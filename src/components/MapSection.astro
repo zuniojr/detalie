@@ -1,0 +1,103 @@
+---
+import { ADDRESS, COMPANY } from '../utils/constants';
+---
+
+<section class="map-section" aria-label="Localização da fábrica">
+  <div class="container">
+    <div class="map-header">
+      <span class="badge">Nossa Fábrica</span>
+      <h2>Venha nos Visitar em Navegantes</h2>
+      <p>{ADDRESS.full}</p>
+    </div>
+
+    <div class="map-frame-wrap">
+      <iframe
+        title={`Mapa de localização - ${COMPANY.name}`}
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.808207185038!2d-48.66307322368945!3d-26.85008239023479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952335f6063b4ad7%3A0xb35a74e5bd6f120e!2sR.%20On%C3%B3rio%20Bortolato%2C%202517%20-%20Gravat%C3%A1%2C%20Navegantes%20-%20SC%2C%2088373-180!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      
+      <div class="map-overlay-badge">
+        <a href={ADDRESS.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          🗺️ Abrir no Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .map-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-offwhite);
+  }
+
+  .map-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+  }
+
+  .map-header h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin: 0.25rem 0 0.5rem 0;
+  }
+
+  .map-header p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+  }
+
+  .map-frame-wrap {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .map-frame-wrap iframe {
+    display: block;
+    filter: grayscale(10%) contrast(105%);
+  }
+
+  .map-overlay-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+
+  @media (max-width: 768px) {
+    .map-section {
+      padding: var(--spacing-md) 0;
+    }
+
+    .map-frame-wrap iframe {
+      height: 320px;
+    }
+
+    .map-overlay-badge {
+      position: static;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .map-overlay-badge .btn {
+      width: 100%;
+    }
+  }
+</style>

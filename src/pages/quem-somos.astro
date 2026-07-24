@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import ContactBar from '../components/ContactBar.astro';
+import Differentials from '../components/Differentials.astro';
+import { COMPANY, CONTACT, SITE } from '../utils/constants';
+import { getWebPageSchema } from '../utils/schema';
+
+const pageSchema = getWebPageSchema({
+  title: `Quem Somos | ${COMPANY.name}`,
+  description: COMPANY.description,
+  url: '/quem-somos',
+});
+---
+
+<Layout
+  title={`Quem Somos | ${COMPANY.name}`}
+  description={COMPANY.description}
+  canonical="/quem-somos"
+  jsonLd={pageSchema}
+>
+  <!-- Breadcrumb -->
+  <Breadcrumb items={[{ label: 'Quem Somos' }]} />
+
+  <!-- Hero Quem Somos -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero-grid">
+        <div class="about-hero-text">
+          <span class="badge">Sua Fábrica de Sonhos</span>
+          <h1 class="about-title">Conheça a <span class="highlight">Detaliê</span></h1>
+          <p class="lead-text">
+            {COMPANY.description}
+          </p>
+          <p>
+            Localizada em Navegantes - SC, atuamos com paixão pela marcenaria de alto padrão, combinando tecnologia de ponta, design funcional e materiais de máxima durabilidade para transformar qualquer ambiente.
+          </p>
+          <p>
+            Do projeto 3D inicial até o ajuste final da montagem, nossa equipe cuida de cada detalhe com rigor técnico e compromisso com a satisfação total do cliente.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Sob Medida</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">3D</span>
+              <span class="stat-label">Projeto Incluso</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">SC</span>
+              <span class="stat-label">Atendimento Regional</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-hero-image">
+          <img
+            src="/images/ambientes-personalizados.jpg"
+            alt="Ambiente planejado Detaliê"
+            width="600"
+            height="450"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossos Valores & Pilares -->
+  <section class="pillars-section">
+    <div class="container">
+      <SectionTitle
+        pretitle="Nossos Pilares"
+        title="O Que Move a Detaliê"
+        subtitle="Princípios que orientam cada projeto e cada móvel fabricado em nossa empresa."
+      />
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🎯</div>
+          <h3>Missão</h3>
+          <p>
+            Transformar espaços residenciais e corporativos em ambientes acolhedores, funcionais e sofisticados por meio de móveis sob medida com acabamento impecável.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">👁️</div>
+          <h3>Visão</h3>
+          <p>
+            Ser a referência regional em marcenaria sob medida e projetos 3D em Santa Catarina, reconhecida pela pontualidade, inovação e excelência no atendimento.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">⭐</div>
+          <h3>Valores</h3>
+          <p>
+            Transparência total com o cliente, rigor nos prazos, valorização do trabalho artesanal e busca contínua pela perfeição em cada detalhe.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossos Diferenciais -->
+  <Differentials />
+
+  <!-- CTA Final -->
+  <ContactBar />
+</Layout>
+
+<style>
+  /* Hero Quem Somos */
+  .about-hero {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .about-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 1rem;
+  }
+
+  .about-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .about-title .highlight {
+    color: var(--color-accent);
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  .about-hero-text p {
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .about-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-num {
+    font-family: var(--font-hero);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+
+  .about-hero-image img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Pilares */
+  .pillars-section {
+    background-color: var(--color-offwhite);
+    padding: var(--spacing-xl) 0;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .pillar-card {
+    background: var(--color-white);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    text-align: center;
+    transition: var(--transition);
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+  }
+
+  .pillar-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .pillar-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .pillar-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 992px) {
+    .about-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .pillars-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

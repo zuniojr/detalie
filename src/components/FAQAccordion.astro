@@ -1,0 +1,112 @@
+---
+import { getFAQSchema } from '../utils/schema';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQItem[];
+  title?: string;
+}
+
+const { faqs, title = 'Perguntas Frequentes' } = Astro.props;
+const faqSchema = getFAQSchema(faqs);
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<div class="faq-accordion-section">
+  {title && <h3 class="faq-title">{title}</h3>}
+  <div class="faq-list">
+    {faqs.map((faq, idx) => (
+      <details class="faq-item" open={idx === 0}>
+        <summary class="faq-question">
+          <span>{faq.question}</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </summary>
+        <div class="faq-answer">
+          <p>{faq.answer}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</div>
+
+<style>
+  .faq-accordion-section {
+    margin: 2rem 0;
+  }
+
+  .faq-title {
+    font-family: var(--font-section);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .faq-item {
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition-fast);
+  }
+
+  .faq-item[open] {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .faq-question {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text);
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-chevron {
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-top: 1px dashed rgba(0, 0, 0, 0.05);
+    margin-top: -0.25rem;
+    padding-top: 1rem;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+</style>

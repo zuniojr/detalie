@@ -1,0 +1,217 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ContactBar from '../../components/ContactBar.astro';
+import { COMPANY, SITE } from '../../utils/constants';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = new Date(post.data.pubDate).toLocaleDateString('pt-BR', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+});
+
+// JSON-LD Article Schema
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  image: `${SITE.url}${post.data.coverImage}`,
+  datePublished: post.data.pubDate.toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: post.data.author || COMPANY.name,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: COMPANY.name,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE.url}${SITE.ogImage}`,
+    },
+  },
+};
+---
+
+<Layout
+  title={`${post.data.title} | Blog ${COMPANY.name}`}
+  description={post.data.description}
+  canonical={`/blog/${post.slug}`}
+  ogImage={post.data.coverImage}
+  jsonLd={articleSchema}
+>
+  <Breadcrumb
+    items={[
+      { label: 'Blog', href: '/blog' },
+      { label: post.data.title },
+    ]}
+  />
+
+  <article class="article-page">
+    <!-- Header do Artigo -->
+    <header class="article-header">
+      <div class="container text-center">
+        {post.data.tags.length > 0 && (
+          <div class="article-tags">
+            {post.data.tags.map((tag) => (
+              <span class="tag-pill">{tag}</span>
+            ))}
+          </div>
+        )}
+
+        <h1 class="article-title">{post.data.title}</h1>
+
+        <div class="article-meta">
+          <span>✍️ Por {post.data.author}</span>
+          <span>•</span>
+          <span>📅 {formattedDate}</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Imagem de Capa -->
+    <div class="container article-cover-container">
+      <img
+        src={post.data.coverImage}
+        alt={post.data.title}
+        class="article-cover-img"
+        width="1000"
+        height="500"
+      />
+    </div>
+
+    <!-- Conteúdo Rich Text -->
+    <div class="container article-body-container">
+      <div class="article-content">
+        <Content />
+      </div>
+
+      <!-- Voltar ao Blog -->
+      <div class="article-footer-nav">
+        <a href="/blog" class="btn btn-outline">&larr; Voltar para o Blog</a>
+      </div>
+    </div>
+  </article>
+
+  <ContactBar />
+</Layout>
+
+<style>
+  .article-page {
+    padding-bottom: var(--spacing-xl);
+    background-color: var(--color-white);
+  }
+
+  .article-header {
+    padding: var(--spacing-lg) 0 var(--spacing-md) 0;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .article-tags {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag-pill {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+  }
+
+  .article-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    max-width: 850px;
+    margin: 0 auto 1rem auto;
+    line-height: 1.25;
+  }
+
+  .article-meta {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .article-cover-container {
+    max-width: 1000px;
+    margin-bottom: 3rem;
+  }
+
+  .article-cover-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .article-body-container {
+    max-width: 780px;
+  }
+
+  .article-content {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  .article-content :global(h2) {
+    font-family: var(--font-section);
+    font-size: 1.75rem;
+    margin: 2.25rem 0 1rem 0;
+    color: var(--color-primary);
+  }
+
+  .article-content :global(h3) {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    margin: 1.75rem 0 0.75rem 0;
+    color: var(--color-primary);
+  }
+
+  .article-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    margin: 1rem 0 1.5rem 1.5rem;
+  }
+
+  .article-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-footer-nav {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+</style>

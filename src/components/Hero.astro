@@ -1,62 +1,170 @@
 ---
+import { COMPANY, CONTACT } from '../utils/constants';
+
+const whatsappUrl = CONTACT.whatsappMessage('móveis planejados');
 ---
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <h1>Móveis Planejados</h1>
-    <p>Transforme seus ambientes com móveis planejados de alto padrão - encontre a perfeição em cada detalhe.</p>
-    <a href="https://wa.me/5547992184100?text=Quero%20um%20orçamento%20grátis." class="btn hero-btn" target="_blank" rel="noopener noreferrer">Quero um orçamento</a>
+
+<section class="hero" aria-label="Apresentação">
+  <div class="hero-bg-overlay"></div>
+  <div class="container hero-container">
+    <div class="hero-card animate-fade-in-up">
+      <span class="hero-badge">Excelência & Sofisticação</span>
+      <h1 class="hero-title">
+        MÓVEIS <span class="highlight">PLANEJADOS</span>
+      </h1>
+      <p class="hero-subtitle">
+        {COMPANY.slogan}
+      </p>
+      <div class="hero-actions">
+        <a
+          href={whatsappUrl}
+          class="btn btn-whatsapp hero-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-0.981z"/>
+          </svg>
+          Quero um Orçamento Grátis
+        </a>
+        <a href="/produtos-e-servicos" class="btn btn-outline hero-btn-secondary">
+          Ver Nossos Projetos
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
   .hero {
     position: relative;
-    height: 80vh;
-    min-height: 500px;
-    background-image: url('/images/hero.webp');
-    background-size: cover;
-    background-position: center;
+    min-height: 82vh;
     display: flex;
     align-items: center;
+    background-image: url('/images/hero.webp');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    overflow: hidden;
   }
-  .hero-overlay {
+
+  .hero-bg-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(4, 5, 6, 0.88) 0%,
+      rgba(4, 5, 6, 0.7) 50%,
+      rgba(4, 5, 6, 0.4) 100%
+    );
   }
-  .hero-content {
+
+  .hero-container {
     position: relative;
-    z-index: 1;
-    text-align: center;
-    color: var(--color-white);
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
-  .hero h1 {
-    font-family: var(--font-hero);
-    font-size: 4.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    color: var(--color-white);
+
+  .hero-card {
+    max-width: 650px;
+    background: rgba(28, 26, 23, 0.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(197, 164, 109, 0.25);
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    text-align: left;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    background: rgba(197, 164, 109, 0.12);
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(197, 164, 109, 0.3);
+    margin-bottom: 1.25rem;
   }
-  .hero p {
-    font-size: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto 2.5rem;
+
+  .hero-title {
+    font-family: var(--font-hero);
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 800;
+    color: var(--color-white);
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
   }
+
+  .hero-title .highlight {
+    color: var(--color-accent);
+    position: relative;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
   .hero-btn {
-    font-size: 1.2rem;
-    padding: 1rem 3rem;
+    font-size: 0.95rem;
+    padding: 0.95rem 2rem;
   }
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 3rem;
+
+  .hero-btn-secondary {
+    font-size: 0.95rem;
+    padding: 0.95rem 1.75rem;
+  }
+
+  @media (max-width: 992px) {
+    .hero-container {
+      justify-content: center;
     }
-    .hero p {
-      font-size: 1.2rem;
+
+    .hero-card {
+      max-width: 100%;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero {
+      min-height: 75vh;
+    }
+
+    .hero-card {
+      padding: 2rem 1.25rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
     }
   }
 </style>

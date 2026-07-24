@@ -1,34 +1,39 @@
 ---
 import '../styles/global.css';
+import SEOHead from '../components/SEOHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
 
 interface Props {
   title: string;
   description: string;
+  canonical?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description } = Astro.props;
+const { title, description, canonical, ogImage, jsonLd } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
-    
-    <link rel="icon" type="image/png" href="/images/logo.png" />
-    
-    <!-- SEO local e Open Graph -->
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://detaliemoveissobmedida.com.br/" />
-    <meta property="og:site_name" content="Detaliê Móveis Sob Medida" />
-    <meta property="og:image" content="/images/logo.png" />
+    <SEOHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      jsonLd={jsonLd}
+    />
   </head>
   <body>
-    <slot />
+    <a href="#main-content" class="skip-link">Pular para conteúdo</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <FloatingCTA />
   </body>
 </html>

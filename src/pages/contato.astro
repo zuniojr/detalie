@@ -1,0 +1,180 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ContactForm from '../components/ContactForm.astro';
+import MapSection from '../components/MapSection.astro';
+import { COMPANY, CONTACT, ADDRESS, SOCIAL } from '../utils/constants';
+import { getWebPageSchema } from '../utils/schema';
+
+const pageSchema = getWebPageSchema({
+  title: `Contato | ${COMPANY.name}`,
+  description: `Entre em contato com a ${COMPANY.name}. Telefone ${CONTACT.phone}, fábrica em Navegantes - SC. Orçamento grátis para móveis sob medida.`,
+  url: '/contato',
+});
+---
+
+<Layout
+  title={`Contato & Orçamentos | ${COMPANY.name}`}
+  description={`Entre em contato com a ${COMPANY.name}. Telefone ${CONTACT.phone}, fábrica em Navegantes - SC. Orçamento grátis para móveis sob medida.`}
+  canonical="/contato"
+  jsonLd={pageSchema}
+>
+  <Breadcrumb items={[{ label: 'Contato' }]} />
+
+  <section class="contact-page-hero">
+    <div class="container">
+      <div class="contact-page-grid">
+        <!-- Coluna 1: Informações de Contato -->
+        <div class="contact-info-col">
+          <span class="badge">Fale Conosco</span>
+          <h1 class="page-title">Estamos Prontos para Atender Você</h1>
+          <p class="lead-text">
+            Tire suas dúvidas, solicite um orçamento sem compromisso ou agende uma visita à nossa fábrica.
+          </p>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="info-icon">📞</div>
+              <div class="info-content">
+                <h3>Telefone / WhatsApp</h3>
+                <a href={CONTACT.phoneTel} class="info-link">{CONTACT.phone}</a>
+                <span class="info-detail">Seg a Sex: 08h às 18h | Sáb: 08h às 12h</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">📍</div>
+              <div class="info-content">
+                <h3>Fábrica e Atendimento</h3>
+                <p>{ADDRESS.full}</p>
+                <a href={ADDRESS.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="info-link-sub">
+                  Ver no Google Maps &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">✉️</div>
+              <div class="info-content">
+                <h3>E-mail Comercial</h3>
+                <a href={`mailto:${CONTACT.email}`} class="info-link">{CONTACT.email}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Formulário -->
+        <div class="contact-form-col">
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção do Mapa -->
+  <MapSection />
+</Layout>
+
+<style>
+  .contact-page-hero {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .contact-page-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  .badge {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    margin-bottom: 1rem;
+  }
+
+  .lead-text {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--color-offwhite);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .info-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+  }
+
+  .info-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-text);
+  }
+
+  .info-content p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: 0 0 0.25rem 0;
+  }
+
+  .info-link {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+  }
+
+  .info-link:hover {
+    color: var(--color-accent);
+  }
+
+  .info-link-sub {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .info-detail {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-gray-medium);
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 992px) {
+    .contact-page-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

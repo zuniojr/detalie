@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { COMPANY, CONTACT, ADDRESS } from '../utils/constants';
+---
+
+<Layout
+  title={`Trabalhe Conosco | ${COMPANY.name}`}
+  description={`Faça parte da equipe da ${COMPANY.name} em Navegantes - SC. Envie seu currículo para oportunidades na marcenaria.`}
+  canonical="/trabalhe-conosco"
+>
+  <Breadcrumb items={[{ label: 'Trabalhe Conosco' }]} />
+
+  <section class="careers-page">
+    <div class="container careers-container">
+      <div class="text-center">
+        <span class="badge">Carreiras</span>
+        <h1 class="careers-title">Venha Fazer Parte da Nossa Equipe</h1>
+        <p class="careers-subtitle">
+          Buscamos talentos apaixonados por marcenaria sob medida, projetos 3D, acabamentos de alto padrão e montagem técnica.
+        </p>
+      </div>
+
+      <div class="careers-cards">
+        <div class="career-card">
+          <div class="career-icon">🪚</div>
+          <h3>Marceneiro / Auxiliar de Marcenaria</h3>
+          <p>Experiência com corte em esquadrejadeira, coladeira de bordo e montagem de móveis em MDF.</p>
+        </div>
+
+        <div class="career-card">
+          <div class="career-icon">📐</div>
+          <h3>Projetista 3D (Promob / SketchUp)</h3>
+          <p>Criação de ambientes planejados, detalhamento executivo e atendimento ao cliente.</p>
+        </div>
+
+        <div class="career-card">
+          <div class="career-icon">🚚</div>
+          <h3>Montador de Móveis Sob Medida</h3>
+          <p>Montagem final no cliente com agilidade, limpeza e atenção aos detalhes de acabamento.</p>
+        </div>
+      </div>
+
+      <div class="resume-box">
+        <h2>Como Enviar Seu Currículo</h2>
+        <p>
+          Encaminhe seu currículo atualizado ou portfólio para o nosso e-mail ou WhatsApp:
+        </p>
+        <div class="resume-contacts">
+          <a href={`mailto:${CONTACT.email}?subject=Currículo - Trabalhe Conosco`} class="btn btn-primary">
+            ✉️ Enviar E-mail: {CONTACT.email}
+          </a>
+          <a href={CONTACT.whatsappMessage('enviar meu currículo')} target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            💬 Enviar pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .careers-page {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .careers-container {
+    max-width: 900px;
+  }
+
+  .text-center {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .badge {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .careers-title {
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    margin-bottom: 1rem;
+  }
+
+  .careers-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .careers-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .career-card {
+    background: var(--color-offwhite);
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+
+  .career-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .career-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .career-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .resume-box {
+    background: var(--color-sand);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid rgba(197, 164, 109, 0.2);
+  }
+
+  .resume-box h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .resume-box p {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .resume-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .careers-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .resume-contacts {
+      flex-direction: column;
+    }
+
+    .resume-contacts .btn {
+      width: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+interface Props {
+  text: string;
+  subtext?: string;
+  pretext?: string;
+  bgImage?: string;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const { text, subtext, pretext, bgImage, ctaText, ctaHref } = Astro.props;
+---
+
+<section
+  class={`impact-banner ${bgImage ? 'has-bg' : ''}`}
+  style={bgImage ? `background-image: url('${bgImage}');` : ''}
+>
+  <div class="impact-overlay"></div>
+  <div class="container impact-container">
+    {pretext && <span class="impact-pretext">{pretext}</span>}
+    <h2 class="impact-title">{text}</h2>
+    {subtext && <p class="impact-subtext">{subtext}</p>}
+    {ctaText && ctaHref && (
+      <a href={ctaHref} class="btn btn-whatsapp impact-cta" target="_blank" rel="noopener noreferrer">
+        {ctaText}
+      </a>
+    )}
+  </div>
+</section>
+
+<style>
+  .impact-banner {
+    position: relative;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid rgba(197, 164, 109, 0.2);
+    border-bottom: 1px solid rgba(197, 164, 109, 0.2);
+  }
+
+  .impact-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 26, 23, 0.85);
+    z-index: 1;
+  }
+
+  .impact-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 900px;
+  }
+
+  .impact-pretext {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+  }
+
+  .impact-title {
+    font-family: var(--font-section);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-white);
+    line-height: 1.3;
+  }
+
+  .impact-subtext {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-top: 0.25rem;
+  }
+
+  .impact-cta {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .impact-banner {
+      padding: var(--spacing-md) 0;
+    }
+  }
+</style>

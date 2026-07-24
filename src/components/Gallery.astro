@@ -1,79 +1,80 @@
 ---
-const categories = [
-  { name: 'Cozinha Planejada', img: 'cozinha.jpg' },
-  { name: 'Paineis Ripados', img: 'painel-ripado.webp' },
-  { name: 'Dormitórios', img: 'dormitorio.jpg' },
-  { name: 'Espaço Gourmet', img: 'espaco-gourmet.jpg' },
-  { name: 'Banheiro', img: 'banheiro.jpg' },
-  { name: 'Lavanderia', img: 'lavanderia.jpg' },
-  { name: 'Closet Planejado', img: 'closet.jpg' },
-  { name: 'Home Office', img: 'home-office.jpg' },
-  { name: 'Corporativo', img: 'corporativo.jpg' },
-  { name: 'Ambientes Personalizados', img: 'ambientes-personalizados.jpg' },
-  { name: 'Cabeceira de Cama e Porta de Correr', img: 'cabeceira-cama.jpg' },
-  { name: 'Painel de TV Sob Medida', img: 'painel-tv.jpg' }
-];
+import { CATEGORIES } from '../utils/constants';
+import SectionTitle from './SectionTitle.astro';
+
+interface Props {
+  limit?: number;
+  offset?: number;
+  showTitle?: boolean;
+}
+
+const { limit, offset = 0, showTitle = true } = Astro.props;
+const displayCategories = limit
+  ? CATEGORIES.slice(offset, offset + limit)
+  : CATEGORIES.slice(offset);
 ---
 
-<div class="gallery-section">
+<section class="gallery-section">
   <div class="container">
-    <h2 class="section-title">Portfólio de Ambientes</h2>
+    {showTitle && (
+      <SectionTitle
+        pretitle="Nossas Especialidades"
+        title="Ambientes Planejados Sob Medida"
+        subtitle="Soluções inteligentes e exclusivas desenvolvidas para cada espaço da sua casa ou empresa."
+      />
+    )}
 
-    <!-- Primeira metade: 6 primeiros itens (2 linhas de 3) -->
     <div class="gallery-grid">
-      {categories.slice(0, 6).map((cat) => (
-        <div class="gallery-card">
+      {displayCategories.map((cat) => (
+        <a href={`/produtos-e-servicos#${cat.slug}`} class="gallery-card">
           <div class="gallery-img-wrap">
-            <img src={`/images/${cat.img}`} alt={cat.name} loading="lazy" />
+            <img
+              src={`/images/${cat.img}`}
+              alt={cat.name}
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+            <div class="gallery-card-overlay">
+              <span class="gallery-card-btn">Ver Ambientes</span>
+            </div>
           </div>
-          <p class="gallery-label">{cat.name.toUpperCase()}</p>
-        </div>
+          <h3 class="gallery-label">{cat.name}</h3>
+        </a>
       ))}
     </div>
   </div>
-</div>
-
-<!-- Banner preto de largura total -->
-<div class="gallery-banner">
-  <p>MÓVEIS QUE SE ENCAIXAM PERFEITAMENTE NA SUA VIDA E NA SUA CASA.</p>
-</div>
-
-<!-- Segunda metade: 6 últimos itens (2 linhas de 3) -->
-<div class="gallery-section">
-  <div class="container">
-    <div class="gallery-grid">
-      {categories.slice(6).map((cat) => (
-        <div class="gallery-card">
-          <div class="gallery-img-wrap">
-            <img src={`/images/${cat.img}`} alt={cat.name} loading="lazy" />
-          </div>
-          <p class="gallery-label">{cat.name.toUpperCase()}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+</section>
 
 <style>
   .gallery-section {
-    background-color: #ffffff;
-    padding: 2rem 0;
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-white);
   }
 
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .gallery-card {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition);
   }
 
   .gallery-img-wrap {
+    position: relative;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     aspect-ratio: 4 / 3;
+    background-color: var(--color-sand);
+    box-shadow: var(--shadow-sm);
   }
 
   .gallery-img-wrap img {
@@ -81,51 +82,78 @@ const categories = [
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
   }
 
-  .gallery-img-wrap:hover img {
-    transform: scale(1.05);
+  .gallery-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 26, 23, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-card-btn {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-white);
+    padding: 0.6rem 1.25rem;
+    border: 1px solid var(--color-accent);
+    background: rgba(197, 164, 109, 0.85);
+    border-radius: var(--radius-sm);
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-card:hover .gallery-img-wrap img {
+    transform: scale(1.08);
+  }
+
+  .gallery-card:hover .gallery-card-overlay {
+    opacity: 1;
+  }
+
+  .gallery-card:hover .gallery-card-btn {
+    transform: translateY(0);
   }
 
   .gallery-label {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: var(--color-dark);
-    letter-spacing: 1px;
-    margin: 0.75rem 0 0;
+    color: var(--color-text);
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
     text-transform: uppercase;
-  }
-
-  /* Banner preto */
-  .gallery-banner {
-    width: 100%;
-    background-color: #111111;
     text-align: center;
-    padding: 2rem 1rem;
+    transition: var(--transition-fast);
   }
 
-  .gallery-banner p {
-    color: #ffffff;
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0;
-    font-weight: 700;
+  .gallery-card:hover .gallery-label {
+    color: var(--color-accent);
   }
 
-  /* Responsivo */
   @media (max-width: 992px) {
     .gallery-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
   }
 
   @media (max-width: 576px) {
     .gallery-grid {
       grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .gallery-section {
+      padding: var(--spacing-md) 0;
     }
   }
 </style>

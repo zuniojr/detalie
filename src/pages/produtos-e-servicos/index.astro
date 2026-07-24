@@ -1,0 +1,236 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+import ContactBar from '../../components/ContactBar.astro';
+import { CATEGORIES, COMPANY, CONTACT } from '../../utils/constants';
+import { getWebPageSchema } from '../../utils/schema';
+
+const pageSchema = getWebPageSchema({
+  title: `Produtos e Serviços | ${COMPANY.name}`,
+  description: `Confira o catálogo completo de ambientes planejados e móveis sob medida da ${COMPANY.name}: cozinhas, dormitórios, banheiros, closets, home office e corporativo.`,
+  url: '/produtos-e-servicos',
+});
+---
+
+<Layout
+  title={`Produtos e Serviços | Ambientes Planejados | ${COMPANY.name}`}
+  description={`Confira o catálogo completo de ambientes planejados e móveis sob medida da ${COMPANY.name}: cozinhas, dormitórios, banheiros, closets, home office e corporativo.`}
+  canonical="/produtos-e-servicos"
+  jsonLd={pageSchema}
+>
+  <Breadcrumb items={[{ label: 'Produtos e Serviços' }]} />
+
+  <!-- Hero Catálogo -->
+  <section class="catalog-hero">
+    <div class="container text-center">
+      <span class="badge">Nosso Portfólio</span>
+      <h1 class="catalog-title">Ambientes Planejados Sob Medida</h1>
+      <p class="catalog-subtitle">
+        Projetos exclusivos desenvolvidos com precisão millimétrica e materiais de altíssima qualidade para cada cômodo da sua vida.
+      </p>
+    </div>
+  </section>
+
+  <!-- Lista Completa de Categorias -->
+  <section class="catalog-grid-section">
+    <div class="container">
+      <div class="categories-detail-grid">
+        {CATEGORIES.map((cat, idx) => (
+          <div id={cat.slug} class="category-detail-card">
+            <div class="card-img-container">
+              <img
+                src={`/images/${cat.img}`}
+                alt={cat.name}
+                loading="lazy"
+                width="600"
+                height="450"
+              />
+              <span class="card-number">0{idx + 1}</span>
+            </div>
+
+            <div class="card-info">
+              <span class="card-category-tag">Móveis Planejados</span>
+              <h2>{cat.name}</h2>
+              <p>
+                Projeto 3D personalizado com aproveitamento total do espaço, ferragens de alta tecnologia, amortecedores e acabamentos premium sob medida.
+              </p>
+
+              <div class="card-features">
+                <span>✔ Projeto 3D incluso</span>
+                <span>✔ Medição no local</span>
+                <span>✔ Garantia de fábrica</span>
+              </div>
+
+              <div class="card-actions">
+                <a
+                  href={CONTACT.whatsappMessage(cat.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-whatsapp"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-0.981z"/>
+                  </svg>
+                  Orçar {cat.name}
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Final -->
+  <ContactBar />
+</Layout>
+
+<style>
+  .catalog-hero {
+    padding: var(--spacing-xl) 0 var(--spacing-md) 0;
+    background-color: var(--color-white);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .badge {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .catalog-title {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .catalog-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Listagem em Cards */
+  .catalog-grid-section {
+    padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+    background-color: var(--color-offwhite);
+  }
+
+  .categories-detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .category-detail-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    align-items: center;
+    scroll-margin-top: 100px; /* offset para navegação por #slug */
+  }
+
+  .category-detail-card:nth-child(even) {
+    direction: rtl;
+  }
+
+  .category-detail-card:nth-child(even) .card-info {
+    direction: ltr;
+  }
+
+  .card-img-container {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .category-detail-card:hover .card-img-container img {
+    transform: scale(1.05);
+  }
+
+  .card-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--color-primary);
+    color: var(--color-accent);
+    font-family: var(--font-hero);
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .card-category-tag {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+  }
+
+  .card-info h2 {
+    font-size: 1.8rem;
+    margin: 0.25rem 0 0.75rem 0;
+  }
+
+  .card-info p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+  }
+
+  .card-actions .btn {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 992px) {
+    .category-detail-card,
+    .category-detail-card:nth-child(even) {
+      grid-template-columns: 1fr;
+      direction: ltr;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  pretitle?: string;
+  align?: 'center' | 'left' | 'right';
+  light?: boolean;
+}
+
+const {
+  title,
+  subtitle,
+  pretitle,
+  align = 'center',
+  light = false,
+} = Astro.props;
+---
+
+<div class={`section-header align-${align} ${light ? 'light' : ''}`}>
+  {pretitle && <span class="section-pretitle">{pretitle}</span>}
+  <h2 class="section-main-title">{title}</h2>
+  <div class="title-divider" aria-hidden="true"></div>
+  {subtitle && <p class="section-subtitle">{subtitle}</p>}
+</div>
+
+<style>
+  .section-header {
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .align-center {
+    text-align: center;
+    align-items: center;
+  }
+
+  .align-left {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .align-right {
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  .section-pretitle {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    margin-bottom: 0.35rem;
+  }
+
+  .section-main-title {
+    font-family: var(--font-section);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .light .section-main-title {
+    color: var(--color-white);
+  }
+
+  .title-divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: 0.75rem 0;
+    border-radius: var(--radius-full);
+  }
+
+  .section-subtitle {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin-top: 0.5rem;
+  }
+
+  .light .section-subtitle {
+    color: var(--color-text-light);
+  }
+
+  @media (max-width: 768px) {
+    .section-header {
+      margin-bottom: var(--spacing-md);
+    }
+  }
+</style>

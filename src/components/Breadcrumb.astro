@@ -1,0 +1,96 @@
+---
+import { getBreadcrumbSchema } from '../utils/schema';
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+// Construir lista para o schema JSON-LD
+const schemaItems = [
+  { name: 'Início', url: '/' },
+  ...items.map((item) => ({
+    name: item.label,
+    url: item.href || '',
+  })),
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(schemaItems);
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<nav class="breadcrumb-container" aria-label="Caminho de navegação">
+  <div class="container">
+    <ol class="breadcrumb-list">
+      <li class="breadcrumb-item">
+        <a href="/">Início</a>
+      </li>
+      {items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        return (
+          <li class="breadcrumb-item">
+            <span class="separator" aria-hidden="true">/</span>
+            {isLast || !item.href ? (
+              <span class="current" aria-current="page">{item.label}</span>
+            ) : (
+              <a href={item.href}>{item.label}</a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</nav>
+
+<style>
+  .breadcrumb-container {
+    background-color: var(--color-offwhite);
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumb-item a {
+    color: var(--color-text-muted);
+    transition: var(--transition-fast);
+  }
+
+  .breadcrumb-item a:hover {
+    color: var(--color-accent);
+  }
+
+  .separator {
+    color: var(--color-gray-medium);
+    font-size: 0.75rem;
+  }
+
+  .current {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+</style>

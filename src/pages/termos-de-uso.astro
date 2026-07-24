@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { COMPANY, CONTACT, ADDRESS } from '../utils/constants';
+---
+
+<Layout
+  title={`Termos de Uso | ${COMPANY.name}`}
+  description={`Termos e Condições de Uso do site da ${COMPANY.name}.`}
+  canonical="/termos-de-uso"
+>
+  <Breadcrumb items={[{ label: 'Termos de Uso' }]} />
+
+  <section class="legal-page">
+    <div class="container legal-container">
+      <h1 class="legal-title">Termos e Condições de Uso</h1>
+      <p class="legal-updated">Última atualização: {new Date().toLocaleDateString('pt-BR')}</p>
+
+      <div class="legal-content">
+        <h2>1. Aceitação dos Termos</h2>
+        <p>
+          Ao acessar e utilizar o site da <strong>{COMPANY.name}</strong>, você concorda em cumprir e estar vinculado aos seguintes Termos e Condições de Uso. Se você não concordar com qualquer parte destes termos, não deverá utilizar nosso site.
+        </p>
+
+        <h2>2. Uso do Site e Conteúdo</h2>
+        <p>
+          Todo o conteúdo exibido neste site, incluindo textos, imagens de projetos, logotipos, ícones e códigos, é de propriedade exclusiva da {COMPANY.name} e protegido pelas leis de propriedade intelectual. É proibida a reprodução ou distribuição sem autorização prévia por escrito.
+        </p>
+
+        <h2>3. Solicitacões de Orçamento</h2>
+        <p>
+          As informações fornecidas nos formulários de orçamento são utilizadas exclusivamente para entrar em contato com o cliente e elaborar propostas de projetos 3D e fabricação de móveis sob medida.
+        </p>
+
+        <h2>4. Limitação de Responsabilidade</h2>
+        <p>
+          A {COMPANY.name} busca manter as informações do site sempre atualizadas e precisas. No entanto, as especificações técnicas, cores de materiais e disponibilidades de acabamentos podem sofrer alterações sem aviso prévio.
+        </p>
+
+        <h2>5. Contato Legal</h2>
+        <p>
+          Para esclarecimento de dúvidas sobre estes Termos de Uso, entre em contato através do e-mail <strong>{CONTACT.email}</strong> ou pelo telefone <strong>{CONTACT.phone}</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-page {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .legal-container {
+    max-width: 800px;
+  }
+
+  .legal-title {
+    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-updated {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .legal-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin: 2rem 0 0.75rem 0;
+  }
+
+  .legal-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+</style>

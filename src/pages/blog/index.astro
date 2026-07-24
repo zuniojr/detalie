@@ -1,0 +1,134 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+import ContactBar from '../../components/ContactBar.astro';
+import { COMPANY } from '../../utils/constants';
+import { getWebPageSchema } from '../../utils/schema';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const pageSchema = getWebPageSchema({
+  title: `Blog & Dicas de Marcenaria | ${COMPANY.name}`,
+  description: `Dicas de marcenaria, tendências de móveis planejados, organização de ambientes e projetos 3D pelo Blog da ${COMPANY.name}.`,
+  url: '/blog',
+});
+---
+
+<Layout
+  title={`Blog & Dicas de Marcenaria | ${COMPANY.name}`}
+  description={`Dicas de marcenaria, tendências de móveis planejados, organização de ambientes e projetos 3D pelo Blog da ${COMPANY.name}.`}
+  canonical="/blog"
+  jsonLd={pageSchema}
+>
+  <Breadcrumb items={[{ label: 'Blog' }]} />
+
+  <!-- Hero do Blog -->
+  <section class="blog-hero">
+    <div class="container text-center">
+      <span class="badge">Dicas & Inspirações</span>
+      <h1 class="blog-title">Blog Detaliê Móveis</h1>
+      <p class="blog-subtitle">
+        Artigos, tendências e orientações para você planejar e transformar os ambientes do seu lar.
+      </p>
+    </div>
+  </section>
+
+  <!-- Grid de Postagens -->
+  <section class="blog-grid-section">
+    <div class="container">
+      {sortedPosts.length > 0 ? (
+        <div class="blog-grid">
+          {sortedPosts.map((post) => (
+            <BlogPostCard
+              title={post.data.title}
+              description={post.data.description}
+              slug={post.slug}
+              pubDate={post.data.pubDate}
+              author={post.data.author}
+              coverImage={post.data.coverImage}
+              tags={post.data.tags}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="no-posts">Nenhum artigo publicado ainda.</p>
+      )}
+    </div>
+  </section>
+
+  <ContactBar />
+</Layout>
+
+<style>
+  .blog-hero {
+    padding: var(--spacing-xl) 0 var(--spacing-md) 0;
+    background-color: var(--color-white);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .badge {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .blog-title {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .blog-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .blog-grid-section {
+    padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+    background-color: var(--color-offwhite);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .no-posts {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 992px) {
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+import { COMPANY, SITE } from '../utils/constants';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.pathname,
+  ogImage = SITE.ogImage,
+  jsonLd,
+} = Astro.props;
+
+const canonicalUrl = `${SITE.url}${canonical}`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${SITE.url}${ogImage}`;
+---
+
+<!-- Charset & Viewport -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<!-- SEO Primário -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph -->
+<meta property="og:locale" content={SITE.locale} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:site_name" content={COMPANY.name} />
+<meta property="og:image" content={ogImageUrl} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" href="/images/logo.png" />
+
+<!-- Preconnect para fontes (performance) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- JSON-LD Structured Data -->
+{jsonLd && (
+  Array.isArray(jsonLd)
+    ? jsonLd.map((schema) => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      ))
+    : <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+)}

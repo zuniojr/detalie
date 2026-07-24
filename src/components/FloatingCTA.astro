@@ -1,27 +1,117 @@
 ---
+import { CONTACT } from '../utils/constants';
+
+interface Props {
+  context?: string;
+}
+
+const { context } = Astro.props;
+const whatsappUrl = CONTACT.whatsappMessage(context);
 ---
-<a href="https://wa.me/5547992184100" class="floating-cta" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" height="30" />
-</a>
+
+<div class="floating-cta-wrapper">
+  <!-- Tooltip Bubble -->
+  <div class="floating-tooltip">
+    <span>Precisa de um orçamento?</span>
+  </div>
+
+  <!-- WhatsApp Button -->
+  <a
+    href={whatsappUrl}
+    class="floating-cta"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Conversar no WhatsApp com a Detaliê Móveis"
+  >
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-0.981z"/>
+    </svg>
+  </a>
+</div>
 
 <style>
-  .floating-cta {
+  .floating-cta-wrapper {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .floating-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 60px;
     height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.3s ease;
+    border-radius: var(--radius-full);
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    transition: var(--transition);
+    animation: pulse 2.5s infinite;
+    position: relative;
   }
+
   .floating-cta:hover {
-    transform: scale(1.1);
+    transform: scale(1.12);
+    background-color: var(--color-whatsapp-hover);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  }
+
+  .floating-tooltip {
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: var(--transition);
+    pointer-events: none;
+    position: relative;
+  }
+
+  .floating-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--color-primary);
+  }
+
+  .floating-cta-wrapper:hover .floating-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (max-width: 768px) {
+    .floating-cta-wrapper {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .floating-cta {
+      width: 54px;
+      height: 54px;
+    }
+
+    .floating-cta svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .floating-tooltip {
+      display: none;
+    }
   }
 </style>

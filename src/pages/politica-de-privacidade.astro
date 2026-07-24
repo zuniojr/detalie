@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { COMPANY, CONTACT } from '../utils/constants';
+---
+
+<Layout
+  title={`Política de Privacidade (LGPD) | ${COMPANY.name}`}
+  description={`Política de Privacidade e Proteção de Dados da ${COMPANY.name} em conformidade com a LGPD.`}
+  canonical="/politica-de-privacidade"
+>
+  <Breadcrumb items={[{ label: 'Política de Privacidade' }]} />
+
+  <section class="legal-page">
+    <div class="container legal-container">
+      <h1 class="legal-title">Política de Privacidade (LGPD)</h1>
+      <p class="legal-updated">Última atualização: {new Date().toLocaleDateString('pt-BR')}</p>
+
+      <div class="legal-content">
+        <h2>1. Coleta de Dados Pessoais</h2>
+        <p>
+          A <strong>{COMPANY.name}</strong> respeita a sua privacidade. Coletamos dados pessoais (como nome, e-mail, telefone e cidade) apenas quando você nos fornece voluntariamente ao solicitar um orçamento ou tirar dúvidas.
+        </p>
+
+        <h2>2. Finalidade do Tratamento de Dados</h2>
+        <p>
+          Seus dados são utilizados estritamente para:
+        </p>
+        <ul>
+          <li>Elaboração e envio de projetos 3D e orçamentos;</li>
+          <li>Comunicação sobre o andamento do atendimento ou produção;</li>
+          <li>Melhoria da experiência do usuário no site.</li>
+        </ul>
+
+        <h2>3. Compartilhamento de Dados</h2>
+        <p>
+          A {COMPANY.name} <strong>não vende, aluga ou compartilha</strong> seus dados pessoais com terceiros para fins de marketing sem o seu consentimento explícito.
+        </p>
+
+        <h2>4. Seus Direitos (LGPD - Lei nº 13.709/2018)</h2>
+        <p>
+          Você tem o direito de solicitar a confirmação, acesso, correção ou eliminação dos seus dados pessoais a qualquer momento.
+        </p>
+
+        <h2>5. Contato Encarregado de Dados</h2>
+        <p>
+          Para exercer seus direitos de privacidade, entre em contato via e-mail em <strong>{CONTACT.email}</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-page {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .legal-container {
+    max-width: 800px;
+  }
+
+  .legal-title {
+    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-updated {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .legal-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin: 2rem 0 0.75rem 0;
+  }
+
+  .legal-content p,
+  .legal-content li {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .legal-content ul {
+    margin-left: 1.5rem;
+  }
+</style>

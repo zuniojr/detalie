@@ -1,0 +1,267 @@
+---
+import { CONTACT } from '../utils/constants';
+
+interface Props {
+  defaultEnvironment?: string;
+}
+
+const { defaultEnvironment = '' } = Astro.props;
+---
+
+<div class="contact-form-card">
+  <div class="contact-form-header">
+    <span class="badge">Solicite um Orçamento</span>
+    <h2>Envie sua Mensagem</h2>
+    <p>Preencha os campos abaixo para receber um orçamento rápido para o seu projeto.</p>
+  </div>
+
+  <form id="budget-form" class="contact-form" novalidate>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Nome Completo <span class="required">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Seu nome" required />
+        <span class="error-msg" id="error-name">Por favor, informe seu nome.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">WhatsApp / Telefone <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="(47) 99999-9999" required />
+        <span class="error-msg" id="error-phone">Informe um número de telefone válido.</span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">E-mail <span class="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+        <span class="error-msg" id="error-email">Informe um e-mail válido.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="city">Cidade / Estado <span class="required">*</span></label>
+        <input type="text" id="city" name="city" placeholder="Ex: Navegantes - SC" required />
+        <span class="error-msg" id="error-city">Informe sua cidade.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="environment">Ambiente Desejado <span class="required">*</span></label>
+      <select id="environment" name="environment" required>
+        <option value="">Selecione o ambiente...</option>
+        <option value="Cozinha Planejada" selected={defaultEnvironment === 'cozinha-sob-medida'}>Cozinha Planejada</option>
+        <option value="Painéis Ripados" selected={defaultEnvironment === 'paineis-ripados'}>Painéis Ripados</option>
+        <option value="Dormitório" selected={defaultEnvironment === 'dormitorio'}>Dormitório</option>
+        <option value="Espaço Gourmet" selected={defaultEnvironment === 'espaco-gourmet'}>Espaço Gourmet</option>
+        <option value="Banheiro" selected={defaultEnvironment === 'banheiro'}>Banheiro</option>
+        <option value="Lavanderia" selected={defaultEnvironment === 'lavanderia'}>Lavanderia</option>
+        <option value="Closet Planejado" selected={defaultEnvironment === 'closets'}>Closet Planejado</option>
+        <option value="Home Office" selected={defaultEnvironment === 'home-office'}>Home Office</option>
+        <option value="Corporativo" selected={defaultEnvironment === 'corporativo'}>Corporativo</option>
+        <option value="Ambiente Completo / Vários" selected={defaultEnvironment === 'ambientes-personalizados'}>Ambiente Completo / Vários</option>
+      </select>
+      <span class="error-msg" id="error-environment">Selecione um ambiente.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Detalhes do Projeto (Opcional)</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        placeholder="Conte-nos um pouco sobre as medidas, preferências de cores ou dúvidas..."
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-whatsapp submit-btn">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-0.981z"/>
+      </svg>
+      Enviar Via WhatsApp
+    </button>
+  </form>
+</div>
+
+<script>
+  import { CONTACT } from '../utils/constants';
+
+  function setupForm() {
+    const form = document.getElementById('budget-form') as HTMLFormElement;
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameInput = form.querySelector('#name') as HTMLInputElement;
+      const phoneInput = form.querySelector('#phone') as HTMLInputElement;
+      const emailInput = form.querySelector('#email') as HTMLInputElement;
+      const cityInput = form.querySelector('#city') as HTMLInputElement;
+      const envSelect = form.querySelector('#environment') as HTMLSelectElement;
+      const msgInput = form.querySelector('#message') as HTMLTextAreaElement;
+
+      let valid = true;
+
+      // Validação básica
+      if (!nameInput.value.trim()) {
+        showError('name', true);
+        valid = false;
+      } else {
+        showError('name', false);
+      }
+
+      if (!phoneInput.value.trim() || phoneInput.value.length < 8) {
+        showError('phone', true);
+        valid = false;
+      } else {
+        showError('phone', false);
+      }
+
+      if (!emailInput.value.includes('@')) {
+        showError('email', true);
+        valid = false;
+      } else {
+        showError('email', false);
+      }
+
+      if (!cityInput.value.trim()) {
+        showError('city', true);
+        valid = false;
+      } else {
+        showError('city', false);
+      }
+
+      if (!envSelect.value) {
+        showError('environment', true);
+        valid = false;
+      } else {
+        showError('environment', false);
+      }
+
+      if (!valid) return;
+
+      // Formatar mensagem para WhatsApp
+      const text =
+        `Olá! Meu nome é *${nameInput.value.trim()}*.\n` +
+        `Quero um orçamento para: *${envSelect.value}*\n` +
+        `Cidade: *${cityInput.value.trim()}*\n` +
+        `E-mail: ${emailInput.value.trim()}\n` +
+        (msgInput.value.trim() ? `Observações: ${msgInput.value.trim()}` : '');
+
+      const whatsappUrl = `https://wa.me/5547992184100?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, '_blank');
+    });
+
+    function showError(id: string, show: boolean) {
+      const el = document.getElementById(`error-${id}`);
+      if (el) {
+        el.style.display = show ? 'block' : 'none';
+      }
+    }
+  }
+
+  setupForm();
+  document.addEventListener('astro:page-load', setupForm);
+</script>
+
+<style>
+  .contact-form-card {
+    background: var(--color-white);
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .badge {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+  }
+
+  .contact-form-header h2 {
+    font-size: 1.8rem;
+    margin: 0.25rem 0 0.5rem 0;
+  }
+
+  .contact-form-header p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .required {
+    color: var(--color-error);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    transition: var(--transition-fast);
+    background-color: #fafafa;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background-color: var(--color-white);
+    box-shadow: 0 0 0 3px rgba(197, 164, 109, 0.15);
+  }
+
+  .error-msg {
+    display: none;
+    font-size: 0.78rem;
+    color: var(--color-error);
+  }
+
+  .submit-btn {
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-form-card {
+      padding: 2rem 1.25rem;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

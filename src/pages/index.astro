@@ -1,25 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Differentials from '../components/Differentials.astro';
 import Gallery from '../components/Gallery.astro';
+import ImpactBanner from '../components/ImpactBanner.astro';
 import Testimonials from '../components/Testimonials.astro';
-import Footer from '../components/Footer.astro';
-import FloatingCTA from '../components/FloatingCTA.astro';
+import ContactBar from '../components/ContactBar.astro';
+import { getLocalBusinessSchema } from '../utils/schema';
+import { COMPANY, SITE } from '../utils/constants';
+
+const localBusinessSchema = getLocalBusinessSchema();
 ---
 
-<Layout 
-  title="Detaliê Móveis Sob Medida | Navegantes - SC" 
-  description="A Detaliê móveis sob medida é especializada em criação de projetos 3D, fabricação, montagem e instalação de ambientes personalizados."
+<Layout
+  title={`${COMPANY.name} | Móveis Planejados em Navegantes e Região`}
+  description={COMPANY.description}
+  canonical="/"
+  jsonLd={localBusinessSchema}
 >
-  <Header />
-  <main>
-    <Hero />
-    <Differentials />
-    <Gallery />
-    <Testimonials />
-  </main>
-  <Footer />
-  <FloatingCTA />
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Seção de Diferenciais (6 pilares) -->
+  <Differentials />
+
+  <!-- Banner de Atendimento e Projeto 3D -->
+  <ImpactBanner
+    pretext="Compromisso & Qualidade"
+    text="OFERECEMOS EXCELENTE ATENDIMENTO DA CRIAÇÃO DO PROJETO 3D ATÉ A ENTREGA FINAL DO SEU MÓVEL."
+  />
+
+  <!-- Primeira Metade do Portfólio (6 categorias) -->
+  <Gallery limit={6} offset={0} />
+
+  <!-- Banner de Encaixe Perfeito -->
+  <ImpactBanner
+    pretext="Personalização Sob Medida"
+    text="MÓVEIS QUE SE ENCAIXAM PERFEITAMENTE NA SUA VIDA E NA SUA CASA."
+    ctaText="Solicite seu Orçamento Sem Compromisso"
+    ctaHref={SITE.url + '/contato'}
+  />
+
+  <!-- Segunda Metade do Portfólio (6 categorias) -->
+  <Gallery limit={6} offset={6} showTitle={false} />
+
+  <!-- Depoimentos de Clientes Satifeitos -->
+  <Testimonials />
+
+  <!-- Barra de Atendimento Rápido Pré-Rodapé -->
+  <ContactBar />
 </Layout>
