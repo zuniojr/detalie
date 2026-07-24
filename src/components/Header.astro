@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { CONTACT, ADDRESS, NAV_LINKS, COMPANY } from '../utils/constants';
+import logoImg from '../assets/images/logo.png';
 
 const currentPath = Astro.url.pathname;
 ---
@@ -29,7 +31,7 @@ const currentPath = Astro.url.pathname;
 <header class="main-header">
   <div class="container nav-bar-inner">
     <a href="/" class="nav-logo" aria-label={COMPANY.name}>
-      <img src="/images/logo.png" alt={COMPANY.name} width="220" height="74" />
+      <Image src={logoImg} alt={COMPANY.name} width={220} height={74} loading="eager" />
     </a>
 
     <!-- Desktop Navigation -->
@@ -63,7 +65,7 @@ const currentPath = Astro.url.pathname;
 <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true"></div>
 <aside id="mobile-drawer" class="mobile-drawer" aria-label="Menu mobile" aria-hidden="true">
   <div class="mobile-drawer-header">
-    <img src="/images/logo.png" alt={COMPANY.name} width="160" height="54" />
+    <Image src={logoImg} alt={COMPANY.name} width={160} height={54} loading="eager" />
     <button id="menu-close" class="menu-close" aria-label="Fechar menu">
       <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
         <line x1="18" y1="6" x2="6" y2="18"></line>

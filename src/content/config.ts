@@ -2,10 +2,10 @@ import { defineCollection, z } from 'astro:content';
 
 const servicosCollection = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
-    heroImage: z.string(),
+    heroImage: image(),
     category: z.string(),
     features: z.array(z.string()),
     faqs: z.array(
@@ -19,12 +19,12 @@ const servicosCollection = defineCollection({
 
 const blogCollection = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
     author: z.string().default('Detaliê Móveis'),
-    coverImage: z.string(),
+    coverImage: image(),
     tags: z.array(z.string()).default(['Móveis Planejados']),
   }),
 });

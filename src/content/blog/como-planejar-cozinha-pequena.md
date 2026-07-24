@@ -3,7 +3,7 @@ title: "Como Planejar uma Cozinha Pequena: 5 Dicas Infalíveis de Marcenaria"
 description: "Descubra como otimizar cada centímetro da sua cozinha pequena com móveis sob medida, cores certas e soluções de iluminação."
 pubDate: 2026-06-15
 author: "Detaliê Móveis"
-coverImage: "/images/cozinha.jpg"
+coverImage: "../../assets/images/cozinha.jpg"
 tags: ["Cozinha", "Dicas de Decoração", "Espaços Pequenos"]
 ---
 

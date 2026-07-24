@@ -3,7 +3,7 @@ title: "Tendências de Móveis Planejados para 2026: Sofisticação e Tecnologia
 description: "Painéis ripados, iluminação embutida, acabamentos amadeirados e ferragens inteligentes lideram as escolhas dos arquitetos este ano."
 pubDate: 2026-07-10
 author: "Detaliê Móveis"
-coverImage: "/images/painel-ripado.webp"
+coverImage: "../../assets/images/painel-ripado.webp"
 tags: ["Tendências", "Design de Interiores", "Painel Ripado"]
 ---
 

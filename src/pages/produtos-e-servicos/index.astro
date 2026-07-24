@@ -1,10 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import SectionTitle from '../../components/SectionTitle.astro';
 import ContactBar from '../../components/ContactBar.astro';
 import { CATEGORIES, COMPANY, CONTACT } from '../../utils/constants';
 import { getWebPageSchema } from '../../utils/schema';
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../../assets/images/*.{jpeg,jpg,png,gif,webp}');
 
 const pageSchema = getWebPageSchema({
   title: `Produtos e Serviços | ${COMPANY.name}`,
@@ -36,18 +39,23 @@ const pageSchema = getWebPageSchema({
   <section class="catalog-grid-section">
     <div class="container">
       <div class="categories-detail-grid">
-        {CATEGORIES.map((cat, idx) => (
-          <div id={cat.slug} class="category-detail-card">
-            <div class="card-img-container">
-              <img
-                src={`/images/${cat.img}`}
-                alt={cat.name}
-                loading="lazy"
-                width="600"
-                height="450"
-              />
-              <span class="card-number">0{idx + 1}</span>
-            </div>
+        {CATEGORIES.map((cat, idx) => {
+          const imagePath = `../../assets/images/${cat.img}`;
+          const imagePromise = images[imagePath];
+          if (!imagePromise) throw new Error(`Image not found: ${imagePath}`);
+
+          return (
+            <div id={cat.slug} class="category-detail-card">
+              <div class="card-img-container">
+                <Image
+                  src={imagePromise()}
+                  alt={cat.name}
+                  loading="lazy"
+                  width={600}
+                  height={450}
+                />
+                <span class="card-number">0{idx + 1}</span>
+              </div>
 
             <div class="card-info">
               <span class="card-category-tag">Móveis Planejados</span>
@@ -77,7 +85,8 @@ const pageSchema = getWebPageSchema({
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>

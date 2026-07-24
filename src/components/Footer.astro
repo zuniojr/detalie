@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { COMPANY, CONTACT, ADDRESS, SOCIAL, NAV_LINKS, LEGAL_LINKS } from '../utils/constants';
+import logoImg from '../assets/images/logo.png';
 ---
 
 <footer class="footer">
@@ -7,7 +9,7 @@ import { COMPANY, CONTACT, ADDRESS, SOCIAL, NAV_LINKS, LEGAL_LINKS } from '../ut
     <!-- Coluna 1: Sobre e Logo -->
     <div class="footer-col brand-col">
       <a href="/" aria-label={COMPANY.name}>
-        <img src="/images/logo.png" alt={COMPANY.name} width="180" height="60" loading="lazy" />
+        <Image src={logoImg} alt={COMPANY.name} width={180} height={60} loading="lazy" />
       </a>
       <p class="brand-desc">{COMPANY.slogan}</p>
       

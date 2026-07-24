@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SectionTitle from '../components/SectionTitle.astro';
@@ -6,6 +7,7 @@ import ContactBar from '../components/ContactBar.astro';
 import Differentials from '../components/Differentials.astro';
 import { COMPANY, CONTACT, SITE } from '../utils/constants';
 import { getWebPageSchema } from '../utils/schema';
+import aboutImg from '../assets/images/ambientes-personalizados.jpg';
 
 const pageSchema = getWebPageSchema({
   title: `Quem Somos | ${COMPANY.name}`,
@@ -56,11 +58,12 @@ const pageSchema = getWebPageSchema({
         </div>
 
         <div class="about-hero-image">
-          <img
-            src="/images/ambientes-personalizados.jpg"
-            alt="Ambiente planejado Detaliê"
-            width="600"
-            height="450"
+          <Image 
+            src={aboutImg} 
+            alt="Ambiente sofisticado com móveis planejados" 
+            width={800}
+            height={600}
+            loading="eager"
           />
         </div>
       </div>

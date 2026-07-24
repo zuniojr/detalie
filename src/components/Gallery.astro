@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { CATEGORIES } from '../utils/constants';
 import SectionTitle from './SectionTitle.astro';
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*.{jpeg,jpg,png,gif,webp}');
 
 interface Props {
   limit?: number;
@@ -25,23 +28,29 @@ const displayCategories = limit
     )}
 
     <div class="gallery-grid">
-      {displayCategories.map((cat) => (
-        <a href={`/produtos-e-servicos#${cat.slug}`} class="gallery-card">
-          <div class="gallery-img-wrap">
-            <img
-              src={`/images/${cat.img}`}
-              alt={cat.name}
-              loading="lazy"
-              width="400"
-              height="300"
-            />
-            <div class="gallery-card-overlay">
+      {displayCategories.map((cat) => {
+        const imagePath = `../assets/images/${cat.img}`;
+        const imagePromise = images[imagePath];
+        if (!imagePromise) throw new Error(`Image not found: ${imagePath}`);
+        
+        return (
+          <a href={`/produtos-e-servicos#${cat.slug}`} class="gallery-card">
+            <div class="gallery-img-wrap">
+              <Image
+                src={imagePromise()}
+                alt={cat.name}
+                loading="lazy"
+                width={400}
+                height={300}
+              />
+              <div class="gallery-card-overlay">
               <span class="gallery-card-btn">Ver Ambientes</span>
             </div>
           </div>
           <h3 class="gallery-label">{cat.name}</h3>
         </a>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>

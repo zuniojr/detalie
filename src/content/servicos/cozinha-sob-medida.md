@@ -1,7 +1,7 @@
 ---
 title: "Cozinha Planejada Sob Medida"
 description: "Cozinhas modernas e funcionais sob medida com aproveitamento inteligente do espaço, amortecedores em gavetas e materiais de alto padrão."
-heroImage: "/images/cozinha.jpg"
+heroImage: "../../assets/images/cozinha.jpg"
 category: "Residencial"
 features:
   - "Projeto 3D completo antes da produção"
