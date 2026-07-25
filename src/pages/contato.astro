@@ -1,8 +1,8 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import ContactForm from '../components/ContactForm.astro';
 import MapSection from '../components/MapSection.astro';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
 import { COMPANY, CONTACT, ADDRESS, SOCIAL } from '../utils/constants';
 import { getWebPageSchema } from '../utils/schema';
 
@@ -23,49 +23,38 @@ const pageSchema = getWebPageSchema({
 
   <section class="contact-page-hero">
     <div class="container">
-      <div class="contact-page-grid">
-        <!-- Coluna 1: Informações de Contato -->
-        <div class="contact-info-col">
-          <span class="badge">Fale Conosco</span>
-          <h1 class="page-title">Estamos Prontos para Atender Você</h1>
-          <p class="lead-text">
-            Tire suas dúvidas, solicite um orçamento sem compromisso ou agende uma visita à nossa fábrica.
-          </p>
+      <div class="contact-page-content">
+        <span class="badge">Fale Conosco</span>
+        <h1 class="page-title">Estamos Prontos para Atender Você</h1>
+        <p class="lead-text">
+          Tire suas dúvidas, solicite um orçamento sem compromisso ou agende uma visita à nossa fábrica.
+        </p>
 
-          <div class="info-cards">
-            <div class="info-card">
-              <div class="info-icon">📞</div>
-              <div class="info-content">
-                <h3>Telefone / WhatsApp</h3>
-                <a href={CONTACT.phoneTel} class="info-link">{CONTACT.phone}</a>
-                <span class="info-detail">Seg a Sex: 08h às 18h | Sáb: 08h às 12h</span>
-              </div>
-            </div>
-
-            <div class="info-card">
-              <div class="info-icon">📍</div>
-              <div class="info-content">
-                <h3>Fábrica e Atendimento</h3>
-                <p>{ADDRESS.full}</p>
-                <a href={ADDRESS.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="info-link-sub">
-                  Ver no Google Maps &rarr;
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-icon">📞</div>
+            <div class="info-content">
+              <h3>Telefone / WhatsApp</h3>
+              <a href="https://bitlybr.net/Detalie" target="_blank" rel="noopener noreferrer" class="info-link">{CONTACT.phone}</a>
+              <span class="info-detail">Seg a Sex: 08h às 18h | Sáb: 08h às 12h</span>
+              <div class="btn-container">
+                <a href="https://bitlybr.net/Detalie" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                  <WhatsAppIcon size={20} /> Falar no WhatsApp
                 </a>
               </div>
             </div>
+          </div>
 
-            <div class="info-card">
-              <div class="info-icon">✉️</div>
-              <div class="info-content">
-                <h3>E-mail Comercial</h3>
-                <a href={`mailto:${CONTACT.email}`} class="info-link">{CONTACT.email}</a>
-              </div>
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <div class="info-content">
+              <h3>Fábrica e Atendimento</h3>
+              <p>{ADDRESS.full}</p>
+              <a href={ADDRESS.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="info-link-sub">
+                Ver no Google Maps &rarr;
+              </a>
             </div>
           </div>
-        </div>
-
-        <!-- Coluna 2: Formulário -->
-        <div class="contact-form-col">
-          <ContactForm />
         </div>
       </div>
     </div>
@@ -81,11 +70,10 @@ const pageSchema = getWebPageSchema({
     background-color: var(--color-white);
   }
 
-  .contact-page-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 3.5rem;
-    align-items: start;
+  .contact-page-content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .badge {
@@ -118,12 +106,13 @@ const pageSchema = getWebPageSchema({
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    text-align: left;
   }
 
   .info-card {
     display: flex;
     gap: 1.25rem;
-    padding: 1.5rem;
+    padding: 1.75rem;
     background: var(--color-offwhite);
     border-radius: var(--radius-md);
     border-left: 4px solid var(--color-accent);
@@ -171,10 +160,7 @@ const pageSchema = getWebPageSchema({
     margin-top: 0.25rem;
   }
 
-  @media (max-width: 992px) {
-    .contact-page-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
+  .btn-container {
+    margin-top: 1rem;
   }
 </style>
