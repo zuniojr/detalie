@@ -223,15 +223,6 @@ ul, ol {
   box-shadow: var(--shadow-md);
 }
 
-/* Ícone circular dentro dos botões WhatsApp */
-.btn-whatsapp .wa-icon-wrap {
-  background: rgba(0, 0, 0, 0.18);
-}
-
-.btn-cta-primary .wa-icon-wrap {
-  background: rgba(0, 0, 0, 0.18);
-}
-
 /* Outline */
 .btn-outline {
   background-color: transparent;
