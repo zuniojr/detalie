@@ -10,14 +10,13 @@ const currentPath = Astro.url.pathname;
 <header class="top-bar">
   <div class="container top-bar-inner">
     <span class="top-bar-item">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
         <path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.72 11.72 0 0 0 3.7.59 1 1 0 0 1 1 1v3.44a1 1 0 0 1-1 1A17 17 0 0 1 2 4a1 1 0 0 1 1-1h3.44a1 1 0 0 1 1 1 11.72 11.72 0 0 0 .59 3.7 1 1 0 0 1-.27 1.1l-2.2 2.2z"/>
       </svg>
       <a href={CONTACT.phoneTel}>{CONTACT.phone}</a>
     </span>
-    <span class="top-bar-sep">|</span>
     <span class="top-bar-item">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
       </svg>
       <a href={ADDRESS.googleMapsUrl} target="_blank" rel="noopener noreferrer">
@@ -31,7 +30,7 @@ const currentPath = Astro.url.pathname;
 <header class="main-header">
   <div class="container nav-bar-inner">
     <a href="/" class="nav-logo" aria-label={COMPANY.name}>
-      <Image src={logoImg} alt={COMPANY.name} width={220} height={74} loading="eager" />
+      <Image src={logoImg} alt={COMPANY.name} width={200} height={67} loading="eager" />
     </a>
 
     <!-- Desktop Navigation -->
@@ -147,7 +146,7 @@ const currentPath = Astro.url.pathname;
   /* Top Bar */
   .top-bar {
     background: #ffffff;
-    color: var(--color-dark);
+    color: #000000;
     border-bottom: 1px solid #e0e0e0;
     font-size: 0.82rem;
   }
@@ -156,32 +155,31 @@ const currentPath = Astro.url.pathname;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    padding: 0.35rem 0;
+    gap: 1.5rem;
+    padding: 0.4rem 0;
   }
 
   .top-bar-item {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
+    color: #000000;
   }
 
   .top-bar-item a {
-    color: var(--color-text-muted);
+    color: #000000;
+    text-decoration: none;
+    font-weight: 400;
     transition: var(--transition-fast);
   }
 
   .top-bar-item a:hover {
-    color: #cbb18a;
+    color: #555555;
   }
 
   .top-bar-item svg {
-    color: var(--color-accent);
+    color: #000000;
     flex-shrink: 0;
-  }
-
-  .top-bar-sep {
-    color: #ccc;
   }
 
   /* Main Header */
@@ -196,12 +194,13 @@ const currentPath = Astro.url.pathname;
   .nav-bar-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 0;
+    justify-content: center;
+    gap: 4rem;
+    padding: 0.6rem 0;
   }
 
   .nav-logo img {
-    max-width: 220px;
+    max-width: 200px;
     width: 100%;
     height: auto;
     display: block;
@@ -217,10 +216,10 @@ const currentPath = Astro.url.pathname;
   .nav-menu a {
     color: var(--color-white);
     font-family: var(--font-ui);
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: 0.2px;
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
     transition: var(--transition-fast);
@@ -390,16 +389,17 @@ const currentPath = Astro.url.pathname;
 
   /* Responsive Rules */
   @media (max-width: 768px) {
+    .nav-bar-inner {
+      justify-content: space-between;
+      gap: 0;
+    }
+
     .nav-menu {
       display: none;
     }
 
     .menu-toggle {
       display: block;
-    }
-
-    .top-bar-sep {
-      display: none;
     }
 
     .top-bar-inner {
