@@ -172,7 +172,7 @@ const currentPath = Astro.url.pathname;
   }
 
   .top-bar-item a:hover {
-    color: var(--color-accent);
+    color: #cbb18a;
   }
 
   .top-bar-item svg {
@@ -227,7 +227,11 @@ const currentPath = Astro.url.pathname;
     white-space: nowrap;
   }
 
-  .nav-menu a:hover,
+  .nav-menu a:hover {
+    color: #cbb18a;
+    border-bottom-color: #cbb18a;
+  }
+
   .nav-menu a.active {
     color: var(--color-accent);
     border-bottom-color: var(--color-accent);
@@ -355,10 +359,13 @@ const currentPath = Astro.url.pathname;
     transition: var(--transition-fast);
   }
 
-  .mobile-nav a:hover,
+  .mobile-nav a:hover {
+    color: #cbb18a;
+    padding-left: 0.5rem;
+  }
+
   .mobile-nav a.active {
     color: var(--color-accent);
-    padding-left: 0.5rem;
   }
 
   .mobile-drawer-footer {
