@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import ContactBar from '../../components/ContactBar.astro';
@@ -8,13 +8,13 @@ import { COMPANY, SITE } from '../../utils/constants';
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const formattedDate = new Date(post.data.pubDate).toLocaleDateString('pt-BR', {
   day: '2-digit',
@@ -48,7 +48,7 @@ const articleSchema = {
 <Layout
   title={`${post.data.title} | Blog ${COMPANY.name}`}
   description={post.data.description}
-  canonical={`/blog/${post.slug}`}
+  canonical={`/blog/${post.id}`}
   ogImage={post.data.coverImage}
   jsonLd={articleSchema}
 >
