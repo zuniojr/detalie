@@ -1,46 +1,132 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import { COMPANY, CONTACT, ADDRESS } from '../utils/constants';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+import { COMPANY, CONTACT } from '../utils/constants';
 ---
 
 <Layout
   title={`Termos de Uso | ${COMPANY.name}`}
-  description={`Termos e Condições de Uso do site da ${COMPANY.name}.`}
+  description={`Termos e Condições de Uso da ${COMPANY.name}.`}
   canonical="/termos-de-uso"
 >
   <Breadcrumb items={[{ label: 'Termos de Uso' }]} />
 
   <section class="legal-page">
     <div class="container legal-container">
-      <h1 class="legal-title">Termos e Condições de Uso</h1>
+      <h1 class="legal-title">Termos de Uso</h1>
       <p class="legal-updated">Última atualização: {new Date().toLocaleDateString('pt-BR')}</p>
 
       <div class="legal-content">
-        <h2>1. Aceitação dos Termos</h2>
         <p>
-          Ao acessar e utilizar o site da <strong>{COMPANY.name}</strong>, você concorda em cumprir e estar vinculado aos seguintes Termos e Condições de Uso. Se você não concordar com qualquer parte destes termos, não deverá utilizar nosso site.
+          A <strong>{COMPANY.name}</strong> tem a sua privacidade e segurança como pilares do seu funcionamento. Coleta e opera seus dados utilizando sistemas de terceiros, os quais, por meio de compromissos contratuais conosco, se obrigaram a cumprir fielmente as disposições pertinentes da Lei Geral de Proteção de Dados Pessoais. A {COMPANY.name} é, em certos momentos, operadora e, em outros, controladora dos seus dados, sempre prezando pela segurança e proteção. De todo modo, a {COMPANY.name}, para efetivamente prestar os serviços de seu interesse, de forma alinhada com nosso propósito, precisará processar seus dados de diferentes formas, sempre sinalizando caso a caso a realização de coleta (quando não for algo explícito, como a prestação de informações por você), finalidade e outros detalhes relevantes do tratamento, a fim de prover, com total transparência, plena autonomia a você quanto aos dados processados por nós.
         </p>
 
-        <h2>2. Uso do Site e Conteúdo</h2>
         <p>
-          Todo o conteúdo exibido neste site, incluindo textos, imagens de projetos, logotipos, ícones e códigos, é de propriedade exclusiva da {COMPANY.name} e protegido pelas leis de propriedade intelectual. É proibida a reprodução ou distribuição sem autorização prévia por escrito.
+          Esta Política é uma versão detalhada de nossas práticas com seus dados pessoais. Contudo, caso tenha dúvidas mais pontuais, para fins de um melhor e mais rápido atendimento, elaboramos uma <strong>Versão Simplificada</strong> contendo perguntas frequentes e as respectivas respostas redigidas de forma mais resumida.
         </p>
 
-        <h2>3. Solicitacões de Orçamento</h2>
+        <h2>1. PARA QUE SERVE ESSA POLÍTICA E COMO CUMPRIMOS COM AS REGRAS DA LGPD?</h2>
         <p>
-          As informações fornecidas nos formulários de orçamento são utilizadas exclusivamente para entrar em contato com o cliente e elaborar propostas de projetos 3D e fabricação de móveis sob medida.
+          Nós da {COMPANY.name} estamos alinhados com a Lei Geral de Proteção de Dados (LGPD) e queremos que você se familiarize com a forma como coletamos, usamos e armazenamos suas informações pessoais. Esta política abrange nossos sites, aplicativos, conteúdos e serviços relacionados e demonstra como eles interagem com seus dados. Ao aderir aos termos de utilização de nossos produtos e aceitar a utilização de cookies, você concorda com a aplicação desta política no âmbito da nossa relação.
         </p>
 
-        <h2>4. Limitação de Responsabilidade</h2>
+        <h2>2. QUAIS INFORMAÇÕES COLETAMOS DE VOCÊS?</h2>
         <p>
-          A {COMPANY.name} busca manter as informações do site sempre atualizadas e precisas. No entanto, as especificações técnicas, cores de materiais e disponibilidades de acabamentos podem sofrer alterações sem aviso prévio.
+          A {COMPANY.name} e nossos prestadores de serviços coletam as seguintes informações relacionadas a você:
+        </p>
+        <ul>
+          <li><strong>Informação de Registro:</strong> dados enviados ao se registrar em nossos ambientes ou de parceiros (nome, e-mail, faixa de renda, país, cidade, estado, telefone, data de nascimento e dados de pagamento).</li>
+          <li><strong>Informação Pública e Publicações:</strong> informações publicadas por você através de comentários ou conversas espontâneas.</li>
+          <li><strong>Informações de Redes Sociais:</strong> dados compartilhados ao se conectar via redes sociais (nome de usuário, foto de perfil, e-mail).</li>
+          <li><strong>Informação da Atividade nos Ambientes:</strong> endereço IP, tipo de navegador, sistema operacional e dados de navegação via cookies.</li>
+        </ul>
+
+        <h2>3. COMO USAMOS SUAS INFORMAÇÕES?</h2>
+        <p>
+          Utilizamos seus dados para viabilizar a prestação dos serviços contratados, otimizar nossos produtos, fornecer suporte e oferecer a melhor experiência nos nossos ambientes.
+        </p>
+        <ul>
+          <li><strong>Fornecer serviços e funções:</strong> entregar produtos, projetos 3D e promoções contratadas.</li>
+          <li><strong>Entregar publicidade relevante:</strong> exibir anúncios personalizados de acordo com seu perfil.</li>
+          <li><strong>Desenvolver e melhorar produtos:</strong> realizar estudos anônimos de público para constante evolução.</li>
+          <li><strong>Contatar o usuário:</strong> enviar atualizações do serviço, informativos e avisos importantes.</li>
+          <li><strong>Proteger direitos e segurança:</strong> prevenir fraudes e cumprir obrigações legais.</li>
+        </ul>
+
+        <h2>4. ONDE FICAM ARMAZENADOS MEUS DADOS? TERCEIROS TÊM ACESSO?</h2>
+        <p>
+          Usamos sistemas de armazenamento de terceiros em nuvem que aplicam as melhores práticas de segurança do mercado. Compartilhamos dados exclusivamente para garantir a execução das seguintes ferramentas:
         </p>
 
-        <h2>5. Contato Legal</h2>
+        <div class="table-responsive">
+          <table class="legal-table">
+            <thead>
+              <tr>
+                <th>Sistema</th>
+                <th>Função</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>RD Station</strong></td>
+                <td>Envio de publicidade e conteúdos direcionados por e-mail, armazenamento e BI.</td>
+              </tr>
+              <tr>
+                <td><strong>Zendesk</strong></td>
+                <td>Sistema de atendimento ao cliente e suporte aos usuários.</td>
+              </tr>
+              <tr>
+                <td><strong>Hotmart / WooCommerce</strong></td>
+                <td>Processamento seguro de transações e vendas online.</td>
+              </tr>
+              <tr>
+                <td><strong>Google Drive</strong></td>
+                <td>Armazenamento seguro de arquivos e documentos da empresa.</td>
+              </tr>
+              <tr>
+                <td><strong>Typeform</strong></td>
+                <td>Realização de pesquisas de satisfação e atendimento com clientes.</td>
+              </tr>
+              <tr>
+                <td><strong>Hand Talk</strong></td>
+                <td>Plataforma de acessibilidade em Libras e voz para navegação.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>5. COMO IMPLEMENTAMOS MEDIDAS DE SEGURANÇA?</h2>
         <p>
-          Para esclarecimento de dúvidas sobre estes Termos de Uso, entre em contato através do e-mail <strong>{CONTACT.email}</strong> ou pelo telefone <strong>{CONTACT.phone}</strong>.
+          Aplicamos medidas técnicas, administrativas e físicas para proteger seus dados contra acessos não autorizados, vazamentos ou alterações, respeitando os requisitos da LGPD.
         </p>
+
+        <h2>6. QUAIS OS SEUS DIREITOS E COMO VOCÊ TERÁ CONTROLE DAS SUAS INFORMAÇÕES?</h2>
+        <p>
+          Em conformidade com a LGPD, você possui direito de acesso, retificação, exclusão, confirmação de tratamento, bloqueio, eliminação e revogação do seu consentimento a qualquer momento enviando solicitação para nossa equipe.
+        </p>
+
+        <h2>7. INFORMAÇÕES ADICIONAIS</h2>
+        <p>
+          Esta Política de Termos de Uso pode ser atualizada periodicamente. Recomendamos a leitura contínua para acompanhar as novidades de segurança.
+        </p>
+
+        <h2>8. CONTATO</h2>
+        <p>
+          Se você tiver alguma dúvida sobre nossos serviços ou desejar exercer seus direitos sobre seus dados pessoais, entre em contato conosco.
+        </p>
+
+        <div class="legal-action">
+          <a
+            href="https://bitlybr.net/Detalie"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-whatsapp"
+          >
+            <WhatsAppIcon size={20} />
+            Falar no WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -53,7 +139,7 @@ import { COMPANY, CONTACT, ADDRESS } from '../utils/constants';
   }
 
   .legal-container {
-    max-width: 800px;
+    max-width: 850px;
   }
 
   .legal-title {
@@ -77,10 +163,54 @@ import { COMPANY, CONTACT, ADDRESS } from '../utils/constants';
     margin: 2rem 0 0.75rem 0;
   }
 
-  .legal-content p {
+  .legal-content p,
+  .legal-content li {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.75;
     color: var(--color-text-muted);
     margin-bottom: 1.25rem;
+  }
+
+  .legal-content ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .legal-action {
+    margin-top: 2rem;
+  }
+
+  /* Tabela Responsiva */
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0 2rem 0;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+
+  .legal-table th,
+  .legal-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .legal-table th {
+    background-color: var(--color-sand);
+    color: var(--color-black);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .legal-table tr:last-child td {
+    border-bottom: none;
   }
 </style>
