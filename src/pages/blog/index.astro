@@ -14,11 +14,22 @@ const sortedPosts = posts.sort(
   (a, b) => b.pubDate.valueOf() - a.pubDate.valueOf()
 );
 
+const featuredPost = sortedPosts[0];
+const regularPosts = sortedPosts.slice(1);
+
 const pageSchema = getWebPageSchema({
   title: `Blog & Dicas de Marcenaria | ${COMPANY.name}`,
   description: `Dicas de marcenaria, tendências de móveis planejados, organização de ambientes e projetos 3D pelo Blog da ${COMPANY.name}.`,
   url: '/blog',
 });
+
+const formattedFeaturedDate = featuredPost
+  ? new Date(featuredPost.pubDate).toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    })
+  : '';
 ---
 
 <Layout
@@ -40,23 +51,94 @@ const pageSchema = getWebPageSchema({
     </div>
   </section>
 
+  <!-- Post em Destaque -->
+  {featuredPost && (
+    <section class="featured-section">
+      <div class="container">
+        <div class="featured-card">
+          <a href={`/blog/${featuredPost.slug}`} class="featured-img-wrap">
+            <img src={featuredPost.coverImage} alt={featuredPost.title} loading="eager" />
+            <span class="featured-badge">⭐ Destaque</span>
+          </a>
+          <div class="featured-content">
+            <div class="featured-meta">
+              <span class="featured-tag">{featuredPost.tags[0] || 'Móveis Planejados'}</span>
+              <span class="featured-date">📅 {formattedFeaturedDate}</span>
+            </div>
+            <h2 class="featured-title">
+              <a href={`/blog/${featuredPost.slug}`}>{featuredPost.title}</a>
+            </h2>
+            <p class="featured-desc">{featuredPost.description}</p>
+            <a href={`/blog/${featuredPost.slug}`} class="btn btn-primary featured-btn">
+              Ler Artigo Completo &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Barra de Busca e Filtros -->
+  <section class="blog-filter-section">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input
+            type="text"
+            id="blog-search-input"
+            placeholder="Buscar artigos por palavra-chave..."
+            aria-label="Buscar artigos por palavra-chave"
+          />
+        </div>
+        <div class="counter-text" id="posts-counter">
+          Exibindo <strong>{sortedPosts.length}</strong> artigos
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Grid de Postagens -->
   <section class="blog-grid-section">
     <div class="container">
-      {sortedPosts.length > 0 ? (
-        <div class="blog-grid">
-          {sortedPosts.map((post) => (
-            <BlogPostCard
-              title={post.title}
-              description={post.description}
-              slug={post.slug}
-              pubDate={post.pubDate}
-              author={post.author}
-              coverImage={post.coverImage}
-              tags={post.tags}
-            />
-          ))}
-        </div>
+      {regularPosts.length > 0 ? (
+        <>
+          <div class="blog-grid" id="blog-grid">
+            {regularPosts.map((post, index) => (
+              <div
+                class="blog-card-item"
+                data-title={post.title.toLowerCase()}
+                data-desc={post.description.toLowerCase()}
+                data-tags={post.tags.join(' ').toLowerCase()}
+                style={index >= 9 ? 'display: none;' : ''}
+              >
+                <BlogPostCard
+                  title={post.title}
+                  description={post.description}
+                  slug={post.slug}
+                  pubDate={post.pubDate}
+                  author={post.author}
+                  coverImage={post.coverImage}
+                  tags={post.tags}
+                />
+              </div>
+            ))}
+          </div>
+
+          {regularPosts.length > 9 && (
+            <div class="load-more-wrap" id="load-more-wrap">
+              <button id="load-more-btn" class="btn btn-outline">
+                Carregar Mais Artigos ({regularPosts.length - 9} restantes)
+              </button>
+            </div>
+          )}
+
+          <p class="no-posts" id="no-search-results" style="display: none;">
+            Nenhum artigo encontrado para sua busca. Tente outros termos!
+          </p>
+        </>
       ) : (
         <p class="no-posts">Nenhum artigo publicado ainda.</p>
       )}
@@ -65,6 +147,92 @@ const pageSchema = getWebPageSchema({
 
   <ContactBar />
 </Layout>
+
+<script>
+  function setupBlogSearch() {
+    const searchInput = document.getElementById('blog-search-input') as HTMLInputElement;
+    const gridItems = document.querySelectorAll<HTMLElement>('.blog-card-item');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const loadMoreWrap = document.getElementById('load-more-wrap');
+    const noResults = document.getElementById('no-search-results');
+    const counter = document.getElementById('posts-counter');
+
+    let currentlyShown = 9;
+
+    if (!gridItems.length) return;
+
+    // Ação do Botão Carregar Mais
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        currentlyShown += 9;
+        let visibleCount = 0;
+
+        gridItems.forEach((item, idx) => {
+          if (idx < currentlyShown) {
+            item.style.display = 'block';
+            visibleCount++;
+          }
+        });
+
+        const remaining = gridItems.length - currentlyShown;
+        if (remaining <= 0 && loadMoreWrap) {
+          loadMoreWrap.style.display = 'none';
+        } else if (loadMoreBtn) {
+          loadMoreBtn.textContent = `Carregar Mais Artigos (${remaining} restantes)`;
+        }
+      });
+    }
+
+    // Busca Interativa
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+
+        if (query === '') {
+          // Resetar para estado inicial paginado
+          gridItems.forEach((item, idx) => {
+            item.style.display = idx < currentlyShown ? 'block' : 'none';
+          });
+          if (loadMoreWrap && gridItems.length > currentlyShown) {
+            loadMoreWrap.style.display = 'flex';
+          }
+          if (noResults) noResults.style.display = 'none';
+          if (counter) counter.innerHTML = `Exibindo <strong>${gridItems.length + 1}</strong> artigos`;
+          return;
+        }
+
+        // Esconder botão carregar mais durante busca
+        if (loadMoreWrap) loadMoreWrap.style.display = 'none';
+
+        let matchCount = 0;
+
+        gridItems.forEach((item) => {
+          const title = item.dataset.title || '';
+          const desc = item.dataset.desc || '';
+          const tags = item.dataset.tags || '';
+
+          if (title.includes(query) || desc.includes(query) || tags.includes(query)) {
+            item.style.display = 'block';
+            matchCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        if (noResults) {
+          noResults.style.display = matchCount === 0 ? 'block' : 'none';
+        }
+
+        if (counter) {
+          counter.innerHTML = `Encontrados <strong>${matchCount}</strong> artigos`;
+        }
+      });
+    }
+  }
+
+  setupBlogSearch();
+  document.addEventListener('astro:page-load', setupBlogSearch);
+</script>
 
 <style>
   .blog-hero {
@@ -103,8 +271,177 @@ const pageSchema = getWebPageSchema({
     line-height: 1.6;
   }
 
+  /* ============================================
+     FEATURED POST (DESTAQUE)
+  ============================================ */
+  .featured-section {
+    padding: 1.5rem 0 3rem 0;
+    background-color: var(--color-white);
+  }
+
+  .featured-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(197, 164, 109, 0.2);
+  }
+
+  .featured-img-wrap {
+    position: relative;
+    height: 100%;
+    min-height: 380px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .featured-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .featured-card:hover .featured-img-wrap img {
+    transform: scale(1.04);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: linear-gradient(135deg, #C5A46D 0%, #D4B57C 100%);
+    color: #111111;
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .featured-content {
+    padding: 2.5rem 2.5rem 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .featured-tag {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+  }
+
+  .featured-title {
+    font-family: var(--font-section);
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  .featured-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .featured-title a:hover {
+    color: var(--color-accent);
+  }
+
+  .featured-desc {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+  }
+
+  .featured-btn {
+    align-self: flex-start;
+  }
+
+  /* ============================================
+     BARRA DE BUSCA
+  ============================================ */
+  .blog-filter-section {
+    padding: 2rem 0;
+    background-color: var(--color-offwhite);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    position: relative;
+    flex: 1;
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-box svg {
+    position: absolute;
+    left: 14px;
+    color: var(--color-accent);
+    pointer-events: none;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 2.6rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .search-box input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(197, 164, 109, 0.15);
+  }
+
+  .counter-text {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ============================================
+     GRID E PAGINAÇÃO
+  ============================================ */
   .blog-grid-section {
-    padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+    padding: var(--spacing-xl) 0;
     background-color: var(--color-offwhite);
   }
 
@@ -112,6 +449,12 @@ const pageSchema = getWebPageSchema({
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+
+  .load-more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
   }
 
   .no-posts {
@@ -122,6 +465,19 @@ const pageSchema = getWebPageSchema({
   }
 
   @media (max-width: 992px) {
+    .featured-card {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .featured-content {
+      padding: 2rem;
+    }
+
+    .featured-img-wrap {
+      min-height: 260px;
+    }
+
     .blog-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
@@ -131,6 +487,15 @@ const pageSchema = getWebPageSchema({
   @media (max-width: 576px) {
     .blog-grid {
       grid-template-columns: 1fr;
+    }
+
+    .filter-bar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .search-box {
+      max-width: 100%;
     }
   }
 </style>

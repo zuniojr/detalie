@@ -2,22 +2,35 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
 import ContactBar from '../../components/ContactBar.astro';
 import { COMPANY, SITE } from '../../utils/constants';
 import { getPostMeta } from '../../utils/blog';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
+  const allMetas = posts.map((p) => getPostMeta(p));
+
   return posts.map((post) => {
     const meta = getPostMeta(post);
+    // Filtrar posts relacionados (com tags semelhantes ou mais recentes)
+    const relatedPosts = allMetas
+      .filter((p) => p.slug !== meta.slug)
+      .sort((a, b) => {
+        const aMatch = a.tags.some((t) => meta.tags.includes(t)) ? 1 : 0;
+        const bMatch = b.tags.some((t) => meta.tags.includes(t)) ? 1 : 0;
+        return bMatch - aMatch;
+      })
+      .slice(0, 3);
+
     return {
       params: { slug: meta.slug },
-      props: { post, meta },
+      props: { post, meta, relatedPosts },
     };
   });
 }
 
-const { post, meta } = Astro.props;
+const { post, meta, relatedPosts } = Astro.props;
 const { Content } = await render(post);
 
 const formattedDate = new Date(meta.pubDate).toLocaleDateString('pt-BR', {
@@ -110,6 +123,31 @@ const articleSchema = {
       </div>
     </div>
   </article>
+
+  <!-- Seção de Artigos Relacionados -->
+  {relatedPosts.length > 0 && (
+    <section class="related-posts-section">
+      <div class="container">
+        <div class="related-header">
+          <span class="badge-sub">Recomendados para você</span>
+          <h2 class="related-title">Artigos Relacionados</h2>
+        </div>
+        <div class="related-grid">
+          {relatedPosts.map((rel) => (
+            <BlogPostCard
+              title={rel.title}
+              description={rel.description}
+              slug={rel.slug}
+              pubDate={rel.pubDate}
+              author={rel.author}
+              coverImage={rel.coverImage}
+              tags={rel.tags}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <ContactBar />
 </Layout>
@@ -219,5 +257,52 @@ const articleSchema = {
     margin-top: 3.5rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  /* Seção de Artigos Relacionados */
+  .related-posts-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-offwhite);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .related-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .badge-sub {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+  }
+
+  .related-title {
+    font-family: var(--font-section);
+    font-size: 2rem;
+    color: var(--color-text);
+    margin-top: 0.3rem;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 992px) {
+    .related-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
