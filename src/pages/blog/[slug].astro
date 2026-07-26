@@ -94,6 +94,8 @@ const articleSchema = {
           <span>✍️ Por {meta.author}</span>
           <span>•</span>
           <span>📅 {formattedDate}</span>
+          <span>•</span>
+          <span>⏱️ {meta.readTime}</span>
         </div>
       </div>
     </header>
@@ -142,6 +144,7 @@ const articleSchema = {
               author={rel.author}
               coverImage={rel.coverImage}
               tags={rel.tags}
+              readTime={rel.readTime}
             />
           ))}
         </div>

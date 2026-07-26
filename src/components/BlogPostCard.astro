@@ -7,13 +7,14 @@ interface Props {
   author: string;
   coverImage: string;
   tags?: string[];
+  readTime?: string;
 }
 
-const { title, description, slug, pubDate, author, coverImage, tags = [] } = Astro.props;
+const { title, description, slug, pubDate, author, coverImage, tags = [], readTime } = Astro.props;
 
 const formattedDate = new Date(pubDate).toLocaleDateString('pt-BR', {
   day: '2-digit',
-  month: 'long',
+  month: 'short',
   year: 'numeric',
 });
 ---
@@ -27,7 +28,16 @@ const formattedDate = new Date(pubDate).toLocaleDateString('pt-BR', {
   </a>
 
   <div class="blog-card-content">
-    <span class="blog-card-date">📅 {formattedDate}</span>
+    <div class="blog-card-meta">
+      <span class="blog-card-date">📅 {formattedDate}</span>
+      {readTime && (
+        <>
+          <span class="meta-sep">•</span>
+          <span class="blog-card-readtime">⏱️ {readTime}</span>
+        </>
+      )}
+    </div>
+
     <h3 class="blog-card-title">
       <a href={`/blog/${slug}`}>{title}</a>
     </h3>
@@ -103,11 +113,18 @@ const formattedDate = new Date(pubDate).toLocaleDateString('pt-BR', {
     flex: 1;
   }
 
-  .blog-card-date {
+  .blog-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     font-family: var(--font-ui);
     font-size: 0.8rem;
     color: var(--color-text-muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .meta-sep {
+    opacity: 0.5;
   }
 
   .blog-card-title {

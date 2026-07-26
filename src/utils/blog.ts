@@ -46,6 +46,7 @@ export interface PostMeta {
   tags: string[];
   description: string;
   coverImage: string;
+  readTime: string;
 }
 
 export function getPostMeta(post: any): PostMeta {
@@ -80,6 +81,10 @@ export function getPostMeta(post: any): PostMeta {
     description = 'Confira este artigo no blog da Detaliê Móveis Sob Medida em Navegantes e região.';
   }
 
+  const wordCount = post.body ? post.body.trim().split(/\s+/).length : 300;
+  const readTimeMinutes = Math.max(1, Math.ceil(wordCount / 200));
+  const readTime = `${readTimeMinutes} min de leitura`;
+
   const coverImage = getPostCoverImage(cleanSlug, post.data.coverImage);
 
   return {
@@ -91,5 +96,6 @@ export function getPostMeta(post: any): PostMeta {
     tags,
     description,
     coverImage,
+    readTime,
   };
 }

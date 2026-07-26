@@ -64,6 +64,8 @@ const formattedFeaturedDate = featuredPost
             <div class="featured-meta">
               <span class="featured-tag">{featuredPost.tags[0] || 'Móveis Planejados'}</span>
               <span class="featured-date">📅 {formattedFeaturedDate}</span>
+              <span>•</span>
+              <span class="featured-readtime">⏱️ {featuredPost.readTime}</span>
             </div>
             <h2 class="featured-title">
               <a href={`/blog/${featuredPost.slug}`}>{featuredPost.title}</a>
@@ -122,6 +124,7 @@ const formattedFeaturedDate = featuredPost
                   author={post.author}
                   coverImage={post.coverImage}
                   tags={post.tags}
+                  readTime={post.readTime}
                 />
               </div>
             ))}
