@@ -6,10 +6,12 @@ import BlogPostCard from '../../components/BlogPostCard.astro';
 import ContactBar from '../../components/ContactBar.astro';
 import { COMPANY } from '../../utils/constants';
 import { getWebPageSchema } from '../../utils/schema';
+import { getPostMeta } from '../../utils/blog';
 
-const posts = await getCollection('blog');
+const rawPosts = await getCollection('blog');
+const posts = rawPosts.map((p) => getPostMeta(p));
 const sortedPosts = posts.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.pubDate.valueOf() - a.pubDate.valueOf()
 );
 
 const pageSchema = getWebPageSchema({
@@ -45,13 +47,13 @@ const pageSchema = getWebPageSchema({
         <div class="blog-grid">
           {sortedPosts.map((post) => (
             <BlogPostCard
-              title={post.data.title}
-              description={post.data.description}
-              slug={post.id}
-              pubDate={post.data.pubDate}
-              author={post.data.author}
-              coverImage={post.data.coverImage}
-              tags={post.data.tags}
+              title={post.title}
+              description={post.description}
+              slug={post.slug}
+              pubDate={post.pubDate}
+              author={post.author}
+              coverImage={post.coverImage}
+              tags={post.tags}
             />
           ))}
         </div>

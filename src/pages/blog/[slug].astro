@@ -4,19 +4,23 @@ import Layout from '@/layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import ContactBar from '../../components/ContactBar.astro';
 import { COMPANY, SITE } from '../../utils/constants';
+import { getPostMeta } from '../../utils/blog';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  return posts.map((post) => {
+    const meta = getPostMeta(post);
+    return {
+      params: { slug: meta.slug },
+      props: { post, meta },
+    };
+  });
 }
 
-const { post } = Astro.props;
+const { post, meta } = Astro.props;
 const { Content } = await render(post);
 
-const formattedDate = new Date(post.data.pubDate).toLocaleDateString('pt-BR', {
+const formattedDate = new Date(meta.pubDate).toLocaleDateString('pt-BR', {
   day: '2-digit',
   month: 'long',
   year: 'numeric',
@@ -26,13 +30,13 @@ const formattedDate = new Date(post.data.pubDate).toLocaleDateString('pt-BR', {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: post.data.title,
-  description: post.data.description,
-  image: `${SITE.url}${post.data.coverImage}`,
-  datePublished: post.data.pubDate.toISOString(),
+  headline: meta.title,
+  description: meta.description,
+  image: meta.coverImage.startsWith('http') ? meta.coverImage : `${SITE.url}${meta.coverImage}`,
+  datePublished: new Date(meta.pubDate).toISOString(),
   author: {
     '@type': 'Organization',
-    name: post.data.author || COMPANY.name,
+    name: meta.author || COMPANY.name,
   },
   publisher: {
     '@type': 'Organization',
@@ -46,16 +50,16 @@ const articleSchema = {
 ---
 
 <Layout
-  title={`${post.data.title} | Blog ${COMPANY.name}`}
-  description={post.data.description}
-  canonical={`/blog/${post.id}`}
-  ogImage={post.data.coverImage}
+  title={`${meta.title} | Blog ${COMPANY.name}`}
+  description={meta.description}
+  canonical={`/blog/${meta.slug}`}
+  ogImage={meta.coverImage}
   jsonLd={articleSchema}
 >
   <Breadcrumb
     items={[
       { label: 'Blog', href: '/blog' },
-      { label: post.data.title },
+      { label: meta.title },
     ]}
   />
 
@@ -63,18 +67,18 @@ const articleSchema = {
     <!-- Header do Artigo -->
     <header class="article-header">
       <div class="container text-center">
-        {post.data.tags.length > 0 && (
+        {meta.tags.length > 0 && (
           <div class="article-tags">
-            {post.data.tags.map((tag) => (
+            {meta.tags.slice(0, 3).map((tag) => (
               <span class="tag-pill">{tag}</span>
             ))}
           </div>
         )}
 
-        <h1 class="article-title">{post.data.title}</h1>
+        <h1 class="article-title">{meta.title}</h1>
 
         <div class="article-meta">
-          <span>✍️ Por {post.data.author}</span>
+          <span>✍️ Por {meta.author}</span>
           <span>•</span>
           <span>📅 {formattedDate}</span>
         </div>
@@ -82,15 +86,17 @@ const articleSchema = {
     </header>
 
     <!-- Imagem de Capa -->
-    <div class="container article-cover-container">
-      <img
-        src={post.data.coverImage}
-        alt={post.data.title}
-        class="article-cover-img"
-        width="1000"
-        height="500"
-      />
-    </div>
+    {meta.coverImage && (
+      <div class="container article-cover-container">
+        <img
+          src={meta.coverImage}
+          alt={meta.title}
+          class="article-cover-img"
+          width="1000"
+          height="500"
+        />
+      </div>
+    )}
 
     <!-- Conteúdo Rich Text -->
     <div class="container article-body-container">

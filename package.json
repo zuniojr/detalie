@@ -14,5 +14,8 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^7.0.2"
+  },
+  "devDependencies": {
+    "wordpress-export-to-markdown": "^3.0.6"
   }
 }

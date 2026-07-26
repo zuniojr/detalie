@@ -19,14 +19,16 @@ const servicosCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/blog' }),
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/posts' }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date(),
+    description: z.string().optional(),
+    pubDate: z.coerce.date().optional(),
+    date: z.coerce.date().optional(),
     author: z.string().default('Detaliê Móveis'),
-    coverImage: z.string(),
-    tags: z.array(z.string()).default(['Móveis Planejados']),
+    coverImage: z.string().optional(),
+    categories: z.array(z.string()).optional().default([]),
+    tags: z.array(z.string()).optional().default(['Móveis Planejados']),
   }),
 });
 
