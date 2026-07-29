@@ -8,7 +8,9 @@ import { COMPANY } from '../../utils/constants';
 import { getWebPageSchema } from '../../utils/schema';
 import { getPostMeta } from '../../utils/blog';
 
-const rawPosts = await getCollection('blog');
+const rawPosts = (await getCollection('blog')).filter(
+  (p) => !p.id.startsWith('_drafts') && !p.id.includes('_drafts/')
+);
 const posts = rawPosts.map((p) => getPostMeta(p));
 const sortedPosts = posts.sort(
   (a, b) => b.pubDate.valueOf() - a.pubDate.valueOf()

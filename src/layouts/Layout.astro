@@ -10,10 +10,11 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogType?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, canonical, ogImage, jsonLd } = Astro.props;
+const { title, description, canonical, ogImage, ogType, jsonLd } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,6 +25,7 @@ const { title, description, canonical, ogImage, jsonLd } = Astro.props;
       description={description}
       canonical={canonical}
       ogImage={ogImage}
+      ogType={ogType}
       jsonLd={jsonLd}
     />
   </head>

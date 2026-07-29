@@ -84,3 +84,30 @@ export const CATEGORIES = [
   { name: 'Cabeceira de Cama', slug: 'cabeceira-de-cama', img: 'cabeceira-cama.jpg' },
   { name: 'Painel de TV Sob Medida', slug: 'painel-de-tv', img: 'painel-tv.jpg' },
 ] as const;
+
+export interface AuthorInfo {
+  name: string;
+  avatar: string;
+  bio: string;
+  slug: string;
+}
+
+const AUTHORS_MAP: Record<string, AuthorInfo> = {
+  'Detaliê Móveis': {
+    name: 'Detaliê Móveis Sob Medida',
+    avatar: '/images/logo.png',
+    bio: 'Especialistas em criação de projetos 3D, fabricação e instalação de móveis sob medida em Navegantes e região.',
+    slug: 'detalie-moveis',
+  },
+};
+
+export function getAuthorInfo(authorName: string): AuthorInfo {
+  return (
+    AUTHORS_MAP[authorName] ?? {
+      name: authorName || COMPANY.name,
+      avatar: '/images/logo.png',
+      bio: COMPANY.description,
+      slug: 'detalie-moveis',
+    }
+  );
+}

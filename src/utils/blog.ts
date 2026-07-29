@@ -56,17 +56,24 @@ export function getPostMeta(post: any): PostMeta {
   const pubDate = post.data.pubDate || post.data.date || new Date('2025-05-01');
   const author = post.data.author || 'Detaliê Móveis';
   
-  let tags: string[] = [];
-  if (Array.isArray(post.data.tags) && post.data.tags.length > 0) {
-    tags = post.data.tags;
-  } else if (Array.isArray(post.data.categories) && post.data.categories.length > 0) {
-    tags = post.data.categories;
-  } else {
-    tags = ['Móveis Planejados'];
+  let rawTags: any[] = [];
+  if (Array.isArray(post.data.tags)) {
+    rawTags = post.data.tags;
+  } else if (typeof post.data.tags === 'string' && post.data.tags.trim()) {
+    rawTags = [post.data.tags];
+  } else if (Array.isArray(post.data.categories)) {
+    rawTags = post.data.categories;
+  } else if (typeof post.data.categories === 'string' && post.data.categories.trim()) {
+    rawTags = [post.data.categories];
   }
 
-  // Limpar slugs das tags (ex: 'detalie-moveis-navegantes' -> 'Detaliê Móveis')
-  tags = tags.map(t => t.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()));
+  let tags = rawTags
+    .filter(Boolean)
+    .map((t: any) => String(t).replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()));
+
+  if (tags.length === 0) {
+    tags = ['Móveis Planejados'];
+  }
 
   let description = post.data.description;
   if (!description && post.body) {
