@@ -54,7 +54,7 @@ export function getPostMeta(post: any): PostMeta {
   const cleanSlug = post.id.replace(/\/index$/, '').replace(/\.md$/, '');
   const title = post.data.title || 'Artigo Detaliê Móveis';
   const pubDate = post.data.pubDate || post.data.date || new Date('2025-05-01');
-  const author = post.data.author || 'Detaliê Móveis';
+  const author = post.data.author || 'Levi Junior';
   
   let rawTags: any[] = [];
   if (Array.isArray(post.data.tags)) {

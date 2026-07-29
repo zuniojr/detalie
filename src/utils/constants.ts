@@ -93,21 +93,27 @@ export interface AuthorInfo {
 }
 
 const AUTHORS_MAP: Record<string, AuthorInfo> = {
-  'Detaliê Móveis': {
-    name: 'Detaliê Móveis Sob Medida',
+  'Levi Junior': {
+    name: 'Levi Junior',
     avatar: '/images/logo.png',
-    bio: 'Especialistas em criação de projetos 3D, fabricação e instalação de móveis sob medida em Navegantes e região.',
-    slug: 'detalie-moveis',
+    bio: 'Especialista em móveis sob medida, design de interiores e soluções personalizadas para ambientes residenciais e corporativos.',
+    slug: 'levi-junior',
+  },
+  'Detaliê Móveis': {
+    name: 'Levi Junior',
+    avatar: '/images/logo.png',
+    bio: 'Especialista em móveis sob medida, design de interiores e soluções personalizadas para ambientes residenciais e corporativos.',
+    slug: 'levi-junior',
   },
 };
 
 export function getAuthorInfo(authorName: string): AuthorInfo {
   return (
     AUTHORS_MAP[authorName] ?? {
-      name: authorName || COMPANY.name,
+      name: 'Levi Junior',
       avatar: '/images/logo.png',
-      bio: COMPANY.description,
-      slug: 'detalie-moveis',
+      bio: 'Especialista em móveis sob medida, design de interiores e soluções personalizadas para ambientes residenciais e corporativos.',
+      slug: 'levi-junior',
     }
   );
 }
