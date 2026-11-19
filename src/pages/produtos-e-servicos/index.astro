@@ -81,6 +81,11 @@ const pageSchema = getWebPageSchema({
                   <WhatsAppIcon size={18} />
                   Orçar {cat.name}
                 </a>
+                {(cat.slug === 'cozinha-sob-medida' || cat.slug === 'paineis-ripados') && (
+                  <a href={`/${cat.slug}`} class="btn btn-detail">
+                    Ver Página Completa &rarr;
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -228,8 +233,34 @@ const pageSchema = getWebPageSchema({
     margin-bottom: 1.5rem;
   }
 
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: center;
+  }
+
   .card-actions .btn {
     font-size: 0.9rem;
+  }
+
+  .btn-detail {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.65rem 1.25rem;
+    background: var(--color-sand);
+    color: var(--color-black);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-fast);
+  }
+
+  .btn-detail:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
   }
 
   @media (max-width: 992px) {

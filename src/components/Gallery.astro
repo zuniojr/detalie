@@ -33,8 +33,15 @@ const displayCategories = limit
         const imagePromise = images[imagePath];
         if (!imagePromise) throw new Error(`Image not found: ${imagePath}`);
         
+        const cardHref =
+          cat.slug === 'cozinha-sob-medida'
+            ? '/cozinha-sob-medida'
+            : cat.slug === 'paineis-ripados'
+              ? '/paineis-ripados'
+              : `/produtos-e-servicos#${cat.slug}`;
+
         return (
-          <a href={`/produtos-e-servicos#${cat.slug}`} class="gallery-card">
+          <a href={cardHref} class="gallery-card">
             <div class="gallery-img-wrap">
               <Image
                 src={imagePromise()}
