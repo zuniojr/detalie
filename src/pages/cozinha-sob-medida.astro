@@ -1,0 +1,806 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import Differentials from '../components/Differentials.astro';
+import ImpactBanner from '../components/ImpactBanner.astro';
+import Gallery from '../components/Gallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ContactBar from '../components/ContactBar.astro';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import { COMPANY, CONTACT, SITE } from '../utils/constants';
+import { getWebPageSchema } from '../utils/schema';
+
+// Importação das fotografias originais em alta resolução
+import heroBg from '../assets/images/cozinha-planejada-hero-cozinha1.jpg';
+import detalhe1 from '../assets/images/cozinha-planejada-detalhe-1.jpeg';
+import detalhe2 from '../assets/images/cozinha-planejada-detalhe-2.jpeg';
+import armarios1 from '../assets/images/cozinha-planejada-armarios-sob-medida.jpeg';
+import ampla1 from '../assets/images/cozinha-planejada-moderna-ampla.jpg';
+import bancada1 from '../assets/images/cozinha-planejada-bancada-ilha.jpg';
+import torreQuente from '../assets/images/cozinha-planejada-torre-quente.jpg';
+
+const pageTitle = `Cozinha Planejada Sob Medida em Navegantes | ${COMPANY.name}`;
+const pageDescription = 'Uma cozinha planejada traz praticidade, beleza e organização para a rotina do dia a dia. Conheça os projetos de cozinha sob medida da Detaliê em Navegantes e solicite seu orçamento com projeto 3D.';
+
+const pageSchema = getWebPageSchema({
+  title: pageTitle,
+  description: pageDescription,
+  url: '/cozinha-sob-medida',
+});
+
+const faqs = [
+  {
+    question: 'Como funciona o processo de desenvolvimento da cozinha planejada?',
+    answer: 'Iniciamos com o briefing para entender sua rotina, estilo e necessidades, seguido da medição técnica detalhada no local. Criamos um projeto 3D exclusivo sem custo para você visualizar cada armário, gaveta e nicho antes do início da fabricação.'
+  },
+  {
+    question: 'Qual é o prazo de entrega e instalação da cozinha sob medida?',
+    answer: 'Nosso compromisso com prazo é um dos pilares da Detaliê. A fabricação e montagem levam em média de 30 a 45 dias úteis após a aprovação final do projeto 3D, com pontualidade rigorosa e acompanhamento direto.'
+  },
+  {
+    question: 'Quais tipos de materiais e ferragens são utilizados?',
+    answer: 'Utilizamos 100% MDF de alta densidade com tratamento especial anti-umidade para áreas molhadas, ferragens de alta tecnologia com sistema de amortecimento (slow-motion), corrediças telescópicas invisíveis e ampla variedade de padrões madeirados, lacas e perfis de alumínio.'
+  },
+  {
+    question: 'Vocês atendem outras cidades além de Navegantes?',
+    answer: 'Sim! Atendemos toda a região do Vale do Itajaí e Litoral Norte de Santa Catarina, incluindo Penha, Piçarras, Itajaí, Balneário Camboriú, Joinville e arredores.'
+  }
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="/cozinha-sob-medida"
+  ogImage="/images/logo.png"
+  jsonLd={pageSchema}
+>
+  <!-- Breadcrumb -->
+  <Breadcrumb items={[{ label: 'Cozinha Sob Medida' }]} />
+
+  <!-- Hero Section -->
+  <section class="page-hero" aria-label="Apresentação Cozinha Sob Medida">
+    <div class="hero-bg-wrapper">
+      <Image
+        src={heroBg}
+        alt="Cozinha planejada sob medida elegante da Detaliê Móveis"
+        class="hero-bg-img"
+        width={1920}
+        height={900}
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">Móveis Planejados de Alto Padrão</span>
+        <h1 class="hero-title">
+          COZINHA PLANEJADA <span class="highlight">SOB MEDIDA</span>
+        </h1>
+        <p class="hero-subtitle">
+          Transforme seus ambientes com móveis planejados de alto padrão – encontre a perfeição em cada detalhe.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://bitlybr.net/Detalie"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-whatsapp hero-cta-btn"
+          >
+            <WhatsAppIcon size={22} />
+            Quero um Orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apresentação e Texto Original -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text-col">
+          <span class="badge">Detaliê Móveis Sob Medida</span>
+          <h2 class="intro-heading">Praticidade, Beleza e Organização para o seu Lar</h2>
+          <p class="lead-text">
+            Uma cozinha planejada traz praticidade, beleza e organização para a rotina do dia a dia. Por isso, muitos desejam ter um ambiente idealizado nos mínimos detalhes e feito de forma exclusiva para sua casa.
+          </p>
+          <p>
+            Confira projetos pensados de forma personalizada para diferentes espaços com dicas imperdíveis para planejar uma cozinha sob medida perfeita para a sua família.
+          </p>
+
+          <div class="feature-bullets">
+            <div class="bullet-item">
+              <span class="bullet-icon">✔</span>
+              <div>
+                <strong>Projeto 3D Personalizado:</strong>
+                <span>Visualização realista de cada detalhe antes da produção.</span>
+              </div>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon">✔</span>
+              <div>
+                <strong>Aproveitamento Inteligente:</strong>
+                <span>Soluções para cantos, torres de eletrodomésticos e gavetões ergonômicos.</span>
+              </div>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon">✔</span>
+              <div>
+                <strong>Materiais de Alta Resistência:</strong>
+                <span>MDF tratado contra umidade, dobradiças com amortecedores e puxadores nobres.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="intro-action">
+            <a
+              href="https://bitlybr.net/Detalie"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-whatsapp"
+            >
+              <WhatsAppIcon size={20} />
+              Solicitar Orçamento no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="intro-card-col">
+          <div class="highlight-box">
+            <h3>Por Que Planejar sua Cozinha com a Detaliê?</h3>
+            <p>
+              Fabricamos móveis planejados que unem a robustez da marcenaria artesanal com tecnologia de ponta em corte e acabamento. Cada milímetro é pensado para proporcionar conforto e durabilidade por muitos anos.
+            </p>
+            <div class="stats-mini">
+              <div class="stat-mini-box">
+                <span class="stat-val">100%</span>
+                <span class="stat-lbl">Personalizado</span>
+              </div>
+              <div class="stat-mini-box">
+                <span class="stat-val">3D</span>
+                <span class="stat-lbl">Sem Custo</span>
+              </div>
+              <div class="stat-mini-box">
+                <span class="stat-val">Rigor</span>
+                <span class="stat-lbl">No Prazo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria de Projetos Reais (3 Fotos Verticais Originais) -->
+  <section class="gallery-showcase-section">
+    <div class="container">
+      <SectionTitle
+        pretitle="Projetos Reais"
+        title="Inspirações de Cozinhas Entregues"
+        subtitle="Confira alguns dos ambientes desenvolvidos sob medida pela equipe Detaliê para nossos clientes."
+      />
+
+      <div class="photos-grid-triad">
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <Image
+              src={detalhe1}
+              alt="Cozinha planejada sob medida com armários elegantes em tom grafite e madeira nobre"
+              width={600}
+              height={900}
+              loading="lazy"
+            />
+          </div>
+          <div class="photo-info">
+            <h3>Design Contemporâneo</h3>
+            <p>Harmonia perfeita entre tons sóbrios e acabamento amadeirado acolhedor.</p>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <Image
+              src={detalhe2}
+              alt="Cozinha sob medida com bancada sofisticada e iluminação embutida em LED"
+              width={600}
+              height={900}
+              loading="lazy"
+            />
+          </div>
+          <div class="photo-info">
+            <h3>Iluminação & Ergonomia</h3>
+            <p>Fitas de LED embutidas sob os armários aéreos para iluminação funcional da bancada.</p>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <Image
+              src={armarios1}
+              alt="Armários aéreos planejados e organização interna para cozinha sob medida"
+              width={600}
+              height={900}
+              loading="lazy"
+            />
+          </div>
+          <div class="photo-info">
+            <h3>Organização Inteligente</h3>
+            <p>Módulos sob medida com aproveitamento vertical total até o teto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais da Detaliê (6 diferenciais com o novo ícone do calendário) -->
+  <Differentials />
+
+  <!-- Destaques de Acabamento (2 Fotos Horizontais + 1 Foto Vertical) -->
+  <section class="extended-showcase-section">
+    <div class="container">
+      <SectionTitle
+        pretitle="Acabamento Impecável"
+        title="Detalhes que Transformam o Espaço"
+        subtitle="Mobiliário pensado para otimizar o fluxo de trabalho, preparo de refeições e convivência familiar."
+      />
+
+      <div class="extended-grid">
+        <div class="extended-col-wide">
+          <div class="wide-photo-card">
+            <Image
+              src={ampla1}
+              alt="Cozinha ampla planejada com ilha central e armários sob medida"
+              width={1024}
+              height={500}
+              loading="lazy"
+            />
+            <div class="wide-caption">
+              <h3>Integração com Ilha Central</h3>
+              <p>Ambientes amplos que conectam sala de jantar e área gourmet com elegância e amplitude.</p>
+            </div>
+          </div>
+
+          <div class="wide-photo-card">
+            <Image
+              src={bancada1}
+              alt="Bancada de cozinha planejada sob medida com torre de tomadas e armários integrados"
+              width={1024}
+              height={500}
+              loading="lazy"
+            />
+            <div class="wide-caption">
+              <h3>Bancadas Funcionais & Práticas</h3>
+              <p>Materiais resistentes a riscos e calor, com detalhes funcionais como calhas úmidas e lixeiras embutidas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="extended-col-tall">
+          <div class="tall-photo-card">
+            <Image
+              src={torreQuente}
+              alt="Torre quente sob medida com forno e micro-ondas embutidos em cozinha planejada"
+              width={600}
+              height={1000}
+              loading="lazy"
+            />
+            <div class="tall-caption">
+              <h3>Torre Quente Ergonômica</h3>
+              <p>Eletrodomésticos alinhados na altura exata para uso confortável no dia a dia, com ventilação planejada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner de Impacto -->
+  <ImpactBanner
+    pretext="Atendimento & Qualidade"
+    text="OFERECEMOS EXCELENTE ATENDIMENTO, PRODUTOS DE QUALIDADE, ALÉM DE INSTALAÇÃO RÁPIDA E PERFEITA."
+    ctaText="ENTRE EM CONTATO"
+    ctaHref="https://bitlybr.net/Detalie"
+  />
+
+  <!-- Seção de Perguntas Frequentes -->
+  <section class="faqs-section">
+    <div class="container">
+      <SectionTitle
+        pretitle="Tire Suas Dúvidas"
+        title="Perguntas Frequentes sobre Cozinhas Sob Medida"
+        subtitle="Entenda prazos, materiais e o passo a passo para ter a cozinha dos seus sonhos."
+      />
+      <div class="faq-wrapper-card">
+        <FAQAccordion faqs={faqs} title="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Você Também Vai Amar (Outros Ambientes / Portfólio) -->
+  <section class="other-environments-section">
+    <div class="container">
+      <SectionTitle
+        pretitle="Você Também Vai Amar"
+        title="Outros Ambientes Planejados Detaliê"
+        subtitle="Confira mais soluções exclusivas sob medida para transformar cada canto do seu lar."
+      />
+      <Gallery limit={6} offset={2} showTitle={false} />
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <Testimonials />
+
+  <!-- Barra de Atendimento / Contato Rápido -->
+  <ContactBar />
+</Layout>
+
+<style>
+  /* ===================================================
+     HERO SECTION
+     =================================================== */
+  .page-hero {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--color-white);
+  }
+
+  .hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(4, 5, 6, 0.88) 0%,
+      rgba(28, 26, 23, 0.78) 50%,
+      rgba(4, 5, 6, 0.88) 100%
+    );
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .hero-content {
+    max-width: 780px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: rgba(197, 164, 109, 0.15);
+    border: 1px solid rgba(197, 164, 109, 0.35);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-section);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    color: var(--color-white);
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-accent);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-btn {
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+  }
+
+  /* ===================================================
+     INTRO SECTION
+     =================================================== */
+  .intro-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 1rem;
+  }
+
+  .intro-heading {
+    font-family: var(--font-section);
+    font-size: clamp(2rem, 3.5vw, 2.7rem);
+    color: var(--color-black);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.5px;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .intro-text-col p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+  }
+
+  .bullet-item strong {
+    color: var(--color-black);
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .bullet-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.15);
+    color: var(--color-whatsapp-hover);
+    font-size: 0.85rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .intro-action {
+    margin-top: 2rem;
+  }
+
+  .highlight-box {
+    background: var(--color-offwhite);
+    border: 1px solid rgba(197, 164, 109, 0.25);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  .highlight-box h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-black);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .highlight-box p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .stats-mini {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 1.5rem;
+  }
+
+  .stat-val {
+    display: block;
+    font-family: var(--font-section);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  .stat-lbl {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-muted);
+    font-family: var(--font-heading);
+  }
+
+  /* ===================================================
+     GALERIA TRIADE (3 Fotos Verticais)
+     =================================================== */
+  .gallery-showcase-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-sand);
+  }
+
+  .photos-grid-triad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .photo-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .photo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .photo-wrapper {
+    overflow: hidden;
+    aspect-ratio: 9 / 14;
+  }
+
+  .photo-wrapper :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .photo-card:hover .photo-wrapper :global(img) {
+    transform: scale(1.06);
+  }
+
+  .photo-info {
+    padding: 1.5rem;
+  }
+
+  .photo-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .photo-info p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ===================================================
+     EXTENDED SHOWCASE (2 Horizontais + 1 Vertical)
+     =================================================== */
+  .extended-showcase-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .extended-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .extended-col-wide {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .wide-photo-card {
+    background: var(--color-offwhite);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .wide-photo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .wide-photo-card :global(img) {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .wide-caption {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .wide-caption h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-black);
+    margin-bottom: 0.35rem;
+  }
+
+  .wide-caption p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .tall-photo-card {
+    background: var(--color-offwhite);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .tall-photo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .tall-photo-card :global(img) {
+    width: 100%;
+    height: calc(100% - 90px);
+    min-height: 520px;
+    object-fit: cover;
+  }
+
+  .tall-caption {
+    padding: 1.25rem 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .tall-caption h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-black);
+    margin-bottom: 0.35rem;
+  }
+
+  .tall-caption p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ===================================================
+     FAQS & OTHER ENVIRONMENTS
+     =================================================== */
+  .faqs-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-offwhite);
+  }
+
+  .faq-wrapper-card {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--color-white);
+    padding: 2.5rem 3rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .other-environments-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  /* ===================================================
+     RESPONSIVIDADE
+     =================================================== */
+  @media (max-width: 992px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .photos-grid-triad {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .extended-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tall-photo-card :global(img) {
+      height: 380px;
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-hero {
+      min-height: 65vh;
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+    }
+
+    .photos-grid-triad {
+      grid-template-columns: 1fr;
+    }
+
+    .faq-wrapper-card {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
