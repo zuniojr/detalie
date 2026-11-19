@@ -38,7 +38,15 @@ const displayCategories = limit
             ? '/cozinha-sob-medida'
             : cat.slug === 'paineis-ripados'
               ? '/paineis-ripados'
-              : `/produtos-e-servicos#${cat.slug}`;
+              : cat.slug === 'dormitorio'
+                ? '/dormitorio'
+                : cat.slug === 'espaco-gourmet'
+                  ? '/espaco-gourmet'
+                  : cat.slug === 'banheiro'
+                    ? '/banheiro'
+                    : cat.slug === 'lavanderia'
+                      ? '/lavanderia'
+                      : `/produtos-e-servicos#${cat.slug}`;
 
         return (
           <a href={cardHref} class="gallery-card">

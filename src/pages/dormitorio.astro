@@ -1,0 +1,735 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import Differentials from '../components/Differentials.astro';
+import ImpactBanner from '../components/ImpactBanner.astro';
+import Gallery from '../components/Gallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ContactBar from '../components/ContactBar.astro';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import { COMPANY, CONTACT } from '../utils/constants';
+import { getWebPageSchema } from '../utils/schema';
+
+// Importação das fotografias originais em alta resolução
+import heroBg from '../assets/images/dormitorio-hero-quarto-d1.jpg';
+import foto1 from '../assets/images/dormitorio-planejado-casal-1.jpg';
+import foto2 from '../assets/images/dormitorio-planejado-casal-2.jpg';
+import foto3 from '../assets/images/dormitorio-planejado-casal-3.jpg';
+import fotoAmpla from '../assets/images/dormitorio-suite-sob-medida-amplo.jpg';
+import fotoDetalhe from '../assets/images/dormitorio-armario-embutido-detalhe.jpg';
+import fotoCabeceira from '../assets/images/dormitorio-cabeceira-estofada-painel.jpg';
+
+const pageTitle = `Dormitório Sob Medida em Navegantes | Quarto Planejado | ${COMPANY.name}`;
+const pageDescription = 'Transforme seu dormitório em um ambiente de aconchego, sofisticação e organização. Móveis sob medida para quartos de casal, solteiro e infantil da Detaliê em Navegantes.';
+
+const pageSchema = getWebPageSchema({
+  title: pageTitle,
+  description: pageDescription,
+  url: '/dormitorio',
+});
+
+const faqs = [
+  {
+    question: 'Como é feito o planejamento de um dormitório sob medida?',
+    answer: 'Iniciamos entendendo as necessidades de armazenamento do casal ou morador (quantidade de cabides, gavetas para acessórios, sapateiras e nichos), aproveitando cada centímetro do chão ao teto. Apresentamos um projeto 3D completo antes da fabricação.'
+  },
+  {
+    question: 'Vocês fazem cabeceiras estofadas e painéis ripados integrados?',
+    answer: 'Sim! Desenvolvemos quartos completos com cabeceiras ripadas em MDF, cabeceiras estofadas sob medida, painéis de TV com fiação oculta e mesas de cabeceira suspensas com iluminação em LED embutida.'
+  },
+  {
+    question: 'Qual é o prazo de entrega dos móveis para dormitório?',
+    answer: 'Trabalhamos com rigoroso cumprimento de prazos. A entrega e montagem ocorrem de 30 a 45 dias úteis após a aprovação do projeto executivo, com instalação limpa e profissionais qualificados.'
+  },
+  {
+    question: 'É possível planejar quartos pequenos com bom aproveitamento de espaço?',
+    answer: 'Com certeza. Os móveis sob medida são ideais exatamente para quartos compactos, pois utilizamos portas de correr, gavetões sob a cama, armários em ponte sobre a cabeceira e nichos verticais que ampliam a circulação.'
+  }
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="/dormitorio"
+  ogImage="/images/logo.png"
+  jsonLd={pageSchema}
+>
+  <!-- Breadcrumb -->
+  <Breadcrumb items={[{ label: 'Dormitório Sob Medida' }]} />
+
+  <!-- Hero Section -->
+  <section class="page-hero" aria-label="Apresentação Dormitório Sob Medida">
+    <div class="hero-bg-wrapper">
+      <Image
+        src={heroBg}
+        alt="Dormitório planejado sob medida elegante e acolhedor da Detaliê Móveis"
+        class="hero-bg-img"
+        width={1920}
+        height={900}
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">Conforto, Aconchego e Sofisticação</span>
+        <h1 class="hero-title">
+          DORMITÓRIO <span class="highlight">SOB MEDIDA</span>
+        </h1>
+        <p class="hero-subtitle">
+          Transforme seus ambientes com móveis planejados de alto padrão – encontre a perfeição em cada detalhe.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://bitlybr.net/Detalie"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-whatsapp hero-cta-btn"
+          >
+            <WhatsAppIcon size={22} />
+            Quero um Orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apresentação e Texto Original -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text-col">
+          <span class="badge">Detaliê Móveis Sob Medida</span>
+          <h2 class="intro-heading">Praticidade, Beleza e Organização para o seu Quarto</h2>
+          <p class="lead-text">
+            Um quarto traz praticidade, beleza e organização para a rotina do dia a dia. Por isso, muitos desejam ter um ambiente idealizado nos mínimos detalhes e feito de forma exclusiva para sua casa.
+          </p>
+          <p>
+            Confira projetos pensados de forma personalizada para diferentes espaços com dicas imperdíveis para planejar seu dormitório sob medida perfeito para o seu descanso.
+          </p>
+
+          <div class="feature-bullets">
+            <div class="bullet-item">
+              <span class="bullet-icon">✔</span>
+              <div>
+                <strong>Aproveitamento Inteligente:</strong> Roupeiros planejados de chão ao teto com divisões internas personalizadas.
+              </div>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon">✔</span>
+              <div>
+                <strong>Design e Aconchego:</strong> Cabeceiras estofadas, painéis amadeirados e iluminação indireta em LED.
+              </div>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon">✔</span>
+              <div>
+                <strong>Conforto Acústico e Visual:</strong> Gavetas com amortecimento suave e acabamento impecável em cada detalhe.
+              </div>
+            </div>
+          </div>
+
+          <div class="intro-cta-wrapper">
+            <a
+              href="https://bitlybr.net/Detalie"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              Solicitar Projeto 3D do Quarto
+            </a>
+          </div>
+        </div>
+
+        <div class="intro-highlight-col">
+          <div class="highlight-card">
+            <h3 class="highlight-title">Por que escolher a Detaliê?</h3>
+            <ul class="highlight-list">
+              <li>
+                <span class="hl-num">100%</span>
+                <span class="hl-desc">MDF de alta densidade com acabamento nobre</span>
+              </li>
+              <li>
+                <span class="hl-num">3D</span>
+                <span class="hl-desc">Visualização real do seu quarto antes de fabricar</span>
+              </li>
+              <li>
+                <span class="hl-num">Pontual</span>
+                <span class="hl-desc">Compromisso rigoroso com a data de entrega</span>
+              </li>
+              <li>
+                <span class="hl-num">Garantia</span>
+                <span class="hl-desc">Assistência e suporte com alto padrão de qualidade</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria Vertical Original (3 fotos) -->
+  <section class="photo-showcase-section">
+    <div class="container">
+      <SectionTitle
+        subtitle="Galeria de Projetos"
+        title="DORMITÓRIOS QUE INSPIRAM DESCANSO E TRANQUILIDADE"
+      />
+      <div class="photo-triplet-grid">
+        <div class="photo-card">
+          <Image
+            src={foto1}
+            alt="Quarto de casal planejado com roupeiro sob medida e acabamento refinado"
+            class="showcase-img"
+            width={600}
+            height={800}
+            loading="lazy"
+          />
+          <div class="photo-caption">
+            <span>Roupeiro com portas de correr e espelho</span>
+          </div>
+        </div>
+        <div class="photo-card">
+          <Image
+            src={foto2}
+            alt="Dormitório sob medida com cabeceira integrada e nichos iluminados"
+            class="showcase-img"
+            width={600}
+            height={800}
+            loading="lazy"
+          />
+          <div class="photo-caption">
+            <span>Cabeceira com painel amadeirado e mesas suspensas</span>
+          </div>
+        </div>
+        <div class="photo-card">
+          <Image
+            src={foto3}
+            alt="Dormitório planejado com iluminação em LED e armários espaçosos"
+            class="showcase-img"
+            width={600}
+            height={800}
+            loading="lazy"
+          />
+          <div class="photo-caption">
+            <span>Acabamento impecável e máxima organização</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais da Detaliê -->
+  <Differentials />
+
+  <!-- Showcase Estendido (Fotos Horizontais e Detalhes) -->
+  <section class="extended-showcase-section">
+    <div class="container">
+      <SectionTitle
+        subtitle="Detalhes que Fazem a Diferença"
+        title="QUALIDADE VISÍVEL EM CADA ACABAMENTO"
+      />
+      <div class="extended-grid">
+        <div class="extended-main-item">
+          <Image
+            src={fotoAmpla}
+            alt="Suíte master planejada ampla com armários sob medida"
+            class="extended-img-wide"
+            width={1200}
+            height={600}
+            loading="lazy"
+          />
+          <div class="extended-caption">
+            <h4>Suíte Master Personalizada</h4>
+            <p>Harmonia perfeita entre o mobiliário do quarto e o closet integrado.</p>
+          </div>
+        </div>
+        <div class="extended-sub-grid">
+          <div class="extended-sub-item">
+            <Image
+              src={fotoDetalhe}
+              alt="Detalhe de armário embutido planejado com ferragens especiais"
+              class="extended-img-sub"
+              width={600}
+              height={500}
+              loading="lazy"
+            />
+            <div class="extended-sub-caption">
+              <span>Divisões internas inteligentes</span>
+            </div>
+          </div>
+          <div class="extended-sub-item">
+            <Image
+              src={fotoCabeceira}
+              alt="Cabeceira de cama com painel e iluminação suave"
+              class="extended-img-sub"
+              width={600}
+              height={500}
+              loading="lazy"
+            />
+            <div class="extended-sub-caption">
+              <span>Painel de cabeceira aconchegante</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner de Impacto e Chamada -->
+  <ImpactBanner
+    title="Oferecemos excelente atendimento, produtos de qualidade, além de instalação rápida e perfeita."
+    buttonText="ENTRE EM CONTATO"
+    buttonLink="https://bitlybr.net/Detalie"
+  />
+
+  <!-- Perguntas Frequentes -->
+  <FAQAccordion
+    title="Dúvidas Frequentes sobre Dormitório Sob Medida"
+    faqs={faqs}
+  />
+
+  <!-- Outros Ambientes -->
+  <section class="other-environments-section">
+    <div class="container">
+      <SectionTitle
+        subtitle="Você também vai amar"
+        title="CONHEÇA OUTROS AMBIENTES PLANEJADOS"
+      />
+      <Gallery limit={6} offset={3} showTitle={false} />
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <Testimonials />
+
+  <!-- Barra de Contato Final -->
+  <ContactBar />
+</Layout>
+
+<style>
+  /* Hero Section */
+  .page-hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-black);
+    overflow: hidden;
+  }
+
+  .hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(20, 20, 20, 0.88) 0%,
+      rgba(20, 20, 20, 0.72) 50%,
+      rgba(20, 20, 20, 0.85) 100%
+    );
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .hero-content {
+    max-width: 680px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: rgba(197, 164, 109, 0.15);
+    border: 1px solid rgba(197, 164, 109, 0.4);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-section);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    color: var(--color-white);
+    line-height: 1.15;
+    margin: 0 0 1.25rem 0;
+    letter-spacing: 1px;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-accent);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    background-color: #25d366;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    transition: all 0.3s ease;
+  }
+
+  .hero-cta-btn:hover {
+    background-color: #20ba59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+  }
+
+  /* Intro Section */
+  .intro-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .intro-text-col .badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .intro-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--color-black);
+    line-height: 1.3;
+    margin-bottom: 1.25rem;
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+    color: var(--color-black);
+    font-weight: 500;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .intro-text-col p {
+    color: var(--color-gray-medium);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .feature-bullets {
+    margin: 1.75rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--color-gray-medium);
+    line-height: 1.5;
+  }
+
+  .bullet-icon {
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .bullet-item strong {
+    color: var(--color-black);
+  }
+
+  .intro-cta-wrapper {
+    margin-top: 2rem;
+  }
+
+  .intro-cta-wrapper .btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .intro-cta-wrapper .btn-primary:hover {
+    background-color: var(--color-black);
+    transform: translateY(-2px);
+  }
+
+  /* Highlight Card */
+  .highlight-card {
+    background: #fdfaf6;
+    border: 1px solid rgba(197, 164, 109, 0.25);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+  }
+
+  .highlight-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--color-black);
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(197, 164, 109, 0.3);
+  }
+
+  .highlight-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .highlight-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+  }
+
+  .hl-num {
+    font-family: var(--font-section);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    min-width: 75px;
+    flex-shrink: 0;
+  }
+
+  .hl-desc {
+    font-size: 0.9rem;
+    color: var(--color-gray-medium);
+    line-height: 1.4;
+  }
+
+  /* Photo Triplet Grid */
+  .photo-showcase-section {
+    padding: var(--spacing-xl) 0;
+    background-color: #f7f6f4;
+  }
+
+  .photo-triplet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: var(--spacing-lg);
+  }
+
+  .photo-card {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  }
+
+  .showcase-img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .photo-card:hover .showcase-img {
+    transform: scale(1.03);
+  }
+
+  .photo-caption {
+    padding: 1rem 1.25rem;
+    background-color: var(--color-white);
+    text-align: center;
+  }
+
+  .photo-caption span {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-gray-dark);
+  }
+
+  /* Extended Showcase Section */
+  .extended-showcase-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .extended-grid {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .extended-main-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .extended-img-wide {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .extended-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+    padding: 2.5rem 2rem 1.5rem;
+    color: var(--color-white);
+  }
+
+  .extended-caption h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-white);
+    margin: 0 0 0.35rem 0;
+  }
+
+  .extended-caption p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+
+  .extended-sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .extended-sub-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .extended-img-sub {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .extended-sub-item:hover .extended-img-sub {
+    transform: scale(1.02);
+  }
+
+  .extended-sub-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+    padding: 1.25rem 1rem 0.75rem;
+    color: var(--color-white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .other-environments-section {
+    padding: var(--spacing-xl) 0;
+    background-color: #f7f6f4;
+  }
+
+  @media (max-width: 992px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .photo-triplet-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .extended-sub-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .photo-triplet-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .showcase-img {
+      height: 340px;
+    }
+
+    .extended-img-wide {
+      height: 300px;
+    }
+
+    .page-hero {
+      min-height: 420px;
+    }
+  }
+</style>

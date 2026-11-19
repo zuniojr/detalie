@@ -1,0 +1,738 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import Differentials from '../components/Differentials.astro';
+import ImpactBanner from '../components/ImpactBanner.astro';
+import Gallery from '../components/Gallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ContactBar from '../components/ContactBar.astro';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import { COMPANY, CONTACT } from '../utils/constants';
+import { getWebPageSchema } from '../utils/schema';
+
+// Importação das fotografias originais em alta resolução
+import heroBg from '../assets/images/espaco-gourmet-hero-cozinha1.jpg';
+import foto1 from '../assets/images/espaco-gourmet-churrasqueira-bancada-1.jpeg';
+import foto2 from '../assets/images/espaco-gourmet-armarios-churrasqueira-2.jpeg';
+import foto3 from '../assets/images/espaco-gourmet-varanda-planejada-3.jpeg';
+import fotoAmpla from '../assets/images/espaco-gourmet-ilha-moderna-ampla.jpg';
+import fotoBancada from '../assets/images/espaco-gourmet-bancada-refeicoes.jpg';
+import fotoIntegrada from '../assets/images/espaco-gourmet-planejado-integrado.jpg';
+
+const pageTitle = `Espaço Gourmet Sob Medida em Navegantes | Varanda Gourmet | ${COMPANY.name}`;
+const pageDescription = 'Viva a experiência de um espaço gourmet sob medida. Móveis personalizados para churrasqueiras, bancadas funcionais e ilhas integradas da Detaliê em Navegantes.';
+
+const pageSchema = getWebPageSchema({
+  title: pageTitle,
+  description: pageDescription,
+  url: '/espaco-gourmet',
+});
+
+const faqs = [
+  {
+    question: 'Quais materiais são recomendados para móveis de espaço gourmet e churrasqueira?',
+    answer: 'Para áreas de churrasqueira e varandas, utilizamos MDF Naval ou Ultra resistente à umidade, ferragens em aço inoxidável e tampos de granito, quartzo ou porcelanato, garantindo alta durabilidade contra calor e vapores.'
+  },
+  {
+    question: 'Vocês integram os móveis à área da churrasqueira e cervejeira?',
+    answer: 'Sim! Projetamos nichos sob medida com ventilação adequada para cervejeiras, frigobares, fornos de pizza, adegas climatizadas e armários especiais para carvão e utensílios de churrasco.'
+  },
+  {
+    question: 'Qual o prazo de entrega do espaço gourmet?',
+    answer: 'Nosso prazo de entrega é de 30 a 45 dias úteis a contar da aprovação final do projeto 3D executivo, com rigorosa pontualidade e montagem especializada.'
+  },
+  {
+    question: 'É possível fazer fechamento de bancada e ilha de preparo em espaços pequenos?',
+    answer: 'Sim, criamos soluções inteligentes como bancadas retráteis, portas articuladas e gavetões organizadores que aproveitam cada centímetro da sua varanda ou edícula.'
+  }
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="/espaco-gourmet"
+  ogImage="/images/logo.png"
+  jsonLd={pageSchema}
+>
+  <!-- Breadcrumb -->
+  <Breadcrumb items={[{ label: 'Espaço Gourmet' }]} />
+
+  <!-- Hero Section -->
+  <section class="page-hero" aria-label="Apresentação Espaço Gourmet Sob Medida">
+    <div class="hero-bg-wrapper">
+      <Image
+        src={heroBg}
+        alt="Espaço gourmet planejado sob medida com churrasqueira e bancada elegante da Detaliê"
+        class="hero-bg-img"
+        width={1920}
+        height={900}
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">Praticidade, Estilo e Convivência</span>
+        <h1 class="hero-title">
+          ESPAÇO GOURMET <span class="highlight">SOB MEDIDA</span>
+        </h1>
+        <p class="hero-subtitle">
+          Viva a experiência de um espaço gourmet sob medida. Móveis personalizados para atender às suas necessidades específicas.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://bitlybr.net/Detalie"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-whatsapp hero-cta-btn"
+          >
+            <WhatsAppIcon size={22} />
+            Quero um Orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apresentação e Texto Original -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text-col">
+          <span class="badge">Detaliê Móveis Sob Medida</span>
+          <h2 class="intro-heading">Aproveite ao Máximo seu Espaço Gourmet</h2>
+          <p class="lead-text">
+            Viva a experiência de um espaço gourmet sob medida. Móveis personalizados para atender às suas necessidades específicas, desde bancadas funcionais até armazenamento inteligente. Aproveite ao máximo cada momento em seu espaço gourmet.
+          </p>
+          <p>
+            Aproveite ao máximo seu espaço gourmet com móveis sob medida. Criamos soluções personalizadas para otimizar o espaço, oferecendo praticidade, estilo e conforto para seus momentos gastronômicos.
+          </p>
+          <p>
+            Sua cozinha gourmet personalizada: Detaliê móveis sob medida que unem beleza e funcionalidade. De ilhas de preparo a armários planejados, criamos o espaço perfeito para você celebrar sua paixão pela culinária.
+          </p>
+
+          <div class="feature-bullets">
+            <div class="bullet-item">
+              <span class="bullet-icon">✔</span>
+              <div>
+                <strong>Ilhas de Preparo e Bancadas:</strong> Espaço funcional para cozinhar, receber amigos e desfrutar bons momentos.
+              </div>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon">✔</span>
+              <div>
+                <strong>Nichos para Eletros:</strong> Espaço dedicado e ventilado para churrasqueira, chopeira, adega e cervejeira.
+              </div>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-icon">✔</span>
+              <div>
+                <strong>Resistência à Umidade:</strong> Materiais adequados para áreas externas, varandas e espaços semiabertos.
+              </div>
+            </div>
+          </div>
+
+          <div class="intro-cta-wrapper">
+            <a
+              href="https://bitlybr.net/Detalie"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              Solicitar Projeto 3D do Espaço Gourmet
+            </a>
+          </div>
+        </div>
+
+        <div class="intro-highlight-col">
+          <div class="highlight-card">
+            <h3 class="highlight-title">Diferenciais do Espaço Gourmet Detaliê</h3>
+            <ul class="highlight-list">
+              <li>
+                <span class="hl-num">MDF</span>
+                <span class="hl-desc">Resistente à umidade com tratamento para áreas gourmet</span>
+              </li>
+              <li>
+                <span class="hl-num">Inox</span>
+                <span class="hl-desc">Ferragens antiferrugem com amortecimento silencioso</span>
+              </li>
+              <li>
+                <span class="hl-num">3D</span>
+                <span class="hl-desc">Projeto tridimensional com posicionamento dos eletros</span>
+              </li>
+              <li>
+                <span class="hl-num">Pontual</span>
+                <span class="hl-desc">Entrega sem surpresas no prazo acordado</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria Vertical Original (3 fotos) -->
+  <section class="photo-showcase-section">
+    <div class="container">
+      <SectionTitle
+        subtitle="Galeria de Projetos"
+        title="ESPAÇOS GOURMET DESENHADOS PARA RECEBER COM ESTILO"
+      />
+      <div class="photo-triplet-grid">
+        <div class="photo-card">
+          <Image
+            src={foto1}
+            alt="Móveis para churrasqueira sob medida com gavetões e bancada de apoio"
+            class="showcase-img"
+            width={600}
+            height={800}
+            loading="lazy"
+          />
+          <div class="photo-caption">
+            <span>Bancada de churrasqueira com armários planejados</span>
+          </div>
+        </div>
+        <div class="photo-card">
+          <Image
+            src={foto2}
+            alt="Armários funcionais e torre quente integrados na varanda gourmet"
+            class="showcase-img"
+            width={600}
+            height={800}
+            loading="lazy"
+          />
+          <div class="photo-caption">
+            <span>Móveis planejados para chopeira e cervejeira</span>
+          </div>
+        </div>
+        <div class="photo-card">
+          <Image
+            src={foto3}
+            alt="Varanda gourmet com mesa e bancada de preparo integradas"
+            class="showcase-img"
+            width={600}
+            height={800}
+            loading="lazy"
+          />
+          <div class="photo-caption">
+            <span>Integração completa e aproveitamento de área</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais da Detaliê -->
+  <Differentials />
+
+  <!-- Showcase Estendido (Fotos Horizontais e Detalhes) -->
+  <section class="extended-showcase-section">
+    <div class="container">
+      <SectionTitle
+        subtitle="Convivência e Praticidade"
+        title="HARMONIA ENTRE COZINHA E ÁREA SOCIAL"
+      />
+      <div class="extended-grid">
+        <div class="extended-main-item">
+          <Image
+            src={fotoAmpla}
+            alt="Ilha moderna ampla no espaço gourmet sob medida"
+            class="extended-img-wide"
+            width={1200}
+            height={600}
+            loading="lazy"
+          />
+          <div class="extended-caption">
+            <h4>Ilha Gourmet Funcional</h4>
+            <p>O centro das atenções para cozinhar e confraternizar com a família e amigos.</p>
+          </div>
+        </div>
+        <div class="extended-sub-grid">
+          <div class="extended-sub-item">
+            <Image
+              src={fotoBancada}
+              alt="Bancada de refeições rápidas com armários sob medida"
+              class="extended-img-sub"
+              width={600}
+              height={500}
+              loading="lazy"
+            />
+            <div class="extended-sub-caption">
+              <span>Bancada prática com gavetões</span>
+            </div>
+          </div>
+          <div class="extended-sub-item">
+            <Image
+              src={fotoIntegrada}
+              alt="Espaço gourmet planejado e integrado à sala de jantar"
+              class="extended-img-sub"
+              width={600}
+              height={500}
+              loading="lazy"
+            />
+            <div class="extended-sub-caption">
+              <span>Mobiliário gourmet planejado sob medida</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner de Impacto e Chamada Original -->
+  <ImpactBanner
+    title="Transforme seu espaço gourmet em um ambiente dos sonhos com móveis sob medida."
+    buttonText="ENTRE EM CONTATO"
+    buttonLink="https://bitlybr.net/Detalie"
+  />
+
+  <!-- Perguntas Frequentes -->
+  <FAQAccordion
+    title="Dúvidas Frequentes sobre Espaço Gourmet Sob Medida"
+    faqs={faqs}
+  />
+
+  <!-- Outros Ambientes -->
+  <section class="other-environments-section">
+    <div class="container">
+      <SectionTitle
+        subtitle="Você também vai amar"
+        title="CONHEÇA OUTROS AMBIENTES PLANEJADOS"
+      />
+      <Gallery limit={6} offset={4} showTitle={false} />
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <Testimonials />
+
+  <!-- Barra de Contato Final -->
+  <ContactBar />
+</Layout>
+
+<style>
+  /* Hero Section */
+  .page-hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-black);
+    overflow: hidden;
+  }
+
+  .hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(20, 20, 20, 0.88) 0%,
+      rgba(20, 20, 20, 0.72) 50%,
+      rgba(20, 20, 20, 0.85) 100%
+    );
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .hero-content {
+    max-width: 680px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: rgba(197, 164, 109, 0.15);
+    border: 1px solid rgba(197, 164, 109, 0.4);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-section);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    color: var(--color-white);
+    line-height: 1.15;
+    margin: 0 0 1.25rem 0;
+    letter-spacing: 1px;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-accent);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    background-color: #25d366;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    transition: all 0.3s ease;
+  }
+
+  .hero-cta-btn:hover {
+    background-color: #20ba59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+  }
+
+  /* Intro Section */
+  .intro-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .intro-text-col .badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .intro-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--color-black);
+    line-height: 1.3;
+    margin-bottom: 1.25rem;
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+    color: var(--color-black);
+    font-weight: 500;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .intro-text-col p {
+    color: var(--color-gray-medium);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .feature-bullets {
+    margin: 1.75rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--color-gray-medium);
+    line-height: 1.5;
+  }
+
+  .bullet-icon {
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .bullet-item strong {
+    color: var(--color-black);
+  }
+
+  .intro-cta-wrapper {
+    margin-top: 2rem;
+  }
+
+  .intro-cta-wrapper .btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .intro-cta-wrapper .btn-primary:hover {
+    background-color: var(--color-black);
+    transform: translateY(-2px);
+  }
+
+  /* Highlight Card */
+  .highlight-card {
+    background: #fdfaf6;
+    border: 1px solid rgba(197, 164, 109, 0.25);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+  }
+
+  .highlight-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--color-black);
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(197, 164, 109, 0.3);
+  }
+
+  .highlight-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .highlight-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+  }
+
+  .hl-num {
+    font-family: var(--font-section);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    min-width: 75px;
+    flex-shrink: 0;
+  }
+
+  .hl-desc {
+    font-size: 0.9rem;
+    color: var(--color-gray-medium);
+    line-height: 1.4;
+  }
+
+  /* Photo Triplet Grid */
+  .photo-showcase-section {
+    padding: var(--spacing-xl) 0;
+    background-color: #f7f6f4;
+  }
+
+  .photo-triplet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: var(--spacing-lg);
+  }
+
+  .photo-card {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  }
+
+  .showcase-img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .photo-card:hover .showcase-img {
+    transform: scale(1.03);
+  }
+
+  .photo-caption {
+    padding: 1rem 1.25rem;
+    background-color: var(--color-white);
+    text-align: center;
+  }
+
+  .photo-caption span {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-gray-dark);
+  }
+
+  /* Extended Showcase Section */
+  .extended-showcase-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .extended-grid {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .extended-main-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .extended-img-wide {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .extended-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+    padding: 2.5rem 2rem 1.5rem;
+    color: var(--color-white);
+  }
+
+  .extended-caption h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-white);
+    margin: 0 0 0.35rem 0;
+  }
+
+  .extended-caption p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+
+  .extended-sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .extended-sub-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .extended-img-sub {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .extended-sub-item:hover .extended-img-sub {
+    transform: scale(1.02);
+  }
+
+  .extended-sub-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+    padding: 1.25rem 1rem 0.75rem;
+    color: var(--color-white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .other-environments-section {
+    padding: var(--spacing-xl) 0;
+    background-color: #f7f6f4;
+  }
+
+  @media (max-width: 992px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .photo-triplet-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .extended-sub-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .photo-triplet-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .showcase-img {
+      height: 340px;
+    }
+
+    .extended-img-wide {
+      height: 300px;
+    }
+
+    .page-hero {
+      min-height: 420px;
+    }
+  }
+</style>
