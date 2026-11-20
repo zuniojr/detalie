@@ -17,36 +17,41 @@ const faqSchema = getFAQSchema(faqs);
 
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-<div class="faq-accordion-section">
-  {title && <h3 class="faq-title">{title}</h3>}
-  <div class="faq-list">
-    {faqs.map((faq, idx) => (
-      <details class="faq-item" open={idx === 0}>
-        <summary class="faq-question">
-          <span>{faq.question}</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </summary>
-        <div class="faq-answer">
-          <p>{faq.answer}</p>
-        </div>
-      </details>
-    ))}
+<section class="faq-accordion-section" aria-label="Perguntas Frequentes">
+  <div class="container">
+    {title && <h3 class="faq-title">{title}</h3>}
+    <div class="faq-list">
+      {faqs.map((faq, idx) => (
+        <details class="faq-item" open={idx === 0}>
+          <summary class="faq-question">
+            <span>{faq.question}</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
   </div>
-</div>
+</section>
 
 <style>
   .faq-accordion-section {
-    margin: 2rem 0;
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
   }
 
   .faq-title {
     font-family: var(--font-section);
-    font-size: 1.5rem;
-    color: var(--color-text);
-    margin-bottom: 1.25rem;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    color: var(--color-black);
+    margin-bottom: 2rem;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
   }
 
   .faq-list {
