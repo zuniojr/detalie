@@ -273,6 +273,7 @@ const faqs = [
               <h4>Seu Espaço Otimizado</h4>
               <p>Projetamos cada nicho de acordo com o tamanho dos seus eletros e rotina familiar.</p>
               <a href="https://bitlybr.net/Detalie" target="_blank" rel="noopener noreferrer" class="custom-btn">
+                <WhatsAppIcon size={18} />
                 Falar com Especialista
               </a>
             </div>
@@ -399,13 +400,14 @@ const faqs = [
     align-items: center;
     gap: 0.6rem;
     font-size: 1rem;
-    font-weight: 600;
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.95rem 2rem;
+    border-radius: 8px;
     background-color: #25d366;
     color: #fff;
     text-decoration: none;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
     transition: all 0.3s ease;
   }
 
@@ -734,18 +736,26 @@ const faqs = [
   }
 
   .custom-btn {
-    background-color: var(--color-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #25d366;
     color: var(--color-white);
-    padding: 0.75rem 1.75rem;
-    border-radius: 50px;
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
     transition: all 0.3s ease;
   }
 
   .custom-btn:hover {
-    background-color: var(--color-black);
+    background-color: #20ba59;
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
   }
 
   .other-environments-section {

@@ -1,53 +1,60 @@
 ---
-import { Image } from 'astro:assets';
-import Layout from '@/layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
-import SectionTitle from '../components/SectionTitle.astro';
-import Differentials from '../components/Differentials.astro';
-import ImpactBanner from '../components/ImpactBanner.astro';
-import Gallery from '../components/Gallery.astro';
-import Testimonials from '../components/Testimonials.astro';
-import ContactBar from '../components/ContactBar.astro';
-import WhatsAppIcon from '../components/WhatsAppIcon.astro';
-import FAQAccordion from '../components/FAQAccordion.astro';
-import { COMPANY, CONTACT } from '../utils/constants';
-import { getWebPageSchema } from '../utils/schema';
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import Differentials from "../components/Differentials.astro";
+import ImpactBanner from "../components/ImpactBanner.astro";
+import Gallery from "../components/Gallery.astro";
+import Testimonials from "../components/Testimonials.astro";
+import ContactBar from "../components/ContactBar.astro";
+import WhatsAppIcon from "../components/WhatsAppIcon.astro";
+import FAQAccordion from "../components/FAQAccordion.astro";
+import { COMPANY, CONTACT } from "../utils/constants";
+import { getWebPageSchema } from "../utils/schema";
 
 // Importação das fotografias originais em alta resolução
-import heroBg from '../assets/images/espaco-gourmet-hero-cozinha1.jpg';
-import foto1 from '../assets/images/espaco-gourmet-churrasqueira-bancada-1.jpeg';
-import foto2 from '../assets/images/espaco-gourmet-armarios-churrasqueira-2.jpeg';
-import foto3 from '../assets/images/espaco-gourmet-varanda-planejada-3.jpeg';
-import fotoAmpla from '../assets/images/espaco-gourmet-ilha-moderna-ampla.jpg';
-import fotoBancada from '../assets/images/espaco-gourmet-bancada-refeicoes.jpg';
-import fotoIntegrada from '../assets/images/espaco-gourmet-planejado-integrado.jpg';
+import heroBg from "../assets/images/espaco-gourmet-hero-cozinha1.jpg";
+import foto1 from "../assets/images/espaco-gourmet-churrasqueira-bancada-1.jpeg";
+import foto2 from "../assets/images/espaco-gourmet-armarios-churrasqueira-2.jpeg";
+import foto3 from "../assets/images/espaco-gourmet-varanda-planejada-3.jpeg";
+import fotoAmpla from "../assets/images/espaco-gourmet-ilha-moderna-ampla.jpg";
+import fotoBancada from "../assets/images/espaco-gourmet-bancada-refeicoes.jpg";
+import fotoIntegrada from "../assets/images/espaco-gourmet-planejado-integrado.jpg";
 
 const pageTitle = `Espaço Gourmet Sob Medida em Navegantes | Varanda Gourmet | ${COMPANY.name}`;
-const pageDescription = 'Viva a experiência de um espaço gourmet sob medida. Móveis personalizados para churrasqueiras, bancadas funcionais e ilhas integradas da Detaliê em Navegantes.';
+const pageDescription =
+  "Viva a experiência de um espaço gourmet sob medida. Móveis personalizados para churrasqueiras, bancadas funcionais e ilhas integradas da Detaliê em Navegantes.";
 
 const pageSchema = getWebPageSchema({
   title: pageTitle,
   description: pageDescription,
-  url: '/espaco-gourmet',
+  url: "/espaco-gourmet",
 });
 
 const faqs = [
   {
-    question: 'Quais materiais são recomendados para móveis de espaço gourmet e churrasqueira?',
-    answer: 'Para áreas de churrasqueira e varandas, utilizamos MDF Naval ou Ultra resistente à umidade, ferragens em aço inoxidável e tampos de granito, quartzo ou porcelanato, garantindo alta durabilidade contra calor e vapores.'
+    question:
+      "Quais materiais são recomendados para móveis de espaço gourmet e churrasqueira?",
+    answer:
+      "Para áreas de churrasqueira e varandas, utilizamos MDF Naval ou Ultra resistente à umidade, ferragens em aço inoxidável e tampos de granito, quartzo ou porcelanato, garantindo alta durabilidade contra calor e vapores.",
   },
   {
-    question: 'Vocês integram os móveis à área da churrasqueira e cervejeira?',
-    answer: 'Sim! Projetamos nichos sob medida com ventilação adequada para cervejeiras, frigobares, fornos de pizza, adegas climatizadas e armários especiais para carvão e utensílios de churrasco.'
+    question: "Vocês integram os móveis à área da churrasqueira e cervejeira?",
+    answer:
+      "Sim! Projetamos nichos sob medida com ventilação adequada para cervejeiras, frigobares, fornos de pizza, adegas climatizadas e armários especiais para carvão e utensílios de churrasco.",
   },
   {
-    question: 'Qual o prazo de entrega do espaço gourmet?',
-    answer: 'Nosso prazo de entrega é de 30 a 45 dias úteis a contar da aprovação final do projeto 3D executivo, com rigorosa pontualidade e montagem especializada.'
+    question: "Qual o prazo de entrega do espaço gourmet?",
+    answer:
+      "Nosso prazo de entrega é de 30 a 45 dias úteis a contar da aprovação final do projeto 3D executivo, com rigorosa pontualidade e montagem especializada.",
   },
   {
-    question: 'É possível fazer fechamento de bancada e ilha de preparo em espaços pequenos?',
-    answer: 'Sim, criamos soluções inteligentes como bancadas retráteis, portas articuladas e gavetões organizadores que aproveitam cada centímetro da sua varanda ou edícula.'
-  }
+    question:
+      "É possível fazer fechamento de bancada e ilha de preparo em espaços pequenos?",
+    answer:
+      "Sim, criamos soluções inteligentes como bancadas retráteis, portas articuladas e gavetões organizadores que aproveitam cada centímetro da sua varanda ou edícula.",
+  },
 ];
 ---
 
@@ -59,10 +66,13 @@ const faqs = [
   jsonLd={pageSchema}
 >
   <!-- Breadcrumb -->
-  <Breadcrumb items={[{ label: 'Espaço Gourmet' }]} />
+  <Breadcrumb items={[{ label: "Espaço Gourmet" }]} />
 
   <!-- Hero Section -->
-  <section class="page-hero" aria-label="Apresentação Espaço Gourmet Sob Medida">
+  <section
+    class="page-hero"
+    aria-label="Apresentação Espaço Gourmet Sob Medida"
+  >
     <div class="hero-bg-wrapper">
       <Image
         src={heroBg}
@@ -83,7 +93,8 @@ const faqs = [
           ESPAÇO GOURMET <span class="highlight">SOB MEDIDA</span>
         </h1>
         <p class="hero-subtitle">
-          Viva a experiência de um espaço gourmet sob medida. Móveis personalizados para atender às suas necessidades específicas.
+          Viva a experiência de um espaço gourmet sob medida. Móveis
+          personalizados para atender às suas necessidades específicas.
         </p>
         <div class="hero-actions">
           <a
@@ -108,32 +119,43 @@ const faqs = [
           <span class="badge">Detaliê Móveis Sob Medida</span>
           <h2 class="intro-heading">Aproveite ao Máximo seu Espaço Gourmet</h2>
           <p class="lead-text">
-            Viva a experiência de um espaço gourmet sob medida. Móveis personalizados para atender às suas necessidades específicas, desde bancadas funcionais até armazenamento inteligente. Aproveite ao máximo cada momento em seu espaço gourmet.
+            Viva a experiência de um espaço gourmet sob medida. Móveis
+            personalizados para atender às suas necessidades específicas, desde
+            bancadas funcionais até armazenamento inteligente. Aproveite ao
+            máximo cada momento em seu espaço gourmet.
           </p>
           <p>
-            Aproveite ao máximo seu espaço gourmet com móveis sob medida. Criamos soluções personalizadas para otimizar o espaço, oferecendo praticidade, estilo e conforto para seus momentos gastronômicos.
+            Aproveite ao máximo seu espaço gourmet com móveis sob medida.
+            Criamos soluções personalizadas para otimizar o espaço, oferecendo
+            praticidade, estilo e conforto para seus momentos gastronômicos.
           </p>
           <p>
-            Sua cozinha gourmet personalizada: Detaliê móveis sob medida que unem beleza e funcionalidade. De ilhas de preparo a armários planejados, criamos o espaço perfeito para você celebrar sua paixão pela culinária.
+            Sua cozinha gourmet personalizada: Detaliê móveis sob medida que
+            unem beleza e funcionalidade. De ilhas de preparo a armários
+            planejados, criamos o espaço perfeito para você celebrar sua paixão
+            pela culinária.
           </p>
 
           <div class="feature-bullets">
             <div class="bullet-item">
               <span class="bullet-icon">✔</span>
               <div>
-                <strong>Ilhas de Preparo e Bancadas:</strong> Espaço funcional para cozinhar, receber amigos e desfrutar bons momentos.
+                <strong>Ilhas de Preparo e Bancadas:</strong> Espaço funcional
+                para cozinhar, receber amigos e desfrutar bons momentos.
               </div>
             </div>
             <div class="bullet-item">
               <span class="bullet-icon">✔</span>
               <div>
-                <strong>Nichos para Eletros:</strong> Espaço dedicado e ventilado para churrasqueira, chopeira, adega e cervejeira.
+                <strong>Nichos para Eletros:</strong> Espaço dedicado e
+                ventilado para churrasqueira, chopeira, adega e cervejeira.
               </div>
             </div>
             <div class="bullet-item">
               <span class="bullet-icon">✔</span>
               <div>
-                <strong>Resistência à Umidade:</strong> Materiais adequados para áreas externas, varandas e espaços semiabertos.
+                <strong>Resistência à Umidade:</strong> Materiais adequados para
+                áreas externas, varandas e espaços semiabertos.
               </div>
             </div>
           </div>
@@ -153,23 +175,33 @@ const faqs = [
 
         <div class="intro-highlight-col">
           <div class="highlight-card">
-            <h3 class="highlight-title">Diferenciais do Espaço Gourmet Detaliê</h3>
+            <h3 class="highlight-title">
+              Diferenciais do Espaço Gourmet Detaliê
+            </h3>
             <ul class="highlight-list">
               <li>
                 <span class="hl-num">MDF</span>
-                <span class="hl-desc">Resistente à umidade com tratamento para áreas gourmet</span>
+                <span class="hl-desc">
+                  Resistente à umidade com tratamento para áreas gourmet
+                </span>
               </li>
               <li>
                 <span class="hl-num">Inox</span>
-                <span class="hl-desc">Ferragens antiferrugem com amortecimento silencioso</span>
+                <span class="hl-desc">
+                  Ferragens antiferrugem com amortecimento silencioso
+                </span>
               </li>
               <li>
                 <span class="hl-num">3D</span>
-                <span class="hl-desc">Projeto tridimensional com posicionamento dos eletros</span>
+                <span class="hl-desc">
+                  Projeto tridimensional com posicionamento dos eletros
+                </span>
               </li>
               <li>
                 <span class="hl-num">Pontual</span>
-                <span class="hl-desc">Entrega sem surpresas no prazo acordado</span>
+                <span class="hl-desc">
+                  Entrega sem surpresas no prazo acordado
+                </span>
               </li>
             </ul>
           </div>
@@ -251,7 +283,10 @@ const faqs = [
           />
           <div class="extended-caption">
             <h4>Ilha Gourmet Funcional</h4>
-            <p>O centro das atenções para cozinhar e confraternizar com a família e amigos.</p>
+            <p>
+              O centro das atenções para cozinhar e confraternizar com a família
+              e amigos.
+            </p>
           </div>
         </div>
         <div class="extended-sub-grid">
@@ -403,13 +438,14 @@ const faqs = [
     align-items: center;
     gap: 0.6rem;
     font-size: 1rem;
-    font-weight: 600;
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.95rem 2rem;
+    border-radius: 8px;
     background-color: #25d366;
     color: #fff;
     text-decoration: none;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
     transition: all 0.3s ease;
   }
 
@@ -585,7 +621,9 @@ const faqs = [
     overflow: hidden;
     background-color: var(--color-white);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .photo-card:hover {
@@ -649,7 +687,11 @@ const faqs = [
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85) 0%,
+      transparent 100%
+    );
     padding: 2.5rem 2rem 1.5rem;
     color: var(--color-white);
   }
@@ -697,7 +739,11 @@ const faqs = [
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75) 0%,
+      transparent 100%
+    );
     padding: 1.25rem 1rem 0.75rem;
     color: var(--color-white);
     font-size: 0.9rem;
