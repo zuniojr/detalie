@@ -138,14 +138,15 @@ const faqs = [
             </div>
           </div>
 
-          <div class="intro-cta-wrapper">
+          <div class="intro-action">
             <a
               href="https://bitlybr.net/Detalie"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-primary"
+              class="btn btn-whatsapp intro-whatsapp-btn"
             >
-              Solicitar Projeto 3D do Banheiro
+              <WhatsAppIcon size={20} />
+              SOLICITAR ORÇAMENTO NO WHATSAPP
             </a>
           </div>
         </div>
@@ -491,25 +492,31 @@ const faqs = [
     color: var(--color-black);
   }
 
-  .intro-cta-wrapper {
+  .intro-action {
     margin-top: 2rem;
   }
 
-  .intro-cta-wrapper .btn-primary {
-    background-color: var(--color-accent);
-    color: var(--color-white);
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
+  .intro-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
     font-size: 0.95rem;
-    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.95rem 1.8rem;
+    border-radius: 8px;
+    background-color: #25d366;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
     transition: all 0.3s ease;
   }
 
-  .intro-cta-wrapper .btn-primary:hover {
-    background-color: var(--color-black);
+  .intro-whatsapp-btn:hover {
+    background-color: #20ba59;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    color: #fff;
   }
 
   /* Highlight Card */
