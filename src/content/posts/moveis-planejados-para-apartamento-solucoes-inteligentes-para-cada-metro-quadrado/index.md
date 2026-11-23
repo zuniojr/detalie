@@ -12,6 +12,7 @@ tags:
   - "moveis-em-navegantes"
   - "moveis-planejados"
   - "moveis-sob-medida"
+coverImage: "cover.jpeg"
 ---
 
 Viver em um apartamento traz inúmeras vantagens, mas também exige planejamento inteligente quando o assunto é mobiliário. Cada centímetro conta e é exatamente por isso que os **móveis planejados para apartamento** são a escolha ideal para quem deseja aliar funcionalidade, organização e estilo.

@@ -12,6 +12,7 @@ tags:
   - "moveis-projetados"
   - "moveis-projetados-em-penha-sc"
   - "moveis-sob-medida"
+coverImage: "cover.jpeg"
 ---
 
 Você já pensou em ter móveis que se encaixam perfeitamente no seu espaço, com funcionalidade, estética e personalidade? Essa é a proposta dos **móveis projetados**, uma tendência que ganha cada vez mais força entre quem valoriza organização e estilo. Em **Penha SC**, esse tipo de solução já é realidade para quem busca ambientes mais eficientes e harmoniosos.

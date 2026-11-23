@@ -13,6 +13,7 @@ tags:
   - "moveis-personalizados"
   - "moveis-planejados"
   - "moveis-sob-medida-navegantes"
+coverImage: "cover.webp"
 ---
 
 A **fabricação de móveis sob medida** é a arte que une design personalizado, técnica artesanal e tecnologia para criar peças exclusivas que se encaixam perfeitamente no seu espaço e estilo de vida. Com mais de 30 anos de vivência no ramo, posso afirmar que esse tipo de serviço é a solução ideal para quem busca funcionalidade, beleza e durabilidade.
@@ -37,4 +38,4 @@ Depois de aprovado, inicia-se a fabricação propriamente dita, onde materiais d
 
 Ao escolher uma marcenaria local para fabricar seus móveis sob medida em Navegantes, você conta com atendimento personalizado, conhecimento do clima e particularidades da região, além de suporte próximo para montagem e manutenção.
 
-Esse é um excelente projeto para inspirar sua imaginação. Se deseja transformar seu ambiente com móveis sob medida feitos com cuidado e excelência, conte com a [**Detaliê Móveis Sob Medida**,](https://detaliemoveissobmedida.com.br/) especialista em fabricação de móveis sob medida em Navegantes e região.
+Esse é um excelente projeto para inspirar sua imaginação. Se deseja transformar seu ambiente com móveis sob medida feitos com cuidado e excelência, conte com a [**Detaliê Móveis Sob Medida**,](/) especialista em fabricação de móveis sob medida em Navegantes e região.

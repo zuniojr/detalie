@@ -15,6 +15,7 @@ tags:
   - "moveis-planejados-em-penha-sc"
   - "moveis-sob-medida"
   - "orcamento-de-moveis"
+coverImage: "cover.jpg"
 ---
 
 Se você está pensando em transformar sua casa ou apartamento com móveis planejados, o primeiro passo é solicitar um orçamento detalhado e confiável. Em **Penha SC**, cresce a busca por soluções sob medida que valorizam cada centímetro do ambiente e trazem sofisticação com funcionalidade.

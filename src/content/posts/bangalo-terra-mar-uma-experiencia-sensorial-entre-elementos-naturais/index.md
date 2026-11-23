@@ -3,7 +3,7 @@ title: "Bangalô Terra Mar: Uma Experiência Sensorial Entre Elementos Naturais"
 date: 2025-05-28
 categories: 
   - "ambientes-planejados"
-coverImage: "image4-1727297254318.webp"
+coverImage: "cover.webp"
 ---
 
 Em um mundo cada vez mais acelerado, encontrar espaços que nos convidam a desacelerar e reconectar com a natureza torna-se um verdadeiro luxo. O Bangalô Terra Mar, assinado pela arquiteta Carol Barreto para a CASACOR Bahia 2024, é uma dessas criações que transcendem o conceito tradicional de habitação para oferecer uma experiência imersiva e transformadora.

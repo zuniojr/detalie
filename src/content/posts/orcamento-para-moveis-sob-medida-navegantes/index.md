@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "orcamento-para-moveis-sob-medida-em-navegantes"
   - "projeto-3d-de-moveis"
+coverImage: "cover.jpeg"
 ---
 
 Ao longo de três décadas acompanhando projetos de interiores por todo o Brasil, aprendi que planejar bem o investimento é tão importante quanto escolher o desenho do móvel. O **orçamento para móveis sob medida em Navegantes** pode variar bastante — e é justamente por isso que o planejamento financeiro precisa caminhar lado a lado com o sonho de transformar seu lar.

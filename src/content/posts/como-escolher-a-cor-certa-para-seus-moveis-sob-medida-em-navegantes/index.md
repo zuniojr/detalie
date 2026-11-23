@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "navegantes"
   - "tendencias-2025"
+coverImage: "cover.jpg"
 ---
 
 Escolher a cor ideal para seus móveis sob medida é uma etapa fundamental para garantir ambientes harmônicos, funcionais e que reflitam sua personalidade. Em Navegantes, onde a luminosidade natural e o estilo de vida praiano influenciam a decoração, a escolha das cores se torna ainda mais estratégica para valorizar cada espaço da casa.
@@ -50,7 +51,7 @@ Escolher a cor ideal para seus móveis sob medida é uma etapa fundamental para 
 
 * * *
 
-## Deixe seus móveis sob medida ainda [mais bonitos com a Detaliê](https://detaliemoveissobmedida.com.br/)
+## Deixe seus móveis sob medida ainda [mais bonitos com a Detaliê](/)
 
 Transforme sua casa em Navegantes com móveis sob medida nas cores perfeitas para o seu estilo e seu espaço. Fale com a Detaliê e tenha um projeto personalizado, funcional e cheio de personalidade!
 

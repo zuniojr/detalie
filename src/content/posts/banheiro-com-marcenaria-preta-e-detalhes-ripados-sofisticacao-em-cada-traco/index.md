@@ -12,7 +12,7 @@ tags:
   - "moveis-planejados-sc"
   - "moveis-ripados"
   - "moveis-sob-medida-navegantes"
-coverImage: "detalie.moveissobmedida_1724760200_3443860630967569753_67043413838.jpg"
+coverImage: "cover.jpg"
 ---
 
 O banheiro deixou de ser apenas um espaço funcional — hoje, ele representa bem-estar, estilo e personalidade. E quando o projeto aposta em **marcenaria preta** com **detalhes ripados**, o resultado é puro requinte.

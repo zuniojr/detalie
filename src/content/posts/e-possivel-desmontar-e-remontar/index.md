@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida-navegantes"
   - "mudanca-de-moveis-planejados"
   - "reaproveitamento-de-moveis"
+coverImage: "cover.jpeg"
 ---
 
 Sim, **é possível desmontar e remontar móveis sob medida em outro local** — mas é importante compreender os limites e cuidados que esse processo exige. Ao longo de mais de 30 anos acompanhando projetos de marcenaria e mudanças residenciais, aprendi que cada móvel carrega mais do que beleza: carrega medidas exatas, encaixes únicos e, muitas vezes, um vínculo com o espaço original.

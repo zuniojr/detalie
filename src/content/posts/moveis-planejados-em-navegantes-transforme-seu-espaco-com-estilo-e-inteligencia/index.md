@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados-em-navegantes"
   - "moveis-sob-medida"
   - "moveis-sob-medida-navegantes"
+coverImage: "cover.jpeg"
 ---
 
 Se você está em busca de **móveis planejados em Navegantes**, chegou ao lugar certo. Em uma cidade que cresce em ritmo acelerado, como Navegantes, saber aproveitar bem cada espaço da casa é essencial — e é exatamente aí que entram os móveis sob medida.

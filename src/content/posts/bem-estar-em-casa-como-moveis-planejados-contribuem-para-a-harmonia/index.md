@@ -12,6 +12,7 @@ tags:
   - "navegantes-sc"
   - "organizacao"
   - "qualidade-de-vida"
+coverImage: "cover.jpg"
 ---
 
 Em um mundo cada vez mais acelerado e repleto de estímulos externos, nosso lar se tornou mais do que simplesmente um lugar para dormir e guardar pertences – é um refúgio, um espaço de reconexão e equilíbrio. A busca por bem-estar dentro de casa nunca esteve tão em evidência, e os móveis planejados surgem como aliados poderosos nessa jornada rumo à harmonia doméstica. Em Navegantes, onde o estilo de vida litorâneo se mescla com o ritmo contemporâneo, criar ambientes que promovam tranquilidade e organização tornou-se uma prioridade para muitas famílias.

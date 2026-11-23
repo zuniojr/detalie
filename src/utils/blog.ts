@@ -5,9 +5,22 @@ const allImages = import.meta.glob<{ default: { src: string } | string }>(
   { eager: true }
 );
 
+const assetImages = import.meta.glob<{ default: { src: string } | string }>(
+  '/src/assets/images/**/*.{png,jpg,jpeg,webp}',
+  { eager: true }
+);
+
+function getFallbackImage(): string {
+  const hero = assetImages['/src/assets/images/hero.webp'] || assetImages['/src/assets/images/logo.png'];
+  if (hero) {
+    return typeof hero.default === 'string' ? hero.default : hero.default?.src || '';
+  }
+  return '';
+}
+
 export function getPostCoverImage(postSlug: string, coverImageName?: string): string {
   if (!coverImageName) {
-    return '/assets/images/hero-bg.jpg';
+    return getFallbackImage();
   }
 
   if (
@@ -22,7 +35,11 @@ export function getPostCoverImage(postSlug: string, coverImageName?: string): st
   const cleanImgName = coverImageName.replace(/^(\.\.\/)+assets\/images\//, '');
   if (cleanImgName !== coverImageName) {
     // É uma imagem da pasta de assets globais
-    return `/src/assets/images/${cleanImgName}`;
+    const assetMatch = assetImages[`/src/assets/images/${cleanImgName}`];
+    if (assetMatch) {
+      return typeof assetMatch.default === 'string' ? assetMatch.default : assetMatch.default?.src || '';
+    }
+    return getFallbackImage();
   }
 
   // Tentar encontrar na pasta de imagens do próprio post
@@ -34,7 +51,7 @@ export function getPostCoverImage(postSlug: string, coverImageName?: string): st
     return typeof match.default === 'string' ? match.default : match.default?.src || '';
   }
 
-  return '/assets/images/hero-bg.jpg';
+  return getFallbackImage();
 }
 
 export interface PostMeta {

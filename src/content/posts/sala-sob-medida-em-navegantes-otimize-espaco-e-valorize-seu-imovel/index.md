@@ -4,6 +4,7 @@ date: 2025-05-28
 categories: 
   - "ambientes-planejados"
   - "dicas-de-organizacao-e-funcionalidade"
+coverImage: "cover.webp"
 ---
 
 Imagine uma sala onde cada móvel parece feito sob encomenda para você.
@@ -34,4 +35,4 @@ Em **Navegantes e região**, a Detaliê Móveis Sob Medida é especialista em tr
 
 Nossa equipe oferece atendimento personalizado, entendendo suas necessidades para entregar móveis de altíssima qualidade.
 
-Escolha a [Detaliê Móveis Sob Medida](https://detaliemoveissobmedida.com.br/) para criar a sala dos seus sonhos em Navegantes – um projeto que otimiza espaço, expressa seu estilo pessoal e valoriza seu imóvel.
+Escolha a [Detaliê Móveis Sob Medida](/) para criar a sala dos seus sonhos em Navegantes – um projeto que otimiza espaço, expressa seu estilo pessoal e valoriza seu imóvel.

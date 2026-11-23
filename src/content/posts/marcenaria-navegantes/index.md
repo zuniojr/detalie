@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "moveis-sob-medida-navegantes"
   - "projeto-3d-de-moveis"
+coverImage: "cover.jpeg"
 ---
 
 Quando pensamos em transformar ambientes com móveis que realmente fazem a diferença, a marcenaria ganha destaque como uma arte que une técnica, design e funcionalidade. Em **Navegantes SC**, a marcenaria tem evoluído e se profissionalizado, oferecendo soluções sob medida que se adaptam perfeitamente aos mais diversos estilos e necessidades.

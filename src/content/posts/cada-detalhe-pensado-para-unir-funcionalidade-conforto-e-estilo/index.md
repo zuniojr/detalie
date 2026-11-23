@@ -12,7 +12,7 @@ tags:
   - "moveis-personalizados"
   - "moveis-planejados-sc"
   - "moveis-sob-medida-cozinha"
-coverImage: "detalie.moveissobmedida_1728604618_3476109947035879196_67043413838.jpg"
+coverImage: "cover.jpg"
 ---
 
 A cozinha é o ambiente onde os sabores nascem, as conversas acontecem e as memórias são construídas. Por isso, uma **cozinha planejada** vai muito além da estética — ela é feita para facilitar o seu dia a dia, acolher sua rotina e refletir sua identidade.

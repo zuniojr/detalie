@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "qualidade-marcenaria"
   - "tecnica-marcenaria"
+coverImage: "cover.jpeg"
 ---
 
 Na interseção entre arte e engenharia, encontra-se a marcenaria de precisão – uma disciplina que transcende a simples fabricação de móveis para se tornar uma expressão de excelência, criatividade e rigor técnico. Em Navegantes, a Detaliê Móveis Sob Medida tem se destacado como guardiã dessa tradição, combinando técnicas artesanais refinadas ao longo de gerações com tecnologias contemporâneas para criar peças que são, simultaneamente, funcionais e verdadeiras obras de arte para o lar.

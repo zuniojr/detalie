@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "navegantes"
   - "producao"
+coverImage: "cover.webp"
 ---
 
 Quando você investe em **móveis sob medida**, está buscando mais do que peças de mobiliário; você busca um investimento em qualidade, funcionalidade e durabilidade. É a materialização de um sonho para o seu lar ou ambiente de trabalho. Mas como ter a certeza de que o que foi sonhado será entregue com a excelência esperada? A resposta está em um **controle de qualidade rigoroso**.

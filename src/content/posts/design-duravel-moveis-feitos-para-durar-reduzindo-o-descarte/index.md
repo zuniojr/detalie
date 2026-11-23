@@ -12,6 +12,7 @@ tags:
   - "qualidade"
   - "reducao-descarte"
   - "sustentabilidade"
+coverImage: "cover.jpeg"
 ---
 
 No mundo de hoje, onde a obsolescência programada parece ser a norma, a ideia de investir em **móveis sob medida** com **design durável** ganha um significado ainda maior. Não se trata apenas de estética ou funcionalidade, mas de um compromisso com a longevidade e, consequentemente, com a redução do descarte. Na Detaliê, projetamos e fabricamos peças que desafiam a cultura do "usar e jogar fora", criando soluções que resistem ao teste do tempo, tanto em estilo quanto em estrutura.

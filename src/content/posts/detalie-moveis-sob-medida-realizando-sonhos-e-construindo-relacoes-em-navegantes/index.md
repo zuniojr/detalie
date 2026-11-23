@@ -12,6 +12,7 @@ tags:
   - "navegantes-sc"
   - "projetos-personalizados"
   - "realizacao-de-sonhos"
+coverImage: "cover.webp"
 ---
 
 Em cada projeto entregue, em cada ambiente transformado, existe uma história que vai muito além da madeira, dos parafusos e do design. Existe a realização de um sonho, a concretização de um desejo e, fundamentalmente, a construção de um relacionamento. Para nós, da Detaliê Móveis Sob Medida, essa jornada em Navegantes tem sido marcada pelo apoio e pela confiança de cada cliente, amigo, familiar e parceiro que abraçou nosso propósito.

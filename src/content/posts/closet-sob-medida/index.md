@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida-em-navegantes"
   - "organizacao-de-roupas"
   - "projeto-de-closet"
+coverImage: "cover.jpg"
 ---
 
 ## Funcionalidade, Estilo e Exclusividade em um Só Projeto

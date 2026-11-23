@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida"
   - "navegantes"
+coverImage: "cover.webp"
 ---
 
 Ambientes integrados são tendência em Navegantes, trazendo mais amplitude, funcionalidade e convivência para casas e apartamentos. Para valorizar cada espaço e garantir praticidade no dia a dia, os móveis sob medida são a escolha ideal. Eles permitem criar ambientes fluidos, organizados e com personalidade, aproveitando ao máximo cada centímetro disponível.
@@ -28,7 +29,7 @@ Ambientes integrados são tendência em Navegantes, trazendo mais amplitude, fun
 
 - **Valorização do imóvel:** Ambientes integrados bem planejados e mobiliados agregam valor ao imóvel, tornando-o mais atraente e moderno.
 
-## O que considerar ao [planejar móveis sob medida](https://detaliemoveissobmedida.com.br/) para ambientes integrados
+## O que considerar ao [planejar móveis sob medida](/) para ambientes integrados
 
 - **Layout funcional:** O projeto deve priorizar a circulação e a integração entre os ambientes, evitando barreiras visuais e aproveitando a iluminação natural.
 
@@ -42,6 +43,6 @@ Optar por uma empresa local garante atendimento personalizado, agilidade na exec
 
 * * *
 
-## Transforme seu ambiente integrado em Navegantes com a [Detaliê Móveis Sob Medida](https://detaliemoveissobmedida.com.br/)
+## Transforme seu ambiente integrado em Navegantes com a [Detaliê Móveis Sob Medida](/)
 
 Renove sua casa ou apartamento com móveis sob medida que valorizam a integração dos ambientes. Fale com a Detaliê e descubra como transformar seu espaço em um ambiente funcional, elegante e totalmente personalizado!

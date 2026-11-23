@@ -12,7 +12,7 @@ tags:
   - "estesia-deca"
   - "moveis-sob-medida"
   - "wesley-lemos"
-coverImage: "image6-1731680041513.webp"
+coverImage: "cover.webp"
 ---
 
 Assinado pelo arquiteto Wesley Lemos para a CASACOR Sergipe, o projeto **Estesia Deca** é um convite à reconexão com a essência do lar. Com 85 m² muito bem distribuídos entre estar, suíte, cozinha, banho e mezanino, o espaço traduz o imaginário infantil da casa ideal — um lugar de segurança, acolhimento e identidade.

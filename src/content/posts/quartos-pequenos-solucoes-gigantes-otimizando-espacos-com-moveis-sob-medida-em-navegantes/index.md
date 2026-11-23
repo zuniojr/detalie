@@ -12,6 +12,7 @@ tags:
   - "navegantes-sc"
   - "otimizacao-de-espaco"
   - "quarto-pequeno"
+coverImage: "cover.jpg"
 ---
 
 Quartos com metragens reduzidas são uma realidade cada vez mais comum, especialmente em apartamentos modernos ou casas com layouts mais compactos, como encontramos frequentemente em Navegantes. O desafio de transformar esses poucos metros quadrados em um ambiente funcional, confortável e esteticamente agradável pode parecer intimidador. Como acomodar cama, armário, talvez uma escrivaninha, e ainda ter espaço para circular sem sentir claustrofobia? A resposta, muitas vezes, reside em uma abordagem inteligente e personalizada: os móveis sob medida. Eles são verdadeiros aliados na missão de otimizar cada centímetro, provando que tamanho não é documento quando se trata de criar um quarto dos sonhos.

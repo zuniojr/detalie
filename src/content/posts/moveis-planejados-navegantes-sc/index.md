@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-planejados-navegantes-sc"
   - "moveis-sob-medida-navegantes"
+coverImage: "cover.jpeg"
 ---
 
 Se você busca funcionalidade, estilo e aproveitamento máximo de cada ambiente, os **móveis planejados em Navegantes SC** são a escolha ideal. Com mais de 30 anos de experiência acompanhando o mercado moveleiro, posso afirmar que móveis planejados vão muito além da beleza — eles transformam o modo como você vive e organiza sua casa ou escritório.

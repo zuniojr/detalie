@@ -11,6 +11,7 @@ tags:
   - "moveis-com-preco-justo"
   - "moveis-de-qualidade"
   - "moveis-personalizados"
+coverImage: "cover.jpeg"
 ---
 
 ## Como a Detaliê combina qualidade, preço e prazo para superar expectativas

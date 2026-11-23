@@ -12,7 +12,7 @@ tags:
   - "moveis-planejados-quarto-casal-sc"
   - "quarto-planejado-navegantes"
   - "quarto-sob-medida-casal-navegantes"
-coverImage: "quarto-D1-.jpg"
+coverImage: "cover.jpg"
 ---
 
 Conforto, Estilo e Funcionalidade com a Detaliê

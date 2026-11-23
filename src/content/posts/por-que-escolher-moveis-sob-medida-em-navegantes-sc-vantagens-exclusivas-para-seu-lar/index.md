@@ -12,6 +12,7 @@ tags:
   - "moveis-personalizados-navegantes"
   - "moveis-planejados-sc"
   - "moveis-sob-medida-navegantes"
+coverImage: "cover.jpeg"
 ---
 
 Se você está construindo, reformando ou mobiliando sua casa ou apartamento em Navegantes, SC, uma escolha inteligente pode fazer toda a diferença: **móveis sob medida**. Mais do que estética, essa decisão entrega personalização, aproveitamento de espaço e durabilidade — e o melhor: com estilo único.

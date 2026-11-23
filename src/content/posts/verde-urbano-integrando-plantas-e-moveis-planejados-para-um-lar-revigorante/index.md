@@ -10,6 +10,7 @@ tags:
   - "moveis-planejados"
   - "plantas-na-decoracao"
   - "verde-urbano"
+coverImage: "cover.jpeg"
 ---
 
 O verde urbano é mais do que uma tendência estética — é uma resposta à necessidade crescente de bem-estar e conexão com a natureza, mesmo dentro das cidades. Ao integrar plantas aos móveis planejados, é possível criar ambientes que respiram frescor, vitalidade e equilíbrio, sem abrir mão da funcionalidade e do estilo.

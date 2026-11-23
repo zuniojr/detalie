@@ -13,6 +13,7 @@ tags:
   - "moveis-planejados"
   - "projetos-personalizados"
   - "solucoes-sob-medida"
+coverImage: "cover.webp"
 ---
 
 Uma das maiores vantagens dos móveis planejados é a capacidade de adaptação. Quando o projeto é pensado para atender a necessidades específicas, como acessibilidade, ele deixa de ser apenas uma escolha estética e se transforma em uma ferramenta de inclusão, conforto e autonomia.

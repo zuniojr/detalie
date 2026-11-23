@@ -12,6 +12,7 @@ tags:
   - "navegantes-sc"
   - "otimizacao-de-espaco"
   - "santa-catarina"
+coverImage: "cover.jpeg"
 ---
 
 Encontrar a mobília perfeita para transformar uma casa em um lar pode ser um desafio, especialmente quando buscamos peças que se encaixem perfeitamente em nossos espaços, reflitam nossa personalidade e atendam às nossas necessidades diárias. Em Navegantes, uma cidade dinâmica e com imóveis de variados perfis, essa busca por funcionalidade e estilo encontra uma resposta clara e cada vez mais procurada: os móveis sob medida. Longe de serem apenas uma tendência passageira, eles se consolidam como a solução definitiva para quem deseja otimizar ambientes, garantir exclusividade e investir em qualidade duradoura.

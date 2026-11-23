@@ -12,6 +12,7 @@ tags:
   - "navegantes"
   - "personalizacao"
   - "projeto-personalizado"
+coverImage: "cover.jpeg"
 ---
 
 A personalização de móveis sob medida é um diferencial para quem busca ambientes únicos, funcionais e alinhados ao próprio estilo. O designer de interiores é o profissional que transforma ideias em soluções práticas e sofisticadas, adaptando cada detalhe do projeto às necessidades do cliente.
@@ -42,6 +43,6 @@ A personalização de móveis sob medida é um diferencial para quem busca ambie
 
 - Experiência diferenciada do início ao fim
 
-## Deixe seus móveis sob medida ainda mais especiais com a [Detaliê](https://detaliemoveissobmedida.com.br/)
+## Deixe seus móveis sob medida ainda mais especiais com a [Detaliê](/)
 
 Transforme seu espaço com móveis sob medida desenvolvidos por quem entende de personalização e design. Fale com a Detaliê e descubra como criar ambientes únicos, funcionais e cheios de estilo!

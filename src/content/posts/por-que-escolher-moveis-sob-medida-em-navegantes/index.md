@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados-navegantes"
   - "moveis-sob-medida-em-navegantes-sc"
   - "projeto-3d-moveis"
+coverImage: "cover.jpeg"
 ---
 
 Se você está pensando em mobiliar ou reformar sua casa, apartamento ou escritório em **Navegantes, SC**, provavelmente já se deparou com essa dúvida: **vale a pena investir em móveis sob medida?**  

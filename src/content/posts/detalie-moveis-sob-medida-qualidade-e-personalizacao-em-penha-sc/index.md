@@ -12,6 +12,7 @@ tags:
   - "moveis-de-qualidade"
   - "moveis-para-escritorio"
   - "moveis-sob-medida-penha"
+coverImage: "cover.jpeg"
 ---
 
 Procurando **móveis sob medida** em **Penha, Santa Catarina**, que unam funcionalidade, design e durabilidade?

@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados-navegantes"
   - "moveis-planejados-para-quarto"
   - "organizacao-de-quarto"
+coverImage: "cover.jpg"
 ---
 
 O **armário planejado para quarto** é a escolha perfeita para quem deseja transformar o ambiente em um espaço elegante, funcional e completamente personalizado. Mais do que um móvel, ele se torna parte da arquitetura do cômodo, aproveitando cada centímetro com inteligência.

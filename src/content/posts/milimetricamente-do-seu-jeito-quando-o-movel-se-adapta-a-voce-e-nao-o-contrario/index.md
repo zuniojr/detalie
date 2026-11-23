@@ -12,6 +12,7 @@ tags:
   - "moveis-em-navegantes"
   - "moveis-personalizados"
   - "moveis-sob-medida"
+coverImage: "cover.jpg"
 ---
 
 Existe um tipo de lar que vai além da estética — ele **fala sobre quem você é**. Em cada detalhe, em cada encaixe, há personalidade, história e intenção. É aí que entra o conceito de ter móveis **milimetricamente do seu jeito**: pensados para atender exatamente às suas necessidades, respeitando seus espaços, hábitos e gostos pessoais.

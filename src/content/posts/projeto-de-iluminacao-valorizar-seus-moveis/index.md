@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida-navegantes"
   - "projeto-de-iluminacao-para-valorizar-moveis"
   - "vista-do-mar-navegantes"
+coverImage: "cover.jpg"
 ---
 
 Poucos elementos são tão poderosos na composição de um ambiente quanto a **iluminação**. Ela transforma, destaca, amplia e dá alma aos espaços. E quando aliada a um projeto de **móveis sob medida**, a luz não apenas revela a beleza do mobiliário, mas também valoriza o que Navegantes tem de mais especial: **a vista para o mar, o pôr do sol e o estilo de vida litorâneo.**

@@ -12,6 +12,7 @@ tags:
   - "projeto-3d-de-moveis"
   - "projeto-personalizado"
   - "visualizacao-3d"
+coverImage: "cover.jpg"
 ---
 
 Se há algo que aprendi em décadas de vivência com design de interiores é que visualizar antes de executar é um dos segredos para alcançar resultados impecáveis. Nesse sentido, o **projeto 3D de móveis** representa um avanço revolucionário, tanto para profissionais quanto para clientes. Trata-se de transformar ideias em realidade palpável — antes mesmo do primeiro corte de madeira.

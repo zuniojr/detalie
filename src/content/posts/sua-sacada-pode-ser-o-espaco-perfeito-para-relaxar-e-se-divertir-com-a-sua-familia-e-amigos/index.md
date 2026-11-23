@@ -12,7 +12,7 @@ tags:
   - "moveis-sob-medida-navegantes"
   - "sacada-planejada"
   - "varanda-gourmet"
-coverImage: "detalie.moveissobmedida_1724846400_3444573701327514482_67043413838-1.jpg"
+coverImage: "cover.jpg"
 ---
 
 Nem sempre é preciso muito espaço para criar um ambiente acolhedor e funcional. Com o projeto certo e o uso inteligente de **móveis sob medida**, a sua sacada pode se transformar no refúgio ideal para momentos de lazer, descanso e boas conversas em família ou com amigos.

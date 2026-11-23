@@ -12,7 +12,7 @@ tags:
   - "moveis-planejados-sc"
   - "moveis-sob-medida-cozinha"
   - "moveis-sob-medida-navegantes"
-coverImage: "detalie.moveissobmedida_1719515825_3399867622681379613_67043413838.jpg"
+coverImage: "cover.jpg"
 ---
 
 Quem disse que apartamento não pode ter uma cozinha funcional, linda e cheia de personalidade? Com o projeto certo e **móveis sob medida**, é possível transformar cada centímetro em praticidade, estilo e conforto.

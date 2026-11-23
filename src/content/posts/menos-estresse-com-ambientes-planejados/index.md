@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "navegantes"
   - "organizacao"
+coverImage: "cover.webp"
 ---
 
 Em um mundo cada vez mais acelerado, a busca por tranquilidade e bem-estar em nosso próprio lar ou ambiente de trabalho tornou-se uma prioridade. E o que muitos descobrem é que a chave para essa serenidade está na **organização que liberta**. Ambientes planejados com **móveis sob medida** são a resposta para o estresse causado pela desordem, transformando espaços caóticos em refúgios de funcionalidade e paz.

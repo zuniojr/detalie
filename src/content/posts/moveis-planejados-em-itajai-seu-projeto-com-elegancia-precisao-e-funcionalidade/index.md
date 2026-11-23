@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados-em-itajai"
   - "moveis-santa-catarina"
   - "moveis-sob-medida-itajai"
+coverImage: "cover.webp"
 ---
 
 A cidade de **Itajaí**, com seu crescimento urbano constante e estilo de vida moderno, exige soluções inteligentes para quem deseja unir conforto, organização e sofisticação em casa. É nesse cenário que os **móveis planejados em Itajaí** se destacam como a melhor escolha para transformar qualquer ambiente.

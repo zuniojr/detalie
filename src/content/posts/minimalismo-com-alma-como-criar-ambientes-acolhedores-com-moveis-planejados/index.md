@@ -3,6 +3,7 @@ title: "Minimalismo com Alma: Como Criar Ambientes Acolhedores com Móveis Plane
 date: 2025-05-26
 categories: 
   - "tendencias-de-design-de-interiores"
+coverImage: "cover.jpeg"
 ---
 
 O minimalismo conquistou o mundo do design de interiores com sua promessa de simplicidade, funcionalidade e espaços visualmente limpos. No entanto, para muitos, a ideia de "menos é mais" pode soar fria ou impessoal. É aí que entra uma evolução encantadora dessa tendência: o **Minimalismo com Alma**, também conhecido como _warm minimalism_ ou minimalismo acolhedor.

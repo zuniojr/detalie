@@ -9,7 +9,7 @@ tags:
   - "moveis-de-qualidade"
   - "moveis-personalizados"
   - "moveis-sob-medida"
-coverImage: "detalie.moveissobmedida_1736972148_3546301869406429537_67043413838.jpg"
+coverImage: "cover.jpg"
 ---
 
 A mudança da Detaliê Móveis Sob Medida para o novo endereço em Navegantes, Santa Catarina, traz uma série de benefícios e melhorias para os clientes da região. O novo espaço foi planejado para acompanhar o crescimento e a modernização da cidade, que vive um momento de expansão urbana, investimentos em infraestrutura e avanços em mobilidade e logística[5](https://www.acin.com.br/sobre-navegantes/)[2](https://www.portalntc.org.br/navegantes-o-novo-polo-logistico-que-esta-transformando-santa-catarina/).

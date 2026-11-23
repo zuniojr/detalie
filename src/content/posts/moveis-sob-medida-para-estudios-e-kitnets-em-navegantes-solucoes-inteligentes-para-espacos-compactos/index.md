@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida"
   - "navegantes"
+coverImage: "cover.jpg"
 ---
 
 Viver em estúdios e kitnets exige criatividade e planejamento para aproveitar cada centímetro do ambiente. Em Navegantes, a busca por móveis sob medida cresceu justamente por oferecer soluções inteligentes, funcionais e esteticamente agradáveis para quem deseja unir conforto, organização e estilo em espaços reduzidos.
@@ -38,12 +39,12 @@ Viver em estúdios e kitnets exige criatividade e planejamento para aproveitar c
 
 - **Iluminação embutida:** Aposte em móveis com iluminação LED integrada para criar ambientes aconchegantes e funcionais.
 
-## Detaliê: [Móveis Sob Medida em Navegantes](https://detaliemoveissobmedida.com.br/)
+## Detaliê: [Móveis Sob Medida em Navegantes](/)
 
 A Detaliê Móveis Sob Medida oferece projetos personalizados para estúdios e kitnets em Navegantes, com ampla variedade de materiais, acabamentos e layouts. Nossa equipe especializada acompanha cada etapa do projeto, garantindo móveis que unem design, funcionalidade e durabilidade. Trabalhamos com prazos ágeis, garantia diferenciada e condições de pagamento flexíveis, sempre priorizando a satisfação total do cliente.
 
 * * *
 
-## Transforme seu estúdio ou kitnet em Navegantes com a [Detaliê](https://detaliemoveissobmedida.com.br/) Móveis Sob Medida!
+## Transforme seu estúdio ou kitnet em Navegantes com a [Detaliê](/) Móveis Sob Medida!
 
 Solicite agora um orçamento personalizado e descubra como nossos móveis planejados podem tornar seu espaço compacto muito mais prático, bonito e valorizado!

@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-planejados-em-penha-sc"
   - "moveis-sob-medida"
+coverImage: "cover.jpeg"
 ---
 
 Está construindo, reformando ou apenas quer dar uma nova cara ao seu lar? Investir em **móveis planejados para casa completa** é a escolha ideal para quem busca conforto, aproveitamento inteligente dos espaços e uma estética impecável.

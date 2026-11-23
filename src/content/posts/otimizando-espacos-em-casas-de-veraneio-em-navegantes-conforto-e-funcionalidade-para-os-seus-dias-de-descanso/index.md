@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida-navegantes"
   - "otimizacao-de-espacos"
+coverImage: "cover.jpg"
 ---
 
 Ter uma casa de veraneio em Navegantes é o sonho de muitos que desejam curtir o litoral catarinense com conforto. Mas, como esses imóveis muitas vezes têm metragens mais compactas, **otimizar os espaços** é essencial para garantir funcionalidade e bem-estar sem abrir mão da estética.

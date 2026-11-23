@@ -5,6 +5,7 @@ categories:
   - "ambientes-planejados"
 tags: 
   - "entenda-a-importancia-do-briefing-para-criar-moveis-sob-medida-que-atendam-perfeitamente-aos-seus-desejos-e-necessidades"
+coverImage: "cover.jpg"
 ---
 
 No universo dos **móveis sob medida**, cada peça é única, feita para se encaixar perfeitamente em um espaço e, mais importante, na vida de quem a usará. Mas como transformar ideias e necessidades em um projeto palpável e funcional? A resposta está em uma etapa fundamental e muitas vezes subestimada: o **briefing**.

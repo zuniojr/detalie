@@ -12,6 +12,7 @@ tags:
   - "moveis-personalizados"
   - "moveis-planejados"
   - "sustentabilidade"
+coverImage: "cover.jpg"
 ---
 
 Os móveis em MDF sob medida são a escolha ideal para quem deseja unir beleza, funcionalidade e aproveitamento total dos ambientes. Com a possibilidade de criar projetos exclusivos, cada detalhe é pensado para atender às necessidades e ao estilo de vida de quem utiliza o espaço.
@@ -46,6 +47,6 @@ Se você deseja transformar seu ambiente com móveis que se encaixam perfeitamen
 
 - Prefira empresas comprometidas com a sustentabilidade e a procedência dos materiais.
 
-## Deixe Seu Ambiente Único com a [Detaliê Móveis Sob Medida](https://detaliemoveissobmedida.com.br/)
+## Deixe Seu Ambiente Único com a [Detaliê Móveis Sob Medida](/)
 
 Quer transformar seu espaço com móveis planejados de alta qualidade? A Detaliê oferece soluções sob medida em MDF, unindo design, funcionalidade e durabilidade. Fale com nossos especialistas e descubra como podemos criar o projeto perfeito para você!

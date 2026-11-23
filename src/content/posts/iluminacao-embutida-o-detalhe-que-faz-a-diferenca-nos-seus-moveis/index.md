@@ -14,6 +14,7 @@ tags:
   - "moveis-com-luz-integrada"
   - "moveis-planejados"
   - "projeto-de-interiores"
+coverImage: "cover.jpeg"
 ---
 
 A iluminação embutida tem ganhado destaque nos projetos de móveis planejados modernos por unir funcionalidade, estética e sofisticação. Mais do que apenas um recurso decorativo, ela transforma completamente a percepção de um ambiente, valoriza os materiais e melhora a experiência de uso no dia a dia.

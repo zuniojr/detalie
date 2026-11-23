@@ -1,6 +1,7 @@
 ---
 title: "Luxo Silencioso: A Tendência de Design que Valoriza a Qualidade e o Detalhe"
 date: 2025-05-25
+coverImage: "cover.jpg"
 ---
 
 O luxo silencioso é uma tendência de design que vem ganhando espaço nos últimos anos. Em vez de ostentação ou marcas chamativas, essa abordagem valoriza a sofisticação discreta, os materiais de alta qualidade e a atenção minuciosa aos detalhes. Trata-se de uma estética refinada, onde o verdadeiro luxo está na experiência, no conforto e na durabilidade.

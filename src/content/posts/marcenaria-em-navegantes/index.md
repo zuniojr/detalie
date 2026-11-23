@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados-navegantes"
   - "moveis-sob-medida"
   - "moveis-sob-medida-em-navegantes"
+coverImage: "cover.jpg"
 ---
 
 Buscar uma boa **marcenaria em Navegantes** vai muito além de encontrar móveis bonitos.

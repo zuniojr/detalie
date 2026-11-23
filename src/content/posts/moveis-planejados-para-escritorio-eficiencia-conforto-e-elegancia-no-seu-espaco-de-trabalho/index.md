@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida-em-navegantes"
   - "organizacao-de-escritorio"
   - "planejamento-de-ambiente-de-trabalho"
+coverImage: "cover.jpg"
 ---
 
 Observando a evolução dos espaços residenciais e corporativos, uma verdade sempre se destacou: um ambiente bem planejado transforma a forma como trabalhamos. E quando falamos de produtividade, nada se compara aos **móveis planejados para escritório**.

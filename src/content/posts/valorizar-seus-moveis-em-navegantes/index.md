@@ -12,6 +12,7 @@ tags:
   - "projeto-de-luz"
   - "valorizacao"
   - "vista"
+coverImage: "cover.webp"
 ---
 
 ## Navegantes, com sua beleza costeira e o brilho natural do sol, já oferece um cenário deslumbrante. Mas, para quem investe em **móveis sob medida**, há um elemento crucial que pode transformar completamente a percepção do ambiente, destacando cada detalhe e realçando a vista espetacular: um **bom projeto de iluminação**. Longe de ser apenas uma questão de funcionalidade, a luz é uma ferramenta poderosa que molda a atmosfera, valoriza o design e otimiza a experiência do espaço.

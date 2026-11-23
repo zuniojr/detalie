@@ -11,6 +11,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida"
   - "moveis-sob-medida-em-navegantes"
+coverImage: "cover.jpeg"
 ---
 
 Os **móveis personalizados** são a solução perfeita para quem deseja ambientes únicos, que traduzam estilo, conforto e praticidade.

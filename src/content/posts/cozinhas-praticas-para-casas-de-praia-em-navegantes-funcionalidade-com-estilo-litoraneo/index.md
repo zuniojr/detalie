@@ -12,6 +12,7 @@ tags:
   - "detalie-moveis-sob-medida"
   - "moveis-planejados-praia"
   - "moveis-sob-medida-navegantes"
+coverImage: "cover.jpg"
 ---
 
 Quando pensamos em uma casa de praia, logo imaginamos momentos descontraídos, refeições leves e muita praticidade. Por isso, a **cozinha** — o coração da casa — precisa ser funcional, arejada e bem organizada, especialmente em **casas de veraneio em Navegantes**.

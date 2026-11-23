@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-que-valorizam-a-luz-natural"
   - "moveis-sob-medida-em-navegantes"
+coverImage: "cover.jpeg"
 ---
 
 Poucas coisas transformam tanto um ambiente quanto a **luz natural**. Ela aquece, amplia e dá vida aos espaços.

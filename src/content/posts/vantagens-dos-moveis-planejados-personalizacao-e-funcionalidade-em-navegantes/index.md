@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida-em-navegantes"
   - "moveis-sob-medida-qualidade"
   - "organizacao-de-espacos"
+coverImage: "cover.jpeg"
 ---
 
 Investir em **móveis planejados** é a decisão inteligente para quem busca aliar design, funcionalidade e aproveitamento máximo do espaço. Em Navegantes, a crescente demanda por soluções sob medida reflete o desejo dos moradores por ambientes que expressem personalidade e otimizem o dia a dia.

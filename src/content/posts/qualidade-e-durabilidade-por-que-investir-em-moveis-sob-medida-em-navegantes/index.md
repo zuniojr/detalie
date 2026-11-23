@@ -12,6 +12,7 @@ tags:
   - "moveis-resistentes-a-umidade"
   - "moveis-sob-medida-em-navegantes"
   - "qualidade-em-moveis-planejados"
+coverImage: "cover.webp"
 ---
 
 Quem já enfrentou móveis que incham com a umidade, portas desalinhadas após alguns meses ou gavetas que emperram sabe que o barato pode sair caro. Em mais de 30 anos convivendo com clientes, projetos e marcenarias, posso afirmar: a verdadeira economia está na durabilidade. E quando falamos em **móveis sob medida em Navegantes**, investir em qualidade é investir em tranquilidade.

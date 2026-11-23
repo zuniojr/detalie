@@ -14,6 +14,7 @@ tags:
   - "moveis-sob-medida-navegantes"
   - "organizacao-de-quarto"
   - "quarto-planejado"
+coverImage: "cover.jpg"
 ---
 
 # Organização e Estilo que Valorizam Seu Quarto
@@ -38,4 +39,4 @@ Do clássico ao moderno, com acabamentos em madeira, branco, cinza ou tons mais 
 
 Esse é um excelente projeto para inspirar sua imaginação.
 
-A [**Detaliê Móveis Sob Medida**](https://detaliemoveissobmedida.com.br/), de **Navegantes**, é especialista em transformar ideias em soluções personalizadas, com projetos de guarda-roupas planejados que unem beleza, funcionalidade e durabilidade.
+A [**Detaliê Móveis Sob Medida**](/), de **Navegantes**, é especialista em transformar ideias em soluções personalizadas, com projetos de guarda-roupas planejados que unem beleza, funcionalidade e durabilidade.

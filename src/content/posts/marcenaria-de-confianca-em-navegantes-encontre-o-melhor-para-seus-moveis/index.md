@@ -12,6 +12,7 @@ tags:
   - "moveis-com-preco-justo"
   - "moveis-de-qualidade"
   - "moveis-personalizados"
+coverImage: "cover.webp"
 ---
 
 Se você está buscando uma marcenaria de confiança em Navegantes para transformar seus ambientes com móveis sob medida, a Detaliê Móveis Sob Medida é a escolha ideal. Com ampla experiência no setor e foco total na satisfação do cliente, a Detaliê se destaca pela qualidade, atendimento e compromisso com prazos, tornando-se referência em móveis planejados na região.
@@ -24,7 +25,7 @@ Se você está buscando uma marcenaria de confiança em Navegantes para transfor
 
 - Compromisso com o prazo de entrega: Um dos grandes diferenciais da Detaliê é a agilidade e eficiência na entrega dos projetos, evitando atrasos e transtornos para os clientes.
 
-- Preços competitivos e condições facilitadas: Oferecemos preços justos sem abrir mão da qualidade, além de condições de pagamento flexíveis que se adaptam às necessidades de cada cliente[1](https://detaliemoveissobmedida.com.br/).
+- Preços competitivos e condições facilitadas: Oferecemos preços justos sem abrir mão da qualidade, além de condições de pagamento flexíveis que se adaptam às necessidades de cada cliente[1](/).
 
 - Garantia diferenciada: Todos os nossos móveis sob medida contam com garantia especial, assegurando durabilidade, resistência e a tranquilidade que você merece.
 

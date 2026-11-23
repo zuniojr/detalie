@@ -12,7 +12,7 @@ tags:
   - "moveis-sob-medida-navegantes"
   - "moveis-sob-medida-sc"
   - "projeto-personalizado"
-coverImage: "detalie.moveissobmedida_1743679061_3602563537513666349_67043413838-1.jpg"
+coverImage: "cover.jpg"
 ---
 
 Quando falamos em móveis sob medida, não falamos apenas em estética. Falamos em cuidado. Em entrega. Em transformar ideias em ambientes que acolhem, facilitam a rotina e refletem o estilo de vida de quem vive ali. E é com esse compromisso que mais um projeto foi entregue com sucesso em **Navegantes, SC**.

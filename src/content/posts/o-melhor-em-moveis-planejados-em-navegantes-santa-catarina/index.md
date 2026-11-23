@@ -12,7 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida"
   - "navegantes-sc"
-coverImage: "detalie.moveissobmedida_1737404248_3549926593776717357_67043413838.jpg"
+coverImage: "cover.jpg"
 ---
 
 Quando se fala em transformar ambientes e maximizar cada centímetro do seu lar ou escritório, a escolha por uma marcenaria especializada é fundamental. Se você está em Navegantes, Santa Catarina, e procura móveis planejados ou móveis sob medida de alta qualidade, a Detaliê Móveis Sob Medida é referência em soluções personalizadas para cozinhas, closets, painéis, armários, banheiros e escritórios.

@@ -13,7 +13,7 @@ tags:
   - "santuario-nossa-senhora-dos-navegantes"
   - "tradicao-pesqueira"
   - "turismo-cultural"
-coverImage: "memorial-1.jpg"
+coverImage: "cover.jpg"
 ---
 
 Localizado ao lado do Santuário Nossa Senhora dos Navegantes, o **Barco Temático** é uma atração que celebra a rica tradição pesqueira da cidade. Reproduzido em tamanho real, o barco simboliza uma das principais atividades econômicas de Navegantes e resgata a história dos pescadores que marcaram a região.

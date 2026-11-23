@@ -12,7 +12,7 @@ tags:
   - "moveis-de-qualidade"
   - "moveis-para-escritorio"
   - "moveis-sob-medida-navegantes"
-coverImage: "logo-detalie-350x100-1.png"
+coverImage: "cover.png"
 ---
 
 # **Qualidade e Personalização em Navegantes, SC**

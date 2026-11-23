@@ -13,6 +13,7 @@ tags:
   - "moveis-sob-medida"
   - "tendencias-de-design"
   - "texturas-em-alta"
+coverImage: "cover.jpg"
 ---
 
 No universo dos móveis sob medida, os acabamentos são responsáveis por transmitir personalidade, elegância e estilo. Para 2025, as tendências apontam para uma valorização ainda maior das texturas, dos materiais naturais e de superfícies que convidam ao toque e ao olhar.

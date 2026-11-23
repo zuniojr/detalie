@@ -14,7 +14,7 @@ tags:
   - "marmore-travertino"
   - "moveis-sob-medida"
   - "suite-navona"
-coverImage: "8i4l4KIhlOE2sC7rTCcji-1729076266851.webp"
+coverImage: "cover.webp"
 ---
 
 Assinada pelos talentosos arquitetos Thauana Kairala e João Victor Santanna, a Suíte Navona, destaque da CASACOR Ribeirão Preto, é um exemplo primoroso de elegância atemporal. O projeto combina harmoniosamente materiais nobres, texturas envolventes e uma paleta de cores neutras, criando um ambiente que atravessa tendências e permanece sempre atual.

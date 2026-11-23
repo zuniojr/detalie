@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados-navegantes"
   - "moveis-sob-medida-navegantes"
   - "projeto-3d-moveis"
+coverImage: "cover.webp"
 ---
 
 Você já imaginou ter móveis criados exatamente para o seu espaço, seu estilo e sua rotina?
@@ -34,7 +35,7 @@ Se você está construindo, reformando ou apenas sonhando com um novo ambiente, 
 🔹 Atendimento com hora marcada para garantir exclusividade  
 🔹 Orçamento sem compromisso
 
-🔗 detaliemoveissobmedida.com.br [http://detaliemoveissobmedida.com.br](http://detaliemoveissobmedida.com.br)
+🔗 detaliemoveissobmedida.com.br [/](/)
 
 * * *
 

@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-que-isolam-ruido"
   - "moveis-sob-medida-em-navegantes"
+coverImage: "cover.jpeg"
 ---
 
 O barulho urbano é uma das principais causas de desconforto dentro de casa. Ruídos de trânsito, vizinhos, obras e até vento podem comprometer a qualidade do sono, da concentração e até do convívio familiar. A boa notícia? É possível usar **móveis planejados** para melhorar significativamente o conforto acústico dos ambientes.

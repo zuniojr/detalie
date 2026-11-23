@@ -12,6 +12,7 @@ tags:
   - "parceria-com-arquitetos"
   - "preciso-contratar-um-arquiteto"
   - "projeto-3d-moveis"
+coverImage: "cover.jpeg"
 ---
 
 Essa é uma dúvida comum de quem está iniciando um projeto de interiores ou buscando soluções para móveis planejados: **“Preciso contratar um arquiteto antes de procurar uma marcenaria sob medida?”** A resposta é simples: **não, você não precisa.**

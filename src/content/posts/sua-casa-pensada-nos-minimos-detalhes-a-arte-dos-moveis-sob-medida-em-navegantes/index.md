@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "navegantes-sc"
   - "personalizacao"
+coverImage: "cover.jpg"
 ---
 
 Quando falamos em transformar uma casa em um lar verdadeiramente especial, os detalhes fazem toda a diferença. Não se trata apenas de preencher espaços com móveis, mas de criar ambientes que reflitam personalidade, atendam necessidades específicas e proporcionem uma experiência única de conforto e bem-estar. Em Navegantes, a Detaliê Móveis Sob Medida tem se destacado justamente por essa filosofia: pensar cada projeto nos mínimos detalhes, garantindo que cada centímetro seja aproveitado com inteligência e cada acabamento seja executado com precisão.

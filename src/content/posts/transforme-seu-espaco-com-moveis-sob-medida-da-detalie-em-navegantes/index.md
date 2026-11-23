@@ -12,7 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida"
   - "projetos-personalizados"
-coverImage: "detalie.moveissobmedida_1737404248_3549926593776717357_67043413838.jpg"
+coverImage: "cover.jpg"
 ---
 
 Fica nosso agradecimento a todos os amigos e clientes quê vieram nos prestigiar!

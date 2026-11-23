@@ -12,6 +12,7 @@ tags:
   - "moveis-personalizados"
   - "moveis-planejados"
   - "moveis-sob-medida"
+coverImage: "cover.webp"
 ---
 
 A Detaliê Móveis Sob Medida é referência em Navegantes quando o assunto é móveis personalizados. A empresa se destaca por unir qualidade, preço justo e compromisso com o prazo em cada projeto realizado. Utilizando materiais de alta qualidade e contando com uma equipe especializada, a Detaliê garante móveis duráveis, funcionais e com acabamento impecável.

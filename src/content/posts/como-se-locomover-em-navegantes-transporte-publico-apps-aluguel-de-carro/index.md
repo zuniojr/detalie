@@ -3,6 +3,7 @@ title: "Como se Locomover em Navegantes: Transporte Público, Apps, Aluguel de C
 date: 2025-05-29
 categories: 
   - "ambientes-planejados"
+coverImage: "cover.jpeg"
 ---
 
 Como se Locomover em Navegantes: Transporte Público, Apps, Aluguel de Carro e Mais!  

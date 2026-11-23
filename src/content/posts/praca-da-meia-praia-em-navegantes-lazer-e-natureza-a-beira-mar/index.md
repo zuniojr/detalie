@@ -12,7 +12,7 @@ tags:
   - "parque-infantil"
   - "passarela-ecologica"
   - "praca-da-meia-praia"
-coverImage: "pca_meia_praia.jpg"
+coverImage: "cover.jpg"
 ---
 
 Localizada na Avenida Beira-Mar, no bairro Meia Praia, a **Praça da Meia Praia** é um espaço completo para lazer, esportes e contato com a natureza em Navegantes. Com uma vista privilegiada para o mirante de frente para o mar, o local oferece infraestrutura ideal para toda a família.

@@ -13,6 +13,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida"
   - "personalizacao"
+coverImage: "cover.jpeg"
 ---
 
 As formas orgânicas vêm ganhando cada vez mais espaço no design de móveis planejados modernos. Inspiradas na natureza, essas curvas suaves e fluídas criam ambientes acolhedores, elegantes e visualmente agradáveis. Mais do que uma tendência estética, elas representam uma mudança no modo de pensar o mobiliário: do rígido ao fluido, do técnico ao emocional.

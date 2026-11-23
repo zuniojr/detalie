@@ -12,6 +12,7 @@ tags:
   - "praia-do-gravata"
   - "roteiro-1-dia"
   - "turismo-navegantes"
+coverImage: "cover.webp"
 ---
 
 Se você tem apenas um dia para explorar Navegantes, não se preocupe! É possível montar um roteiro encantador, equilibrando natureza, cultura, gastronomia e momentos de contemplação. Aqui vai uma sugestão perfeita para aproveitar o melhor da cidade em 24 horas.

@@ -1,6 +1,7 @@
 ---
 title: "As Cores que Vão Dominar 2025: Inspire-se para Seus Móveis Sob Medida"
 date: 2025-05-25
+coverImage: "cover.webp"
 ---
 
 Inspire-se para Seus Móveis Sob Medida  

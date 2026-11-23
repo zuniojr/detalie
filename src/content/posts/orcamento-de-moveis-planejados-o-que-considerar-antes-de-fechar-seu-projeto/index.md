@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida-sc"
   - "orcamento-de-moveis-planejados"
   - "orcamento-marcenaria"
+coverImage: "cover.webp"
 ---
 
 Solicitar um **orçamento de móveis planejados** é o primeiro passo para transformar sua casa em um ambiente funcional, bonito e feito sob medida para o seu estilo de vida. Mas antes de comparar valores, é importante entender **o que influencia no preço** e por que um projeto bem planejado vale cada centavo investido.

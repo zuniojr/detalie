@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados-em-navegantes"
   - "moveis-premium"
   - "moveis-sob-medida"
+coverImage: "cover.jpg"
 ---
 
 Quando o assunto é transformar ambientes com elegância e funcionalidade, os **móveis planejados alto padrão** são a escolha ideal para quem busca qualidade superior e design exclusivo. Em Navegantes, esses projetos ganham destaque por atenderem clientes que exigem acabamentos premium, atenção aos detalhes e personalização completa.

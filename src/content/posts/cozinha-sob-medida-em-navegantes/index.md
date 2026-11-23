@@ -12,6 +12,7 @@ tags:
   - "marcenaria-recomendada"
   - "moveis-personalizados"
   - "projeto-cozinha-personalizada"
+coverImage: "cover.jpg"
 ---
 
 A cozinha é considerada o coração da casa, um espaço que vai muito além da preparação de alimentos – é onde histórias são compartilhadas, receitas de família são transmitidas entre gerações e momentos especiais acontecem diariamente. Por isso, investir em uma cozinha sob medida é uma decisão que transforma não apenas o ambiente, mas também a qualidade de vida de toda a família. Em Navegantes, Santa Catarina, essa busca pela cozinha ideal encontra diversas possibilidades, mas é fundamental saber onde encontrar o equilíbrio perfeito entre qualidade, personalização e custo-benefício.

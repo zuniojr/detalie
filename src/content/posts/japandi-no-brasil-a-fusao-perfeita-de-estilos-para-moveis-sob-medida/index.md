@@ -4,6 +4,7 @@ date: 2025-05-26
 categories: 
   - "dicas-de-organizacao-e-funcionalidade"
   - "materiais-e-acabamentos"
+coverImage: "cover.webp"
 ---
 
 Nos últimos anos, um estilo de decoração tem conquistado corações e lares ao redor do mundo, inclusive no Brasil: o **Japandi**. Nascido da harmoniosa união entre a simplicidade funcional do design escandinavo (Scandi) e a elegância minimalista e serena da estética japonesa (Japan), o Japandi oferece uma proposta única para quem busca ambientes calmos, organizados, acolhedores e profundamente conectados com a natureza.

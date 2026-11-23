@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "navegantes"
   - "regiao"
+coverImage: "cover.jpeg"
 ---
 
 Aquele momento em que os seus **móveis sob medida** chegam é sempre emocionante. Sonhamos com o ambiente pronto, com cada peça no seu lugar, refletindo a nossa personalidade e atendendo às nossas necessidades. Mas, entre a fábrica e a sua casa, existe uma etapa crucial que define a experiência final: a montagem.

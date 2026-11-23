@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "orcamento-de-moveis-planejados"
   - "quanto-custa-moveis-planejados"
+coverImage: "cover.jpeg"
 ---
 
 Está pensando em transformar sua casa com móveis sob medida, mas não sabe por onde começar? O primeiro passo é simples — solicitar um **orçamento de móveis planejados**. E mais do que descobrir o preço, esse processo ajuda você a entender as possibilidades que um projeto personalizado pode oferecer ao seu espaço.

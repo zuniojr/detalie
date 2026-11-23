@@ -8,7 +8,7 @@ tags:
   - "led-em-moveis"
   - "moveis-planejados"
   - "moveis-sob-medida"
-coverImage: "cz.jpg"
+coverImage: "cover.jpg"
 ---
 
 Muito além de um espaço para preparar refeições, a cozinha é, para muitos lares, o verdadeiro **coração da casa**.
@@ -25,4 +25,4 @@ Diferente dos móveis padronizados, os planejados são fabricados com materiais 
 
 ### Deixe a Detaliê Transformar Sua Cozinha em um Espaço Inesquecível
 
-Uma cozinha planejada é um excelente projeto para inspirar sua imaginação e transformar a sua rotina. A **[Detaliê](https://detaliemoveissobmedida.com.br/) Móveis Sob Medida** oferece soluções personalizadas para quem busca **móveis sob medida em Navegantes e região**, aliando qualidade, estilo e funcionalidade para tornar sua cozinha o verdadeiro coração da casa.
+Uma cozinha planejada é um excelente projeto para inspirar sua imaginação e transformar a sua rotina. A **[Detaliê](/) Móveis Sob Medida** oferece soluções personalizadas para quem busca **móveis sob medida em Navegantes e região**, aliando qualidade, estilo e funcionalidade para tornar sua cozinha o verdadeiro coração da casa.

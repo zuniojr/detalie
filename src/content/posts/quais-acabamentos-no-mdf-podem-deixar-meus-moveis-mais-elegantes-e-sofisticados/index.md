@@ -13,6 +13,7 @@ tags:
   - "moveis-sob-medida"
   - "moveis-sofisticados"
   - "vidro-em-moveis"
+coverImage: "cover.webp"
 ---
 
 A escolha do acabamento é fundamental para transformar móveis em MDF em peças sofisticadas e elegantes. Os acabamentos certos agregam valor estético, durabilidade e personalidade ao ambiente, permitindo criar projetos exclusivos e alinhados às tendências mais atuais.
@@ -45,6 +46,6 @@ A escolha do acabamento é fundamental para transformar móveis em MDF em peças
 
 - Invista em detalhes como fitas de borda, que garantem acabamento perfeito e valorizam ainda mais o móvel.
 
-## Transforme seus ambientes com móveis em MDF sob medida da [Detaliê](https://detaliemoveissobmedida.com.br/)
+## Transforme seus ambientes com móveis em MDF sob medida da [Detaliê](/)
 
 Quer móveis sofisticados, duráveis e com acabamento impecável? Fale agora com a Detaliê e descubra como nossos projetos sob medida em MDF podem elevar o padrão do seu ambiente!

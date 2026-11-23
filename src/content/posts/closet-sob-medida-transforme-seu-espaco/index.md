@@ -12,6 +12,7 @@ tags:
   - "moveis-sob-medida"
   - "organizacao-de-closet"
   - "projeto-closet"
+coverImage: "cover.jpg"
 ---
 
 Um **closet sob medida** é mais do que um simples armário: é a solução perfeita para quem busca **organização**, **personalização** e **aproveitamento inteligente** de cada centímetro do lar. Com um projeto pensado nos mínimos detalhes, é possível criar um ambiente funcional e esteticamente atraente, refletindo seu estilo de vida e facilitando o dia a dia.

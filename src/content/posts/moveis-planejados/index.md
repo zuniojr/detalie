@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados-pequenos-espacos"
   - "moveis-sob-medida-navegantes"
   - "organizacao-de-ambientes"
+coverImage: "cover.jpg"
 ---
 
 A resposta é direta: **sim, móveis planejados servem para qualquer tamanho de ambiente** — e são, na verdade, a melhor solução justamente quando o espaço é limitado ou desafiador. Com mais de 30 anos observando a evolução do design de interiores e o comportamento das casas brasileiras, posso afirmar: móveis sob medida não são luxo, são estratégia inteligente de aproveitamento.

@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida"
   - "navegantes"
+coverImage: "cover.jpeg"
 ---
 
 A escolha entre acabamento fosco ou brilhante para móveis sob medida em Navegantes é uma das decisões mais importantes para quem busca unir estilo, funcionalidade e personalidade no projeto. Cada tipo de acabamento oferece vantagens distintas e pode transformar completamente a atmosfera dos ambientes.
@@ -42,6 +43,6 @@ A laca é um revestimento versátil que pode ser aplicado tanto em acabamento fo
 
 ## Deixe seus móveis sob medida ainda mais especiais com a Detaliê
 
-Transforme seus ambientes em Navegantes com [móveis sob medida](https://detaliemoveissobmedida.com.br/) no acabamento perfeito para o seu estilo. Fale com a Detaliê e descubra como unir sofisticação, funcionalidade e personalidade em cada detalhe do seu projeto!
+Transforme seus ambientes em Navegantes com [móveis sob medida](/) no acabamento perfeito para o seu estilo. Fale com a Detaliê e descubra como unir sofisticação, funcionalidade e personalidade em cada detalhe do seu projeto!
 
 * * *

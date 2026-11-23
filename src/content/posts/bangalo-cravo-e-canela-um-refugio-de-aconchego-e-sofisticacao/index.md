@@ -12,7 +12,7 @@ tags:
   - "estesia-deca"
   - "moveis-sob-medida"
   - "wesley-lemos"
-coverImage: "0Y0-7e4R4jgaDpCaW037f-1736459160462.webp"
+coverImage: "cover.webp"
 ---
 
 Em meio à agitação do dia a dia, encontrar um espaço que combine aconchego, elegância e funcionalidade é um verdadeiro tesouro. O Bangalô Cravo e Canela, assinado pela arquiteta Jessica Araújo para a CASACOR Bahia 2019, é um desses ambientes que nos transportam para uma atmosfera de tranquilidade sofisticada, onde cada detalhe foi pensado para criar uma experiência sensorial completa.

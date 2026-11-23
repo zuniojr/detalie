@@ -12,6 +12,7 @@ tags:
   - "producao"
   - "qualidade"
   - "tecnologia"
+coverImage: "cover.jpg"
 ---
 
 No cenário atual da fabricação de **móveis sob medida**, a união entre a maestria artesanal e o avanço tecnológico é o que verdadeiramente define a excelência. Longe de ser um mero luxo, a **tecnologia na produção** é uma necessidade inegável para garantir a precisão, a agilidade e, acima de tudo, a qualidade superior que o mercado e, mais importante, você, esperam. Na Detaliê, entendemos que investir em equipamentos modernos não é apenas uma questão de otimização, mas um compromisso com a perfeição de cada peça que entregamos.

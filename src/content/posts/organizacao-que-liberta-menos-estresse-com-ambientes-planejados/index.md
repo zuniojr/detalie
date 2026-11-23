@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida-navegantes"
   - "organizacao-residencial"
+coverImage: "cover.jpeg"
 ---
 
 Viver em um ambiente desorganizado gera ruído — visual, emocional e mental. Com o tempo, pequenos acúmulos se transformam em frustração, e o que deveria ser um refúgio se torna mais um motivo de estresse. Mas há uma solução simples, eficaz e duradoura: os **ambientes planejados**.

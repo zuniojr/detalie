@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-sob-medida"
   - "projeto-3d-de-moveis"
+coverImage: "cover.jpeg"
 ---
 
 ## Como Escolher a Ideal para Seu Projeto

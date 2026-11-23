@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados"
   - "moveis-resistentes-a-umidade"
   - "tipos-de-mdf"
+coverImage: "cover.jpg"
 ---
 
 Ao planejar um projeto de móveis sob medida, uma das escolhas mais importantes — e muitas vezes negligenciada — é o **material**. Essa decisão impacta diretamente na estética, durabilidade, resistência à umidade e, claro, no valor final do investimento. Com mais de 30 anos acompanhando o setor moveleiro, posso garantir: conhecer as opções disponíveis é o primeiro passo para acertar em cheio.

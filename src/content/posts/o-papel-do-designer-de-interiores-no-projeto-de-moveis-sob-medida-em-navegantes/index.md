@@ -12,6 +12,7 @@ tags:
   - "navegantes"
   - "otimizacao-de-espaco"
   - "projeto-de-interiores"
+coverImage: "cover.jpeg"
 ---
 
 Quando se fala em móveis sob medida, especialmente em Navegantes, o trabalho do designer de interiores é fundamental para transformar ambientes em espaços funcionais, elegantes e personalizados. Mais do que simplesmente escolher móveis bonitos, o designer atua desde a concepção até a execução do projeto, garantindo que cada detalhe atenda às necessidades e ao estilo de vida do cliente.
@@ -38,7 +39,7 @@ O sucesso de um projeto de móveis sob medida depende da colaboração entre des
 
 * * *
 
-## Realize seu projeto dos sonhos com a [Detaliê Móveis Sob Medida](https://detaliemoveissobmedida.com.br/)
+## Realize seu projeto dos sonhos com a [Detaliê Móveis Sob Medida](/)
 
 Conte com a expertise da Detaliê para criar móveis sob medida em Navegantes, com acompanhamento de designers de interiores que vão transformar seu espaço em um ambiente único, funcional e sofisticado. Solicite já seu orçamento e descubra como podemos elevar o padrão do seu lar!
 

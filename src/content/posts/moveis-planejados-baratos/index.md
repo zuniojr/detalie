@@ -12,6 +12,7 @@ tags:
   - "moveis-planejados-navegantes"
   - "moveis-planejados-sc"
   - "moveis-sob-medida-acessiveis"
+coverImage: "cover.jpeg"
 ---
 
 Se você acha que móveis planejados são sinônimo de alto custo, está na hora de rever esse conceito. Com o projeto certo e um bom parceiro, é possível investir em **móveis planejados baratos** que se encaixam no seu orçamento **sem abrir mão da beleza, da funcionalidade e da qualidade**.

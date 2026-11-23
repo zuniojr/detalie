@@ -12,7 +12,7 @@ tags:
   - "marcenaria-personalizada"
   - "moveis-planejados-navegantes"
   - "moveis-sob-medida-navegantes"
-coverImage: "detalie.moveissobmedida_1723050890_3429521894335199089_67043413838.jpg"
+coverImage: "cover.jpg"
 ---
 
 Um home office bem planejado faz toda a diferença na produtividade e no bem-estar de quem trabalha de casa. E quando o espaço é pensado com **móveis sob medida**, o resultado vai muito além da organização — ele se transforma em um ambiente funcional, bonito e inspirador.
