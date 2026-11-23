@@ -4,17 +4,51 @@ import Layout from '@/layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import BlogPostCard from '../../components/BlogPostCard.astro';
 import ContactBar from '../../components/ContactBar.astro';
+import WhatsAppIcon from '../../components/WhatsAppIcon.astro';
 import { COMPANY } from '../../utils/constants';
 import { getWebPageSchema } from '../../utils/schema';
 import { getPostMeta } from '../../utils/blog';
+
+// Slugs dos artigos que possuem fotos reais de projetos e obras entregues pela Detaliê
+const postsWithProjectPhotos = new Set([
+  'a-importancia-de-ter-uma-cozinha-planejada-o-coracao-da-sua-casa',
+  'bangalo-cravo-e-canela-um-refugio-de-aconchego-e-sofisticacao',
+  'bangalo-terra-mar-uma-experiencia-sensorial-entre-elementos-naturais',
+  'banheiro-com-marcenaria-preta-e-detalhes-ripados-sofisticacao-em-cada-traco',
+  'barco-tematico-em-navegantes-tradicao-e-cultura-a-beira-mar',
+  'cada-detalhe-pensado-para-unir-funcionalidade-conforto-e-estilo',
+  'cozinha-de-apartamento-com-alma-de-casa-grande-planejamento-e-tudo',
+  'detalie-moveis-sob-medida',
+  'detalie-moveis-sob-medida-esta-de-endereco-novo-em-navegantes',
+  'detalie-moveis-sob-medida-novo-espaco-novas-possibilidades-em-navegantes',
+  'estesia-deca-um-refugio-contemporaneo-com-alma-infantil-e-design-brasileiro',
+  'mais-um-sonho-entregue-cuidado-em-cada-detalhe-para-uma-maior-experiencia',
+  'novidades-e-melhorias-para-os-clientes-de-navegantes-com-a-nova-localizacao-da-detalie',
+  'novidades-e-melhorias-que-a-nova-localizacao-da-detalie-traz-para-os-clientes-de-navegantes',
+  'o-melhor-em-moveis-planejados-em-navegantes-santa-catarina',
+  'praca-da-meia-praia-em-navegantes-lazer-e-natureza-a-beira-mar',
+  'quarto-sob-medida-casal-em-navegantes',
+  'que-tal-se-inspirar-nesse-projeto-para-home-office',
+  'sua-sacada-pode-ser-o-espaco-perfeito-para-relaxar-e-se-divertir-com-a-sua-familia-e-amigos',
+  'suite-navona-atemporalidade-e-sofisticacao-com-marmore-travertino-e-elementos-naturais',
+  'transforme-seu-espaco-com-moveis-sob-medida-da-detalie-em-navegantes',
+]);
 
 const rawPosts = (await getCollection('blog')).filter(
   (p) => !p.id.startsWith('_drafts') && !p.id.includes('_drafts/')
 );
 const posts = rawPosts.map((p) => getPostMeta(p));
-const sortedPosts = posts.sort(
-  (a, b) => b.pubDate.valueOf() - a.pubDate.valueOf()
-);
+
+// Priorizar artigos com fotos reais primeiro, mantendo ordenação por data recente
+const photoPosts = posts
+  .filter((p) => postsWithProjectPhotos.has(p.slug))
+  .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf());
+
+const otherPosts = posts
+  .filter((p) => !postsWithProjectPhotos.has(p.slug))
+  .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf());
+
+const sortedPosts = [...photoPosts, ...otherPosts];
 
 const featuredPost = sortedPosts[0];
 const regularPosts = sortedPosts.slice(1);
@@ -111,31 +145,63 @@ const formattedFeaturedDate = featuredPost
         <>
           <div class="blog-grid" id="blog-grid">
             {regularPosts.map((post, index) => (
-              <div
-                class="blog-card-item"
-                data-title={post.title.toLowerCase()}
-                data-desc={post.description.toLowerCase()}
-                data-tags={post.tags.join(' ').toLowerCase()}
-                style={index >= 9 ? 'display: none;' : ''}
-              >
-                <BlogPostCard
-                  title={post.title}
-                  description={post.description}
-                  slug={post.slug}
-                  pubDate={post.pubDate}
-                  author={post.author}
-                  coverImage={post.coverImage}
-                  tags={post.tags}
-                  readTime={post.readTime}
-                />
-              </div>
+              <>
+                <div
+                  class="blog-card-item"
+                  data-card-index={index}
+                  data-title={post.title.toLowerCase()}
+                  data-desc={post.description.toLowerCase()}
+                  data-tags={post.tags.join(' ').toLowerCase()}
+                  style={index >= 12 ? 'display: none;' : ''}
+                >
+                  <BlogPostCard
+                    title={post.title}
+                    description={post.description}
+                    slug={post.slug}
+                    pubDate={post.pubDate}
+                    author={post.author}
+                    coverImage={post.coverImage}
+                    tags={post.tags}
+                    readTime={post.readTime}
+                  />
+                </div>
+
+                {(index + 1) % 6 === 0 && (
+                  <div
+                    class="blog-inline-banner"
+                    data-banner-after-card={index}
+                    style={index >= 12 ? 'display: none;' : ''}
+                  >
+                    <div class="banner-card">
+                      <div class="banner-text">
+                        <span class="banner-badge">Solicite um Orçamento</span>
+                        <h3 class="banner-title">Pronto para transformar o seu ambiente?</h3>
+                        <p class="banner-desc">
+                          Entre em contato conosco e receba uma consultoria personalizada com projeto 3D para o seu espaço.
+                        </p>
+                      </div>
+                      <div class="banner-actions">
+                        <a
+                          href="https://bitlybr.net/Detalie"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="btn btn-whatsapp banner-btn"
+                        >
+                          <WhatsAppIcon size={22} />
+                          Falar no WhatsApp
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </>
             ))}
           </div>
 
-          {regularPosts.length > 9 && (
+          {regularPosts.length > 12 && (
             <div class="load-more-wrap" id="load-more-wrap">
               <button id="load-more-btn" class="btn btn-outline">
-                Carregar Mais Artigos ({regularPosts.length - 9} restantes)
+                Carregar Mais Artigos ({regularPosts.length - 12} restantes)
               </button>
             </div>
           )}
@@ -155,36 +221,42 @@ const formattedFeaturedDate = featuredPost
 
 <script>
   function setupBlogSearch() {
-    const searchInput = document.getElementById('blog-search-input') as HTMLInputElement;
+    const searchInput = document.getElementById('blog-search-input') as HTMLInputElement | null;
     const gridItems = document.querySelectorAll<HTMLElement>('.blog-card-item');
+    const bannerItems = document.querySelectorAll<HTMLElement>('.blog-inline-banner');
     const loadMoreBtn = document.getElementById('load-more-btn');
     const loadMoreWrap = document.getElementById('load-more-wrap');
     const noResults = document.getElementById('no-search-results');
     const counter = document.getElementById('posts-counter');
 
-    let currentlyShown = 9;
+    let currentlyShown = 12;
 
     if (!gridItems.length) return;
+
+    function updateVisibility() {
+      gridItems.forEach((item, idx) => {
+        item.style.display = idx < currentlyShown ? 'block' : 'none';
+      });
+
+      bannerItems.forEach((banner) => {
+        const afterCardIndex = parseInt(banner.dataset.bannerAfterCard || '0', 10);
+        banner.style.display = afterCardIndex < currentlyShown ? 'block' : 'none';
+      });
+
+      const remaining = gridItems.length - currentlyShown;
+      if (remaining <= 0 && loadMoreWrap) {
+        loadMoreWrap.style.display = 'none';
+      } else if (loadMoreWrap && loadMoreBtn) {
+        loadMoreWrap.style.display = 'flex';
+        loadMoreBtn.textContent = `Carregar Mais Artigos (${remaining} restantes)`;
+      }
+    }
 
     // Ação do Botão Carregar Mais
     if (loadMoreBtn) {
       loadMoreBtn.addEventListener('click', () => {
-        currentlyShown += 9;
-        let visibleCount = 0;
-
-        gridItems.forEach((item, idx) => {
-          if (idx < currentlyShown) {
-            item.style.display = 'block';
-            visibleCount++;
-          }
-        });
-
-        const remaining = gridItems.length - currentlyShown;
-        if (remaining <= 0 && loadMoreWrap) {
-          loadMoreWrap.style.display = 'none';
-        } else if (loadMoreBtn) {
-          loadMoreBtn.textContent = `Carregar Mais Artigos (${remaining} restantes)`;
-        }
+        currentlyShown += 12;
+        updateVisibility();
       });
     }
 
@@ -195,19 +267,15 @@ const formattedFeaturedDate = featuredPost
 
         if (query === '') {
           // Resetar para estado inicial paginado
-          gridItems.forEach((item, idx) => {
-            item.style.display = idx < currentlyShown ? 'block' : 'none';
-          });
-          if (loadMoreWrap && gridItems.length > currentlyShown) {
-            loadMoreWrap.style.display = 'flex';
-          }
+          updateVisibility();
           if (noResults) noResults.style.display = 'none';
           if (counter) counter.innerHTML = `Exibindo <strong>${gridItems.length + 1}</strong> artigos`;
           return;
         }
 
-        // Esconder botão carregar mais durante busca
+        // Esconder botão carregar mais e banners durante busca
         if (loadMoreWrap) loadMoreWrap.style.display = 'none';
+        bannerItems.forEach((b) => (b.style.display = 'none'));
 
         let matchCount = 0;
 
@@ -443,7 +511,7 @@ const formattedFeaturedDate = featuredPost
   }
 
   /* ============================================
-     GRID E PAGINAÇÃO
+     GRID E BANNER A CADA 6 POSTS
   ============================================ */
   .blog-grid-section {
     padding: var(--spacing-xl) 0;
@@ -454,6 +522,77 @@ const formattedFeaturedDate = featuredPost
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+
+  .blog-inline-banner {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .banner-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background: var(--color-white);
+    padding: 2.5rem 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .banner-badge {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    display: inline-block;
+    margin-bottom: 0.35rem;
+  }
+
+  .banner-title {
+    font-family: var(--font-section);
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.25;
+  }
+
+  .banner-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: 580px;
+    line-height: 1.5;
+  }
+
+  .banner-actions {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .banner-btn {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    transition: all 0.25s ease;
+  }
+
+  .banner-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
   }
 
   .load-more-wrap {
@@ -486,6 +625,25 @@ const formattedFeaturedDate = featuredPost
     .blog-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
+    }
+
+    .banner-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .banner-desc {
+      max-width: 100%;
+    }
+
+    .banner-actions {
+      width: 100%;
+    }
+
+    .banner-actions .btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 
